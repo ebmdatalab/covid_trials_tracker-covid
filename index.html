@@ -20,7 +20,7 @@
     <div class="container">
       <h1>Covid-19 Trials Tracker</h1>
 
-      <p>An overvire</p>
+      <p>All registered COVID-19 trials in the ICTRP Database</p>
 
       <font size="2">
       <table id="trials-table" class="table table-striped">
@@ -46,8 +46,23 @@
         <tbody></tbody>
       </table>
     </font>
+      <p></p>
+      <p></p>
+      <p>Data downloaded on 18 March 2020.</p>
 
-      <p>You could put some more text here</p>
+      <p style="font-size:25px;">This is a live work in progress! If you think you can help improve the tracker or have questions/suggestions, please get in touch! <a href="mailto:ebmdatalab@phc.ox.ac.uk">ebmdatalab@phc.ox.ac.uk</a></p>
+
+      <p>Coming Soon:<p>
+        <ul>
+          <li>Data on interventions</li>
+          <li>Data from 25 March 2020</li>
+        </ul>
+
+      <p>Wishlist:</p>
+        <ul>
+          <li>Crowdsourced Results</li>
+          <li>Better normalisation of sponsors (especially Chinese sponsors)</li>
+        </ul>
     </div>
 
     <script type="text/javascript">
@@ -56,7 +71,7 @@
             ajax:
               "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/trials_18mar.json",
             dom: 'lfBrtip',
-            buttons: ['searchPanes', 'colvis'],
+            buttons: [{extend:'searchPanes', text: 'Filter'}, 'colvis'],
             "scrollY": 500,
             "scrollX": true,
             colReorder: true,
