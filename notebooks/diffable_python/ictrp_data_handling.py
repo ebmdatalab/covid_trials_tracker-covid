@@ -151,7 +151,7 @@ check_fields('Study_type')
 # -
 
 #need to think about fixing this
-check_fields('Countries')
+list(check_fields('Countries')
 
 # +
 #More data cleaning
@@ -246,6 +246,7 @@ df_cond_norm[reorder].to_csv('trial_data_25_mar.csv')
 # +
 mar18 = pd.read_csv('trial_data_18_mar.csv')
 mar18['results_url_link'] = mar18['results_url_link'].fillna('No Results')
+mar18['phase'] = mar18['phase'].fillna('Not Applicable')
 
 import json
 with open("trials_18mar", "w") as f:
