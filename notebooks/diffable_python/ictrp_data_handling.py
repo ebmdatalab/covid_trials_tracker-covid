@@ -152,21 +152,10 @@ check_fields('Study_type')
 
 check_fields('Countries')
 
-#need to think about fixing this
-country_values = df_cond_nc['Countries'].tolist()
-
-# +
-new_list = []
-china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china']
-
-for c in country_values:
-    if isinstance(c, float):
-        new_list.append('No Sponsor Name Given')
-    elif ';' in c:
-        
-
 # +
 #More data cleaning
+
+df_cond_nc['results_url_link'] = df_cond_nc['results_url_link'].fillna('No Results')
 
 #semi-colons in the intervention field mess with CSV
 df_cond_nc['Intervention'] = df_cond_nc['Intervention'].str.replace(';', '')
@@ -201,13 +190,37 @@ df_cond_nc['Countries'] = df_cond_nc['Countries'].fillna('No Country Given')
 
 china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china']
 
-for c in china_corr:
-    df_cond_nc['Countries'] = df_cond_nc['Countries'].replace(c, 'China')
-    
-df_cond_nc['Countries'] = df_cond_nc['Countries'].replace('United States;Korea, Republic of;United States', 
-                                                          'South Korea; United States')
+country_values = df_cond_nc['Countries'].tolist()
 
-df_cond_nc['Countries'] = df_cond_nc['Countries'].replace('Korea, Republic of', 'South Korea')
+new_list = []
+
+for c in country_values:
+    country_list = []
+    if isinstance(c, float):
+        country_list.append('No Sponsor Name Given')
+    elif c in china_corr:
+        country_list.append('China')
+    elif c == 'Iran (Islamic Republic of)':
+        country_list.append('Iran')
+    elif c == 'Korea, Republic of':
+        country_list.append('South Korea')
+    elif c == 'Japan,Asia(except Japan),Australia,Europe':
+        country_list = ['Japan', 'Australia', 'Asia', 'Europe']
+    elif ';' in c:
+        c_list = c.split(';')
+        unique_values = list(set(c_list))
+        for v in unique_values:
+            if v == 'Iran (Islamic Republic of)':
+                country_list.append('Iran')
+            elif v == 'Korea, Republic of':
+                country_list.append('South Korea')
+            else:
+                country_list.append(v)
+    else:
+        country_list.append(c)
+    new_list.append(country_list)
+
+df_cond_nc['Countries'] = new_list
 
 #Get rid of messy accents
 
@@ -262,6 +275,9 @@ mar18 = pd.read_csv('trial_data_18_mar.csv')
 mar18['results_url_link'] = mar18['results_url_link'].fillna('No Results')
 mar18['phase'] = mar18['phase'].fillna('Not Applicable')
 mar18['recruitment_status'] = mar18['recruitment_status'].fillna('No Status Given')
+
+mar18.dtypes
+# -
 
 import json
 with open("trials_18mar.json", "w") as f:
