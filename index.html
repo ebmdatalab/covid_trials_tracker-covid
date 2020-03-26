@@ -7,74 +7,72 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/r-2.2.3/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.css"/>
+ 
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/r-2.2.3/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.js"></script>
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      charset="utf8"
-      src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"
-    ></script>
+   <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/r-2.2.3/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.css"/>
+ 
+   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/r-2.2.3/sc-2.0.1/sp-1.0.1/sl-1.3.1/datatables.min.js"></script>-->
   </head>
 
   <body>
     <div class="container">
       <h1>Covid-19 Trials Tracker</h1>
 
-      <p>You could put some text here</p>
+      <p>An overvire</p>
 
+      <font size="2">
       <table id="trials-table" class="table table-striped">
         <thead>
           <tr>
             <th>index</th>
-            <th>trialid</th>
-            <th>source_register</th>
-            <th>date_registration</th>
-            <th>date_enrollement</th>
-            <th>normed_spon_names</th>
+            <th>trial_id</th>
+            <th>registry</th>
+            <th>registration_date</th>
+            <th>start_date</th>
+            <th>sponsor</th>
             <th>recruitment_status</th>
             <th>phase</th>
             <th>study_type</th>
             <th>countries</th>
-            <th>public_title</th>
-            <th>web_address</th>
-            <th>results_url_link</th>
-            <th>last_refreshed_on</th>
+            <th>title</th>
+            <th>url</th>
+            <th>results_link</th>
+            <th>last_updated</th>
             <th>first_seen</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
+    </font>
 
       <p>You could put some more text here</p>
     </div>
 
     <script type="text/javascript">
       $(document).ready(function() {
-        $("#trials-table").DataTable({
-          ajax:
-            "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/trials_18mar.json",
-          scrollX: true
+        var table = $("#trials-table").DataTable({
+            ajax:
+              "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/trials_18mar.json",
+            dom: 'lfBrtip',
+            buttons: ['searchPanes', 'colvis'],
+            "scrollY": 500,
+            "scrollX": true,
+            colReorder: true,
+            searchPanes: {
+              container: '.searchPanes',
+              cascadePanes: true,
+              threshold: .5},
+            columnDefs: [{width: 200, targets: [5, 10]}]
         });
+
+        new $.fn.dataTable.Buttons( table, {
+            buttons: ['copy', 'csv', 'excel']
+          });
+      table.buttons( 1, null ).container().appendTo(
+        table.table().container()
+        );
       });
     </script>
   </body>
