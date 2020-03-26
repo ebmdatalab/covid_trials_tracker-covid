@@ -160,11 +160,13 @@ list(check_fields('Countries')
 df_cond_nc['Intervention'] = df_cond_nc['Intervention'].str.replace(';', '')
 
 #phase
-df_cond_nc['Phase'] = df_cond_nc['Phase'].fillna('N/A')
-phase_fixes = {'0':'N/A', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
-               '1-2':'Phase 1/Phase 2', 'Retrospective study':'N/A', 'Not applicable':'N/A',
-               'New Treatment Measure Clinical Study':'N/A', '2020-02-01 00:00:00':'Phase 1/Phase 2',
-               '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3', 'Not Applicable':'N/A',
+df_cond_nc['Phase'] = df_cond_nc['Phase'].fillna('Not Applicable')
+phase_fixes = {'0':'Not Applicable', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
+               '1-2':'Phase 1/Phase 2', 'Retrospective study':'Not Applicable', 
+               'Not applicable':'Not Applicable',
+               'New Treatment Measure Clinical Study':'Not Applicable', 
+               '2020-02-01 00:00:00':'Phase 1/Phase 2',
+               '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3'
               }
@@ -247,6 +249,7 @@ df_cond_norm[reorder].to_csv('trial_data_25_mar.csv')
 mar18 = pd.read_csv('trial_data_18_mar.csv')
 mar18['results_url_link'] = mar18['results_url_link'].fillna('No Results')
 mar18['phase'] = mar18['phase'].fillna('Not Applicable')
+mar18['recruitment_status'] = mar18['recruitment_status'].fillna('No Status Given')
 
 import json
 with open("trials_18mar", "w") as f:
