@@ -269,15 +269,12 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'web_address', 'results_url_link', 'last_refreshed_on', 'first_seen']
 
 df_cond_norm[reorder].to_csv('trial_data_25_mar.csv')
+# -
 
-# +
 mar18 = pd.read_csv('trial_data_18_mar.csv')
 mar18['results_url_link'] = mar18['results_url_link'].fillna('No Results')
 mar18['phase'] = mar18['phase'].fillna('Not Applicable')
 mar18['recruitment_status'] = mar18['recruitment_status'].fillna('No Status Given')
-
-mar18.dtypes
-# -
 
 import json
 with open("trials_18mar.json", "w") as f:
