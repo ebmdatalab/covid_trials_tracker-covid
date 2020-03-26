@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Covid-19 Trials Tracker</h1>
+
+      <p>You could put some text here</p>
+
+      <table id="trials-table" class="table table-striped">
+        <thead>
+          <tr>
+            <th>index</th>
+            <th>trialid</th>
+            <th>source_register</th>
+            <th>date_registration</th>
+            <th>date_enrollement</th>
+            <th>normed_spon_names</th>
+            <th>recruitment_status</th>
+            <th>phase</th>
+            <th>study_type</th>
+            <th>countries</th>
+            <th>public_title</th>
+            <th>web_address</th>
+            <th>results_url_link</th>
+            <th>last_refreshed_on</th>
+            <th>first_seen</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <p>You could put some more text here</p>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#trials-table").DataTable({
+          ajax:
+            "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/trials_18mar.json",
+          scrollX: true
+        });
+      });
+    </script>
+  </body>
+</html>
