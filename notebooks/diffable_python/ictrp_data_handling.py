@@ -245,6 +245,7 @@ df_cond_norm[reorder].to_csv('trial_data_25_mar.csv')
 
 # +
 mar18 = pd.read_csv('trial_data_18_mar.csv')
+mar18['results_url_link'] = mar18['results_url_link'].fillna('No Results')
 
 import json
 with open("trials_18mar", "w") as f:
