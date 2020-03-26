@@ -25,78 +25,88 @@ from datetime import date
 import unicodedata
 
 #POINT THIS TO THE UPDATED XML
-with open('ICTRP-Results_18Mar2020.xml', 'rb') as f:
-    xml = xmltodict.parse(f, dict_constructor=dict)
+#with open('ICTRP-Results_18Mar2020.xml', 'rb') as f:
+#    xml = xmltodict.parse(f, dict_constructor=dict)
 
-df = pd.DataFrame(xml['Trials_downloaded_from_ICTRP']['Trial'])
+#df = pd.DataFrame(xml['Trials_downloaded_from_ICTRP']['Trial'])
 
+
+df = pd.read_excel('covid-19-trials_25Mar2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
 prior_extract_date = date(2020,3,18)
-this_extract_date = date(2020,3,18)
+this_extract_date = date(2020,3,25)
+# -
+
+df[['TrialID', 'Date enrollement']].head()
 
 # +
 #For future:
 #Can try and parse the 'Target_size' variable, difficult for the Chinese registry
 
-cols = ['TrialID', 'Source_Register', 'Date_registration', 'Date_enrollement', 'Primary_sponsor', 
-        'Recruitment_Status', 'Phase', 'Study_type', 'Countries', 'Public_title', 'Intervention',
-        'web_address', 'results_url_link', 'Last_Refreshed_on']
+cols = ['TrialID', 'Source Register', 'Date registration', 'Date enrollement', 'Primary sponsor', 
+        'Recruitment Status', 'Phase', 'Study type', 'Countries', 'Public title', 'Intervention',
+        'web address', 'results url link', 'Last Refreshed on']
 
 df_cond = df[cols].reset_index(drop=True)
+
+df_cond.columns = ['TrialID', 'Source_Register', 'Date_registration', 'Date_enrollement', 
+                   'Primary_sponsor', 'Recruitment_Status', 'Phase', 'Study_type', 'Countries', 
+                   'Public_title', 'Intervention', 'web_address', 'results_url_link', 
+                   'Last_Refreshed_on']
 
 print(f'Search on ICTRP reveals {len(df_cond)} trials as of {this_extract_date}')
 
 # +
 #POINT THIS TO LAST WEEK'S DATA
-last_weeks_trials = pd.read_csv('trials_8_mar.csv')
+last_weeks_trials = pd.read_csv('trial_data_18_mar.csv')
 
 df_cond = df_cond.merge(last_weeks_trials[['trialid', 'first_seen']], left_on = 'TrialID', right_on = 'trialid', 
                         how='left').drop('trialid', axis=1)
-
-# +
-#For next time
-#df_cond['first_seen'].fillna(pd.Timestamp(this_extract_date))
 # -
+
+#For next time
+df_cond['first_seen'] = pd.to_datetime(df_cond['first_seen'].fillna(this_extract_date))
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
 
 # This is the first area where we may need manual intervention on updates. As more registries start to appear, there may be dates in new formats that we need to address. Just running a date parse over the column, even with just two registries, was already producing wonky dates so I had to split it by registry. Check this based on the registries above and adjust.
+#
+# It looks like this is now standardized well enough in the ICTRP excel file that pandas can parse right on loading
 
-# +
-#last refreshed date parse
-df_cond['Last_Refreshed_on'] = pd.to_datetime(df_cond['Last_Refreshed_on'])
-
-#cleaning up registration dates
-
-date_parsing_reg = df_cond[['TrialID', 'Date_registration']].reset_index(drop=True)
-
-ncts = date_parsing_reg[date_parsing_reg['TrialID'].str.contains('NCT')].reset_index(drop=True)
-ncts['parsed_date'] = pd.to_datetime(ncts['Date_registration'], format='%d/%m/%Y')
-
-chictr = date_parsing_reg[date_parsing_reg['TrialID'].str.contains('Chi')].reset_index(drop=True)
-chictr['parsed_date'] = pd.to_datetime(chictr['Date_registration'], format='%Y-%m-%d')
-
-nct_merged_reg = df_cond.merge(ncts[['TrialID','parsed_date']], on='TrialID', how='left')
-chi_merged_reg = nct_merged_reg.merge(chictr[['TrialID','parsed_date']], on='TrialID', how='left')
-
-df_cond['Date_registration'] = chi_merged_reg['parsed_date_x'].fillna(chi_merged_reg['parsed_date_y'])
-
-#cleaning up start dates
-
-date_parsing_enr = df_cond[['TrialID', 'Date_enrollement']].reset_index(drop=True)
-
-ncts = date_parsing_enr[date_parsing_enr['TrialID'].str.contains('NCT')].reset_index(drop=True)
-ncts['parsed_date'] = pd.to_datetime(ncts['Date_enrollement'])
-
-chictr = date_parsing_enr[date_parsing_enr['TrialID'].str.contains('Chi')].reset_index(drop=True)
-chictr['parsed_date'] = pd.to_datetime(chictr['Date_enrollement'], format='%Y-%m-%d')
-
-nct_merged_enr = df_cond.merge(ncts[['TrialID','parsed_date']], on='TrialID', how='left')
-chi_merged_enr = nct_merged_enr.merge(chictr[['TrialID','parsed_date']], on='TrialID', how='left')
-
-df_cond['Date_enrollement'] = chi_merged_enr['parsed_date_x'].fillna(chi_merged_enr['parsed_date_y'])
+# #last refreshed date parse
+# df_cond['Last_Refreshed_on'] = pd.to_datetime(df_cond['Last_Refreshed_on'])
+#
+# #cleaning up registration dates
+#
+# date_parsing_reg = df_cond[['TrialID', 'Date_registration']].reset_index(drop=True)
+#
+# ncts = date_parsing_reg[date_parsing_reg['TrialID'].str.contains('NCT')].reset_index(drop=True)
+# ncts['parsed_date'] = pd.to_datetime(ncts['Date_registration'], format='%d/%m/%Y')
+#
+# chictr = date_parsing_reg[date_parsing_reg['TrialID'].str.contains('Chi')].reset_index(drop=True)
+# chictr['parsed_date'] = pd.to_datetime(chictr['Date_registration'], format='%Y-%m-%d')
+#
+# nct_merged_reg = df_cond.merge(ncts[['TrialID','parsed_date']], on='TrialID', how='left')
+# chi_merged_reg = nct_merged_reg.merge(chictr[['TrialID','parsed_date']], on='TrialID', how='left')
+#
+# df_cond['Date_registration'] = chi_merged_reg['parsed_date_x'].fillna(chi_merged_reg['parsed_date_y'])
+#
+# #cleaning up start dates
+#
+# date_parsing_enr = df_cond[['TrialID', 'Date_enrollement']].reset_index(drop=True)
+#
+# ncts = date_parsing_enr[date_parsing_enr['TrialID'].str.contains('NCT')].reset_index(drop=True)
+# ncts['parsed_date'] = pd.to_datetime(ncts['Date_enrollement'])
+#
+# chictr = date_parsing_enr[date_parsing_enr['TrialID'].str.contains('Chi')].reset_index(drop=True)
+# chictr['parsed_date'] = pd.to_datetime(chictr['Date_enrollement'], format='%Y-%m-%d')
+#
+# nct_merged_enr = df_cond.merge(ncts[['TrialID','parsed_date']], on='TrialID', how='left')
+# chi_merged_enr = nct_merged_enr.merge(chictr[['TrialID','parsed_date']], on='TrialID', how='left')
+#
+# df_cond['Date_enrollement'] = chi_merged_enr['parsed_date_x'].fillna(chi_merged_enr['parsed_date_y'])
 
 # +
 #lets get rid of trials from before 2020 for now
@@ -111,6 +121,8 @@ print(f'{len(df_cond_rec)} trials remain')
 # -
 
 # Point 2 for manual intervention. As more registries add trials, we will have to contend with a wider vocabulary/identification methods for trials that are cancelled/withdrawn.
+#
+# No further conflicts as of 25 Mar 2020
 
 # +
 #Removing cancelled/withdrawn trials for what registries we have to date
@@ -136,6 +148,10 @@ def check_fields(field):
 
 #Check fields for new unique values that require normalisation
 check_fields('Study_type')
+# -
+
+#need to think about fixing this
+check_fields('Countries')
 
 # +
 #More data cleaning
@@ -144,17 +160,27 @@ check_fields('Study_type')
 df_cond_nc['Intervention'] = df_cond_nc['Intervention'].str.replace(';', '')
 
 #phase
+df_cond_nc['Phase'] = df_cond_nc['Phase'].fillna('N/A')
 phase_fixes = {'0':'N/A', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
-               '1-2':'Phase 1/Phase 2', 'Retrospective study':'N/A', 
-               'New Treatment Measure Clinical Study':'N/A'}
+               '1-2':'Phase 1/Phase 2', 'Retrospective study':'N/A', 'Not applicable':'N/A',
+               'New Treatment Measure Clinical Study':'N/A', '2020-02-01 00:00:00':'Phase 1/Phase 2',
+               '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3', 'Not Applicable':'N/A',
+               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
+               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3'
+              }
 df_cond_nc['Phase'] = df_cond_nc['Phase'].replace(phase_fixes)
 
 #Study Type
+obv_replace = ['Observational [Patient Registry]', 'observational']
+int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment']
+
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].str.replace(' study', '')
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Observational [Patient Registry]', 'Observational')
+df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(obv_replace, 'Observational')
+df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(int_replace, 'Interventional')
 
 #Recruitment Status
 df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].replace('Not recruiting', 'Not Recruiting')
+df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].fillna('No Status Given')
 
 #Countries
 df_cond_nc['Countries'] = df_cond_nc['Countries'].fillna('No Country Given')
@@ -169,14 +195,15 @@ df_cond_nc['Countries'] = df_cond_nc['Countries'].replace('United States;Korea, 
 
 df_cond_nc['Countries'] = df_cond_nc['Countries'].replace('Korea, Republic of', 'South Korea')
 
-#Normalize Sponsor name
+#Get rid of messy accents
 
 def norm_names(x):
-    normed = unicodedata.normalize('NFKD', x).encode('ASCII', 'ignore').decode()
+    normed = unicodedata.normalize('NFKD', str(x)).encode('ASCII', 'ignore').decode()
     return normed 
 
 df_cond_nc['Primary_sponsor'] = df_cond_nc.Primary_sponsor.apply(norm_names)
 df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('NA', 'No Sponsor Name Given')
+df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('nan', 'No Sponsor Name Given')
 # -
 
 # Last space for manual intervention. This will include manual normalisation of new names, any updates to the normalisation schedule from the last update, and updating manually-coded intervention type data.
@@ -186,7 +213,7 @@ df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('NA', 'No 
 #Run this cell, updating the spon_norm csv you are loading after manual adjusting
 #until you get the 'All sponsor names normalized' to print
 
-spon_norm = pd.read_csv('norm_schedule_18Mar2020.csv')
+spon_norm = pd.read_csv('norm_schedule_25Mar2020.csv')
 
 df_cond_norm = df_cond_nc.merge(spon_norm, left_on = 'Primary_sponsor', right_on ='unique_spon_names', how='left')
 df_cond_norm = df_cond_norm.drop('unique_spon_names', axis=1)
@@ -199,6 +226,29 @@ if len(new_unique_spon_names) > 0:
     print('Update the normalisation schedule and rerun')
 else:
     print('All sponsor names normalized')
+
+# +
+#interim dataset
+
+col_names = []
+
+for col in list(df_cond_norm.columns):
+    col_names.append(col.lower())
+    
+df_cond_norm.columns = col_names
+
+reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'normed_spon_names', 
+           'recruitment_status', 'phase', 'study_type', 'countries', 'public_title',
+           'web_address', 'results_url_link', 'last_refreshed_on', 'first_seen']
+
+df_cond_norm[reorder].to_csv('trial_data_25_mar.csv')
+
+# +
+mar18 = pd.read_csv('trial_data_18_mar.csv')
+
+import json
+with open("trials_18mar", "w") as f:
+    json.dump({"data": mar18.values.tolist()}, f, indent=2)
 
 # +
 #Integrating intervention type data
@@ -291,6 +341,6 @@ plt.title('Registered COVID-19 Trials by Week on the ICTRP')
 plt.legend(('New Trials', 'Cumulative Trials'), loc=2)
 #plt.savefig(f'trial_count_{last_extract_date}.png')
 plt.show()
-# +
+# -
 
 
