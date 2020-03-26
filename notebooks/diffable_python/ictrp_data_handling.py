@@ -150,8 +150,20 @@ def check_fields(field):
 check_fields('Study_type')
 # -
 
+check_fields('Countries')
+
 #need to think about fixing this
-list(check_fields('Countries')
+country_values = df_cond_nc['Countries'].tolist()
+
+# +
+new_list = []
+china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china']
+
+for c in country_values:
+    if isinstance(c, float):
+        new_list.append('No Sponsor Name Given')
+    elif ';' in c:
+        
 
 # +
 #More data cleaning
@@ -252,7 +264,7 @@ mar18['phase'] = mar18['phase'].fillna('Not Applicable')
 mar18['recruitment_status'] = mar18['recruitment_status'].fillna('No Status Given')
 
 import json
-with open("trials_18mar", "w") as f:
+with open("trials_18mar.json", "w") as f:
     json.dump({"data": mar18.values.tolist()}, f, indent=2)
 
 # +
