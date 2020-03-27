@@ -36,9 +36,6 @@ df = pd.read_excel('covid-19-trials_25Mar2020.xlsx', dtype={'Phase': str})
 #UPDATE THESE WITH EACH RUN
 prior_extract_date = date(2020,3,18)
 this_extract_date = date(2020,3,25)
-# -
-
-df[['TrialID', 'Date enrollement']].head()
 
 # +
 #For future:
@@ -136,11 +133,17 @@ df_cond_nc = df_cond_rec[~(df_cond_rec['Public_title'].str.contains('Cancelled')
                          ~(df_cond_rec['Recruitment_Status'] == "Withdrawn")].reset_index(drop=True)
 
 print(f'{len(df_cond_nc)} trials remain')
-
-
 # -
 
 # Point three for manual intervention. All this normalisation and data cleaning will have to be expanded each update as more trials get added and more registries start to add trials with their own idiosyncratic data categories. 
+
+# +
+#Now lets get rid of ones we know don't belong from manual review
+
+exclude = ['NCT04226157']
+
+df_cond_nc = df_cond_nc[~df_cond_nc['TrialID'].isin(exclude)].reset_index(drop=True)
+
 
 # +
 def check_fields(field):
@@ -155,6 +158,7 @@ check_fields('Countries')
 # +
 #More data cleaning
 
+#Can't have nulls in the results field. Might need to move this later on when we start populating results
 df_cond_nc['results_url_link'] = df_cond_nc['results_url_link'].fillna('No Results')
 
 #semi-colons in the intervention field mess with CSV
@@ -185,6 +189,17 @@ df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(int_replace, 'Interv
 df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].replace('Not recruiting', 'Not Recruiting')
 df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].fillna('No Status Given')
 
+#Get rid of messy accents
+
+def norm_names(x):
+    normed = unicodedata.normalize('NFKD', str(x)).encode('ASCII', 'ignore').decode()
+    return normed 
+
+df_cond_nc['Primary_sponsor'] = df_cond_nc.Primary_sponsor.apply(norm_names)
+df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('NA', 'No Sponsor Name Given')
+df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('nan', 'No Sponsor Name Given')
+
+# +
 #Countries
 df_cond_nc['Countries'] = df_cond_nc['Countries'].fillna('No Country Given')
 
@@ -218,19 +233,9 @@ for c in country_values:
                 country_list.append(v)
     else:
         country_list.append(c)
-    new_list.append(country_list)
+    new_list.append(', '.join(country_list))
 
 df_cond_nc['Countries'] = new_list
-
-#Get rid of messy accents
-
-def norm_names(x):
-    normed = unicodedata.normalize('NFKD', str(x)).encode('ASCII', 'ignore').decode()
-    return normed 
-
-df_cond_nc['Primary_sponsor'] = df_cond_nc.Primary_sponsor.apply(norm_names)
-df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('NA', 'No Sponsor Name Given')
-df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('nan', 'No Sponsor Name Given')
 # -
 
 # Last space for manual intervention. This will include manual normalisation of new names, any updates to the normalisation schedule from the last update, and updating manually-coded intervention type data.
@@ -328,15 +333,26 @@ df_final.head()
 # # Overall Trend in Registered Trials Graph
 
 # +
-just_reg = df_final[['trialid', 'date_registration']].reset_index(drop=True)
+#just_reg = df_final[['trialid', 'date_registration']].reset_index(drop=True)
+just_reg = mar18[['trialid', 'date_registration']].reset_index(drop=True)
+just_reg['date_registration'] = pd.to_datetime(just_reg['date_registration'], format='%d/%m/%Y')
 
 #catch old registrations that were expanded to include COVID, we can get rid of these for now
 just_reg = just_reg[just_reg['date_registration'] >= pd.Timestamp(2020,1,1)].reset_index(drop=True)
+
+# -
+
+just_reg.head(50)
+
+# +
 just_reg.index = just_reg['date_registration']
 
 
 grouped = just_reg.resample('W').count()
 cumsum = grouped.cumsum()
+# -
+
+grouped.head()
 
 # +
 import matplotlib.pyplot as plt
@@ -364,13 +380,32 @@ gr = grouped['trialid'].to_list()
 cs = cumsum['trialid'].to_list()
 
 plt.xticks(x_pos, labels, rotation=45, fontsize=8)
-plt.ylim(-20,600)
+plt.ylim(-20,800)
 plt.xlabel('Week Ending Date')
 plt.ylabel('Registered Trials')
 plt.title('Registered COVID-19 Trials by Week on the ICTRP')
 plt.legend(('New Trials', 'Cumulative Trials'), loc=2)
 #plt.savefig(f'trial_count_{last_extract_date}.png')
 plt.show()
+# +
+import plotly.graph_objects as go
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(x=labels, y=grouped['trialid'], fill=None, name='New Trials'))
+
+fig.add_trace(go.Scatter(x=labels, y=cumsum['trialid'], fill=None, name='Cumulative Trials'))
+
+fig.update_layout(title={'text': 'Registered COVID-19 Trials by Week in 2020', 'xanchor': 'center', 'x': 0.5}, 
+                  xaxis_title='Week Ending Date',
+                  yaxis_title='Registered Trials',
+                  legend = dict(x=0, y=1, traceorder='normal', bgcolor='rgba(0,0,0,0)'))
+
+
+
+fig.show()
+#fig.write_html("registered trials.html")
 # -
+
 
 
