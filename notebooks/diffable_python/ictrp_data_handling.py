@@ -184,6 +184,8 @@ int_replace = ['interventional', 'Interventional clinical trial of medicinal pro
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].str.replace(' study', '')
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(obv_replace, 'Observational')
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(int_replace, 'Interventional')
+df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Epidemilogical research', 'Epidemiological research')
+df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Health services reaserch', 'Health services research')
 
 #Recruitment Status
 df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].replace('Not recruiting', 'Not Recruiting')
