@@ -4,7 +4,7 @@
 
 ## Repository
 
-This repository contains the data cleaning notebook, all necessary datasets, and the code for running the COVID-19 TrialsTracker website at http://covid19.trialstracker.net.
+This repository contains the data cleaning notebook, all necessary datasets, and the code for running the COVID-19 TrialsTracker website at http://covid19.trialstracker.net. Docker files are included to ensure a consistent environment for reproducability.
 
 
 
