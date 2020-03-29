@@ -18,4 +18,4 @@ Final determinations for Intervention and Intervention type are made by Dr. Jeff
 
 ## How to cite
 
-XXX Please change to either a paper (if published) or the repo. You may find it helpful to use Zenodo DOI (see `DEVELOPERS.md` for further information)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3732709.svg)](https://doi.org/10.5281/zenodo.3732709)
