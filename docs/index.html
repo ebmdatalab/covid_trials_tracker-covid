@@ -43,6 +43,7 @@
       <table id="trials-table" class="table table-striped">
         <thead>
           <tr>
+            <th>index</th>
             <th>trial_id</th>
             <th>registry</th>
             <th>registration_date</th>
@@ -103,7 +104,7 @@
               container: '.searchPanes',
               cascadePanes: true,
               threshold: .5},
-            columnDefs: [{width: 200, targets: [4, 9]}]
+            columnDefs: [{width: 300, targets: [4, 9, 11]}]
         });
 
         new $.fn.dataTable.Buttons( table, {

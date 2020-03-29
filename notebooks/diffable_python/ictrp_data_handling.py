@@ -304,8 +304,10 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 'intervention_type', 'intervention',
            'web_address', 'results_url_link', 'last_refreshed_on', 'first_seen']
 
-df_final = df_cond_int[reorder].reset_index(drop=True)
+df_final = df_cond_int[reorder].reset_index(drop=True).reset_index()
 # -
+
+df_final.head()
 
 #Checking for any null values
 df_final[df_final.isna().any(axis=1)]
@@ -314,7 +316,7 @@ df_final[df_final.isna().any(axis=1)]
 df_final.head()
 
 #Export final dataset
-df_final.to_csv(f'processed_data_sets/trial_list_{this_extract_date}.csv')
+df_final.to_csv(f'processed_data_sets/trial_list_{this_extract_date}.csv', index=False)
 
 #Export json for website
 import json
@@ -417,6 +419,6 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
 
 fig.show()
 #fig.write_html('int_bar.html')
-# -
+# +
 
 
