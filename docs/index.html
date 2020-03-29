@@ -70,18 +70,10 @@
 
       <p style="font-size:25px;">This is a live work in progress! If you think you can help improve the tracker or have questions/suggestions, please get in touch! <a href="mailto:ebmdatalab@phc.ox.ac.uk">ebmdatalab@phc.ox.ac.uk</a></p>
 
-      <h4>Coming Soon:</h4>
-        <ul>
-          <li>Data on interventions</li>
-          <li>Data from 25 March 2020</li>
-        </ul>
+      <p>If you come across trial results, you can submit them <a href="https://docs.google.com/forms/d/e/1FAIpQLScG2MTeOz_bOXqrMH-3RzcUGk379Lr9E6sD3taEqhuyLbfLnQ/viewform?usp=sf_link">here</a></p>
 
-      <h4>Wishlist:</h4>
-        <ul>
-          <li>Crowdsourced Results (see 
-            <li>If you come across trial results, you can submit them <a href="https://docs.google.com/forms/d/e/1FAIpQLScG2MTeOz_bOXqrMH-3RzcUGk379Lr9E6sD3taEqhuyLbfLnQ/viewform?usp=sf_link">here</a>)</li>
-          <li>Better normalisation of sponsors (especially Chinese sponsors)</li>
-        </ul>
+      <p><strong>More information on the <a href="about.html">About</a> page</strong></p>
+
     </div>
 
     <script type="text/javascript">
@@ -90,10 +82,17 @@
             ajax:
               "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/website_data/trials_latest.json",
             dom: 'lfBrtip',
-            buttons: [{extend:'searchPanes', text: 'Filter'}, 'colvis'],
+            buttons: [{extend:'searchPanes', text: 'Filter'}, 
+                      {extend: 'colvis', text: 'Columns'}, 
+                      {extend: 'colvisRestore', text:'Restore Columns'}],
             "scrollY": 500,
             "scrollX": true,
             colReorder: true,
+            language: {
+              searchPanes: {
+                collapse: 'Filter'
+              }
+            },
             searchPanes: {
               container: '.searchPanes',
               cascadePanes: true,
