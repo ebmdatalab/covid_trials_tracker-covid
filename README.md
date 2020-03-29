@@ -8,6 +8,8 @@ This repository contains the data cleaning notebook, all necessary datasets, and
 
 The notebook for data processing is available in the `notebooks` folder. All datasets are also available in this folder.
 
+HTML files for the website are located in the `docs` folder.
+
 ## Data
 
 ICTRP data is taken from: https://www.who.int/ictrp/en/.
