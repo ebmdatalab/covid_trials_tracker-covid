@@ -319,7 +319,7 @@ df_final.to_csv(f'processed_data_sets/trial_list_{this_extract_date}.csv')
 #Export json for website
 import json
 with open("website_data/trials_latest.json", "w") as f:
-    json.dump({"data": df_final.values.tolist()}, f, indent=2, default=str)
+    json.dump({"data": df_final.astype(str).values.tolist()}, f, indent=2)
 
 
 
