@@ -371,7 +371,7 @@ df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_comp
                                             .fillna('Not Available').apply(fix_dates))
 
 # +
-#check for any resutls on ICTRP
+#check for any results on ICTRP
 ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
 
 if len(ictrp_results) > 0:
@@ -510,7 +510,7 @@ fig.update_layout(title={'text': 'Registered COVID-19 Trials by Week', 'xanchor'
 
 
 fig.show()
-fig.write_html("html_figures/registered trials.html")
+#fig.write_html("html_figures/registered trials.html")
 # -
 
 
@@ -537,10 +537,7 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
                   xaxis_title='Number of Trials')
 
 fig.show()
-fig.write_html('html_figures/int_bar.html')
-# -
-labels
-
+#fig.write_html('html_figures/int_bar.html')
 # +
 labels = ['6 Apr 2020']#, '8 Apr 2020',  '15 Apr 2020']
 result_count = [26]#, 0, 0]
