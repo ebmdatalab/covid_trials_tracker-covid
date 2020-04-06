@@ -20,13 +20,17 @@
 
   <body>
     <div class="container">
+      <div>
       <h1>Covid-19 TrialsTracker</h1>
 
       <p>Tracking COVID-19 Trials and their Results</p>
 
       <ul class="nav nav-pills justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="index.html">Table</a>
+          <a class="nav-link active" href="index.html">Full Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="results.html">Results</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="data_viz.html">Interactive</a>
@@ -38,6 +42,7 @@
           <a class="nav-link" href="about.html">About</a>
         </li>
       </ul>
+      </div>
 
       <font size="2">
       <table id="trials-table" class="table table-striped">
@@ -48,6 +53,7 @@
             <th>registry</th>
             <th>registration_date</th>
             <th>start_date</th>
+            <th>retrospective_registration</th>
             <th>sponsor</th>
             <th>recruitment_status</th>
             <th>phase</th>
@@ -56,8 +62,11 @@
             <th>title</th>
             <th>intervention_type</th>
             <th>intervention</th>
-            <th>url</th>
-            <th>results_link</th>
+            <th>enrollment</th>
+            <th>registy_url</th>
+            <th>results_type</th>
+            <th>results_published_date</th>
+            <th>results_url</th>
             <th>last_updated</th>
             <th>first_seen</th>
           </tr>
@@ -67,7 +76,7 @@
     </font>
       <p></p>
       <p></p>
-      <font size="2"><p><i>Data as of 25 March 2020</i></p></font>
+      <font size="2"><p><i>Data as of 1 April 2020</i></p></font>
 
       <p style="font-size:25px;">This is a live work in progress! If you think you can help improve the tracker or have questions/suggestions, please get in touch! <a href="mailto:ebmdatalab@phc.ox.ac.uk">ebmdatalab@phc.ox.ac.uk</a></p>
 
@@ -76,7 +85,15 @@
       <p><b>Abbreviations:</b></p>
         <ul>
           <li>ATMP: Advanced Therapy Medicinal Product</li>
-          <li>ChiCTR: Chinese Clinical Trial Registry</li>
+          <li>See <a href='https://www.who.int/ictrp/network/primary/en/'>here</a> for registry abbreviations</li>
+        </ul>
+
+      <p><b>Recent updates (6 Apr 2020):</b></p>
+        <ul>
+          <li>Updated data from 1 April 2020 Download</li>
+          <li>Added fields for enrollment, completion dates, results details, and a flag for retrospective registration</li>
+          <li>Created section of site highlighting results</li>
+          <li>Expanded contributors on the About page</li>
         </ul>
 
       <p><b>More information on the <a href="about.html">About</a> page</b></p>

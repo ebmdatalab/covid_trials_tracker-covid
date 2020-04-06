@@ -22,7 +22,9 @@ import xmltodict
 import pandas as pd
 import numpy as np
 from datetime import date
+import re
 import unicodedata
+from collections import Counter
 
 #POINT THIS TO THE UPDATED XML - deprecated as ICTRP is down.
 
@@ -33,32 +35,57 @@ import unicodedata
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/covid-19-trials_25Mar2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/covid-19-trials_1Apr2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,3,18)
-this_extract_date = date(2020,3,25)
+prior_extract_date = date(2020,3,25)
+this_extract_date = date(2020,4,1)
+
+# +
+#Extracting target enrollment
+size = df['Target size'].tolist()
+
+extracted_size = []
+for s in size:
+    if not s or isinstance(s,float):
+        extracted_size.append('Not Available')
+    elif isinstance(s,int):
+        extracted_size.append(s)
+    elif isinstance(s,str):
+        digits = []
+        nums = re.findall(r':\d{1,10};',s)
+        for n in nums:
+            digits.append(int(n.replace(':','').replace(';','')))
+        extracted_size.append(sum(digits))
+    else:
+        print(type(s))
+
+df['target_enrollment'] = extracted_size
+
+#Creating retrospective registration
+df['retrospective_registration'] = np.where(df['Date registration'] > df['Date enrollement'], True, False)
 
 # +
 #Taking only what we need right now
 
-cols = ['TrialID', 'Source Register', 'Date registration', 'Date enrollement', 'Primary sponsor', 
-        'Recruitment Status', 'Phase', 'Study type', 'Countries', 'Public title', 'Intervention',
-        'web address', 'results url link', 'Last Refreshed on']
+cols = ['TrialID', 'Source Register', 'Date registration', 'Date enrollement', 'retrospective_registration', 
+        'Primary sponsor', 'Recruitment Status', 'Phase', 'Study type', 'Countries', 'Public title', 
+        'Intervention', 'target_enrollment', 'web address', 'results yes no', 'results url link', 
+        'Last Refreshed on']
 
 df_cond = df[cols].reset_index(drop=True)
 
 #renaming columns to match old format so I don't have to change them throughout
 df_cond.columns = ['TrialID', 'Source_Register', 'Date_registration', 'Date_enrollement', 
-                   'Primary_sponsor', 'Recruitment_Status', 'Phase', 'Study_type', 'Countries', 
-                   'Public_title', 'Intervention', 'web_address', 'results_url_link', 
-                   'Last_Refreshed_on']
+                   'retrospective_registration', 'Primary_sponsor', 'Recruitment_Status', 'Phase', 'Study_type', 
+                   'Countries', 'Public_title', 'Intervention', 'target_enrollment', 'web_address', 
+                   'has_results', 'results_url_link', 'Last_Refreshed_on']
 
-print(f'Search on ICTRP reveals {len(df_cond)} trials as of {this_extract_date}')
+print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_data_18_mar.csv')
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-03-25.csv')
 
 # +
 #Joining in the 'first_seen' field
@@ -135,10 +162,15 @@ def trial_diffs(new=True):
 # +
 print(f'There are {len(trial_diffs(new=True))} new trials')
 
+added = ['NCT04299152', 'NCT04307459', 'NCT04290780', 'NCT04303299']
+recruitments = [20, 50, 300, 80]
+
 print(f'The following trials were removed since the last time and were manually checked:')
-print(trial_diffs(new=False))
+print(list(set(trial_diffs(new=False)) - set(added)))
 
 # +
+#These are trials we know about that are not showing up in the ICTRP data pull
+
 additions = pd.read_excel('manual_data.xlsx', sheet_name = 'additional_trials')
 
 print(f'An additional {len(additions)} known trials were not in the ICTRP data')
@@ -161,14 +193,12 @@ def check_fields(field):
     return df_cond_nc[field].unique()
 
 #Check fields for new unique values that require normalisation
-check_fields('Study_type')
+#check_fields('Countries')
+
 
 # +
 #Data cleaning various fields. 
 #One important thing we have to do is make sure there are no nulls or else the data won't properly load onto the website
-
-#Can't have nulls in the results field. Might need to move this later on when we start populating results
-df_cond_nc['results_url_link'] = df_cond_nc['results_url_link'].fillna('No Results')
 
 #semi-colons in the intervention field mess with CSV
 df_cond_nc['Intervention'] = df_cond_nc['Intervention'].str.replace(';', '')
@@ -177,12 +207,15 @@ df_cond_nc['Intervention'] = df_cond_nc['Intervention'].str.replace(';', '')
 df_cond_nc['Phase'] = df_cond_nc['Phase'].fillna('Not Applicable')
 phase_fixes = {'0':'Not Applicable', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
                '1-2':'Phase 1/Phase 2', 'Retrospective study':'Not Applicable', 
-               'Not applicable':'Not Applicable',
+               'Not applicable':'Not Applicable', 'Early Phase 1':'Phase 1',
                'New Treatment Measure Clinical Study':'Not Applicable', 
                '2020-02-01 00:00:00':'Phase 1/Phase 2',
                '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
-               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3'
+               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3',
+               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n': 'Phase 4',
+               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n': 'Phase 3/Phase 4',
+               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 2/Phase 3'
               }
 df_cond_nc['Phase'] = df_cond_nc['Phase'].replace(phase_fixes)
 
@@ -214,7 +247,7 @@ df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('nan', 'No
 #Countries
 df_cond_nc['Countries'] = df_cond_nc['Countries'].fillna('No Country Given')
 
-china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china']
+china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china', 'Taiwan, Province Of China']
 
 country_values = df_cond_nc['Countries'].tolist()
 
@@ -230,7 +263,9 @@ for c in country_values:
         country_list.append('China')
     elif c == 'Iran (Islamic Republic of)':
         country_list.append('Iran')
-    elif c == 'Korea, Republic of':
+    elif c == 'Viet nam':
+        country_list.append('Vietnam')
+    elif c in ['Korea, Republic of', 'Korea, Republic Of'] :
         country_list.append('South Korea')
     elif c == 'Japan,Asia(except Japan),Australia,Europe':
         country_list = ['Japan', 'Australia', 'Asia', 'Europe']
@@ -240,8 +275,10 @@ for c in country_values:
         for v in unique_values:
             if v == 'Iran (Islamic Republic of)':
                 country_list.append('Iran')
-            elif v == 'Korea, Republic of':
+            elif v in ['Korea, Republic of', 'Korea, Republic Of']:
                 country_list.append('South Korea')
+            elif v == 'Viet nam':
+                country_list.append('Vietnam')
             else:
                 country_list.append(v)
     else:
@@ -278,36 +315,111 @@ else:
 #producing the all-clear message
 
 int_type = pd.read_excel('manual_data.xlsx', sheet_name = 'intervention')
-df_cond_int = df_cond_norm.merge(int_type[['trial_id', 'intervention_type', 'intervention']], left_on = 'TrialID', right_on = 'trial_id', how='left')
+df_cond_int = df_cond_norm.merge(int_type[['trial_id', 'intervention_type',
+                                           'intervention', 'intervention_list']], 
+                                 left_on = 'TrialID', right_on = 'trial_id', how='left')
+
 df_cond_int = df_cond_int.drop('trial_id', axis=1)
 
 new_int_trials = df_cond_int[(df_cond_int['intervention_type'].isna()) | (df_cond_int['intervention'].isna())]
 
 if len(new_int_trials) > 0:
-    new_int_trials[['TrialID', 'Public_title', 'Intervention', 'intervention_type', 'intervention']].to_csv('int_to_assess.csv')
+    new_int_trials[['TrialID', 'Public_title', 'Intervention', 'intervention_type', 
+                    'intervention', 'intervention_list']].to_csv('int_to_assess.csv')
     print('Update the intervention type assessments and rerun')
 else:
     print('All intervention types matched')
     df_cond_int = df_cond_int.drop('Intervention', axis=1).reset_index(drop=True)
 
 # +
+#Can use this cell to output counts of values from columns
+
+treatments = df_cond_int[df_cond_int.intervention_type == 'Drug']['intervention_list'].tolist()
+countries = df_cond_int.Countries.to_list()
+
+def var_counts(var_list, split_char, lower=False):
+    final_list = []
+    for v in var_list:
+        t_list = v.split(split_char)
+        for l in t_list:
+            if lower:
+                final_list.append(l.lower().strip())
+            else:
+                final_list.append(l.strip())
+    return Counter(final_list)
+
+
+# +
+comp_dates = pd.read_excel('manual_data.xlsx', sheet_name = 'Completion Dates')
+df_comp_dates = df_cond_int.merge(comp_dates, 
+                                  left_on='TrialID', right_on='trialid', how='left').drop('trialid', axis=1)
+
+def fix_dates(x):
+    if isinstance(x, str):
+        return x
+    else:
+        return x.date()
+    
+df_comp_dates['primary_completion_date'] = (pd.to_datetime(df_comp_dates['primary_completion_date'], 
+                                                          errors='coerce', 
+                                                          format='%Y-%m-%d')
+                                            .fillna('Not Available').apply(fix_dates))
+
+df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_completion_date'], 
+                                                          errors='coerce', 
+                                                          format='%Y-%m-%d')
+                                            .fillna('Not Available').apply(fix_dates))
+
+# +
+#check for any results on ICTRP
+ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
+
+if len(ictrp_results) > 0:
+    print(f'There are {len(ictrp_results)} results to check')
+else:
+    print('There are no results to check')
+
+#If results cross-check with results already collected in 'manual_data' excel file and add any new trial results.
+
+# +
+results = pd.read_excel('manual_data.xlsx', sheet_name = 'Results')
+df_results = df_comp_dates.merge(results, 
+                                 left_on='TrialID', 
+                                 right_on='trialid', 
+                                 how='left').drop('trialid', axis=1)
+
+df_results['results_link'] = df_results['results_link'].fillna('No Results')
+df_results['results_type'] = df_results['results_type'].fillna('No Results')
+
+df_results['results_publication_date'] = (pd.to_datetime(df_results['results_publication_date'], 
+                                                          errors='coerce', 
+                                                          format='%Y-%m-%d')
+                                            .fillna('No Results').apply(fix_dates))
+
+# +
+just_results = df_results[df_results.results_type != 'No Results']
+
+results_total = len(just_results)
+
+print(f'There are {results_total} trials with results')
+
+# +
 #Final organising
 
 col_names = []
 
-for col in list(df_cond_int.columns):
+for col in list(df_results.columns):
     col_names.append(col.lower())
     
-df_cond_int.columns = col_names
+df_results.columns = col_names
 
-reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'normed_spon_names', 
-           'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 'intervention_type', 'intervention',
-           'web_address', 'results_url_link', 'last_refreshed_on', 'first_seen']
+reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
+           'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
+           'intervention_type', 'intervention', 'target_enrollment', 'web_address', 'results_type', 
+           'results_publication_date', 'results_link', 'last_refreshed_on', 'first_seen']
 
-df_final = df_cond_int[reorder].reset_index(drop=True).reset_index()
+df_final = df_results[reorder].reset_index(drop=True).reset_index()
 # -
-
-df_final.head()
 
 #Checking for any null values
 df_final[df_final.isna().any(axis=1)]
@@ -318,10 +430,15 @@ df_final.head()
 #Export final dataset
 df_final.to_csv(f'processed_data_sets/trial_list_{this_extract_date}.csv', index=False)
 
+# +
 #Export json for website
 import json
 with open("website_data/trials_latest.json", "w") as f:
     json.dump({"data": df_final.astype(str).values.tolist()}, f, indent=2)
+
+with open("website_data/results_latest.json", "w") as f:
+    json.dump({"data": just_results.astype(str).values.tolist()}, f, indent=2)    
+# -
 
 
 
@@ -381,9 +498,9 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 
-fig.add_trace(go.Scatter(x=labels, y=grouped['trialid'], fill=None, name='New Trials'))
+fig.add_trace(go.Scatter(x=labels[:-1], y=grouped['trialid'][:-1], fill=None, name='New Trials'))
 
-fig.add_trace(go.Scatter(x=labels, y=cumsum['trialid'], fill=None, name='Cumulative Trials'))
+fig.add_trace(go.Scatter(x=labels[:-1], y=cumsum['trialid'][:-1], fill=None, name='Cumulative Trials'))
 
 fig.update_layout(title={'text': 'Registered COVID-19 Trials by Week', 'xanchor': 'center', 'x': 0.5}, 
                   xaxis_title='Week Ending Date',
@@ -393,12 +510,14 @@ fig.update_layout(title={'text': 'Registered COVID-19 Trials by Week', 'xanchor'
 
 
 fig.show()
-#fig.write_html("registered trials.html")
+#fig.write_html("html_figures/registered trials.html")
+# -
 
+
+int_types = df_final.intervention_type.value_counts()
+int_types
 
 # +
-int_types = df_final.intervention_type.value_counts()
-
 treatment_dict = dict(drugs = int_types['Drug'], 
                       atmp = int_types['ATMP'], 
                       clinical_char = int_types['Clinical Presentation'] + int_types['Diagnosis'] + int_types['Prognosis'],
@@ -418,7 +537,21 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
                   xaxis_title='Number of Trials')
 
 fig.show()
-#fig.write_html('int_bar.html')
+#fig.write_html('html_figures/int_bar.html')
 # +
+labels = ['6 Apr 2020']#, '8 Apr 2020',  '15 Apr 2020']
+result_count = [26]#, 0, 0]
+
+fig = go.Figure(go.Bar(
+            x=labels,
+            y=result_count,))
+
+fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanchor': 'center', 'x': 0.5}, 
+                  xaxis_title='Number of Trials')
+
+fig.show()
+#fig.write_html('html_figures/int_bar.html')
+# -
+
 
 
