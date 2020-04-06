@@ -397,13 +397,6 @@ df_results['results_publication_date'] = (pd.to_datetime(df_results['results_pub
                                             .fillna('No Results').apply(fix_dates))
 
 # +
-just_results = df_results[df_results.results_type != 'No Results']
-
-results_total = len(just_results)
-
-print(f'There are {results_total} trials with results')
-
-# +
 #Final organising
 
 col_names = []
@@ -429,6 +422,13 @@ df_final.head()
 
 #Export final dataset
 df_final.to_csv(f'processed_data_sets/trial_list_{this_extract_date}.csv', index=False)
+
+# +
+just_results = df_final[df_final.results_type != 'No Results']
+
+results_total = len(just_results)
+
+print(f'There are {results_total} trials with results')
 
 # +
 #Export json for website
