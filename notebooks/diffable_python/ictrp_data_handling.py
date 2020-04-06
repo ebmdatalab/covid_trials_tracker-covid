@@ -408,8 +408,9 @@ df_results.columns = col_names
 
 reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
-           'intervention_type', 'intervention', 'target_enrollment', 'web_address', 'results_type', 
-           'results_publication_date', 'results_link', 'last_refreshed_on', 'first_seen']
+           'intervention_type', 'intervention', 'target_enrollment', 'primary_completion_date', 
+           'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
+           'last_refreshed_on', 'first_seen']
 
 df_final = df_results[reorder].reset_index(drop=True).reset_index()
 # -
@@ -438,8 +439,9 @@ with open("website_data/trials_latest.json", "w") as f:
 
 with open("website_data/results_latest.json", "w") as f:
     json.dump({"data": just_results.astype(str).values.tolist()}, f, indent=2)    
-# -
+# +
 
+# -
 
 
 # # Overall Trend in Registered Trials Graph
