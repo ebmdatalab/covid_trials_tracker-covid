@@ -35,11 +35,14 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/covid-19-trials_1Apr2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-927-trials_7Apr2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,3,25)
-this_extract_date = date(2020,4,1)
+prior_extract_date = date(2020,4,1)
+this_extract_date = date(2020,4,7)
+# -
+
+df['Date enrollement'] = pd.to_datetime(df['Date enrollement'])
 
 # +
 #Extracting target enrollment
@@ -84,8 +87,8 @@ df_cond.columns = ['TrialID', 'Source_Register', 'Date_registration', 'Date_enro
 print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
-#POINT THIS TO LAST WEEK'S DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-03-25.csv')
+#POINT THIS TO LAST WEEK'S PROCESSED DATA
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-01.csv')
 
 # +
 #Joining in the 'first_seen' field
@@ -162,7 +165,7 @@ def trial_diffs(new=True):
 # +
 print(f'There are {len(trial_diffs(new=True))} new trials')
 
-added = ['NCT04299152', 'NCT04307459', 'NCT04290780', 'NCT04303299']
+added = ['NCT04299152', 'NCT04307459', 'NCT04290780', 'NCT04303299', 'NCT04321369']
 recruitments = [20, 50, 300, 80]
 
 print(f'The following trials were removed since the last time and were manually checked:')
@@ -193,7 +196,7 @@ def check_fields(field):
     return df_cond_nc[field].unique()
 
 #Check fields for new unique values that require normalisation
-#check_fields('Countries')
+#check_fields('Recruitment_Status')
 
 
 # +
@@ -209,7 +212,7 @@ phase_fixes = {'0':'Not Applicable', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3'
                '1-2':'Phase 1/Phase 2', 'Retrospective study':'Not Applicable', 
                'Not applicable':'Not Applicable', 'Early Phase 1':'Phase 1',
                'New Treatment Measure Clinical Study':'Not Applicable', 
-               '2020-02-01 00:00:00':'Phase 1/Phase 2',
+               '2020-02-01 00:00:00':'Phase 1/Phase 2', 'Phase II/III':'Phase 2/Phase 3',
                '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3',
@@ -228,6 +231,7 @@ df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(obv_replace, 'Observ
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(int_replace, 'Interventional')
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Epidemilogical research', 'Epidemiological research')
 df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Health services reaserch', 'Health services research')
+df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Health Services reaserch', 'Health services research')
 
 #Recruitment Status
 df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].replace('Not recruiting', 'Not Recruiting')
@@ -261,24 +265,34 @@ for c in country_values:
         country_list.append('No Sponsor Name Given')
     elif c in china_corr:
         country_list.append('China')
-    elif c == 'Iran (Islamic Republic of)':
+    elif c in ['Iran (Islamic Republic of)', 'Iran, Islamic Republic of']:
         country_list.append('Iran')
-    elif c == 'Viet nam':
+    elif c in ['Viet nam', 'Viet Nam']:
         country_list.append('Vietnam')
     elif c in ['Korea, Republic of', 'Korea, Republic Of'] :
         country_list.append('South Korea')
+    elif c == 'United States of America':
+        country_list.append('United States')
     elif c == 'Japan,Asia(except Japan),Australia,Europe':
         country_list = ['Japan', 'Australia', 'Asia', 'Europe']
+    elif c == 'The Netherlands':
+        country_list.append('Netherlands')
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
         for v in unique_values:
-            if v == 'Iran (Islamic Republic of)':
+            if v in china_corr:
+                country_list.append('China')
+            elif v in ['Iran (Islamic Republic of)', 'Iran, Islamic Republic of']:
                 country_list.append('Iran')
             elif v in ['Korea, Republic of', 'Korea, Republic Of']:
                 country_list.append('South Korea')
-            elif v == 'Viet nam':
+            elif v in ['Viet nam', 'Viet Nam']:
                 country_list.append('Vietnam')
+            elif v == 'United States of America':
+                country_list.append('United States')
+            elif v == 'The Netherlands':
+                country_list.append('Netherlands')
             else:
                 country_list.append(v)
     else:
