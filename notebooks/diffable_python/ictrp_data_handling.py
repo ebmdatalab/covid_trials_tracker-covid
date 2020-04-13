@@ -165,7 +165,7 @@ def trial_diffs(new=True):
 # +
 print(f'There are {len(trial_diffs(new=True))} new trials')
 
-added = ['NCT04299152', 'NCT04307459', 'NCT04290780', 'NCT04303299', 'NCT04321369']
+added = ['NCT04299152', 'NCT04307459', 'NCT04290780', 'NCT04303299', 'NCT04321369', 'NCT04323527']
 recruitments = [20, 50, 300, 80]
 
 print(f'The following trials were removed since the last time and were manually checked:')
