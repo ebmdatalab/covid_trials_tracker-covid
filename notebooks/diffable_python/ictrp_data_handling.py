@@ -492,17 +492,17 @@ l1 = plt.plot(x_pos, grouped['trialid'], marker = 'o')
 l2 = plt.plot(x_pos, cumsum['trialid'], marker = 'o')
 
 for i, j in zip(x_pos[1:], grouped['trialid'].tolist()[1:]):
-    ax.annotate(str(j), (i,j), xytext = (i-.1, j-35))
+    ax.annotate(str(j), (i,j), xytext = (i-.1, j-50))
 
 for i, j in zip(x_pos, cumsum['trialid']):
-    ax.annotate(str(j), (i,j), xytext = (i-.2, j+20))
+    ax.annotate(str(j), (i,j), xytext = (i-.2, j+25))
     
 
 gr = grouped['trialid'].to_list()
 cs = cumsum['trialid'].to_list()
 
 plt.xticks(x_pos, labels, rotation=45, fontsize=8)
-plt.ylim(-50,800)
+plt.ylim(-50,1000)
 plt.xlabel('Week Ending Date')
 plt.ylabel('Registered Trials')
 plt.title('Registered COVID-19 Trials by Week on the ICTRP')
@@ -526,7 +526,7 @@ fig.update_layout(title={'text': 'Registered COVID-19 Trials by Week', 'xanchor'
 
 
 fig.show()
-#fig.write_html("html_figures/registered trials.html")
+fig.write_html("html_figures/registered trials.html")
 # -
 
 
@@ -553,7 +553,7 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
                   xaxis_title='Number of Trials')
 
 fig.show()
-#fig.write_html('html_figures/int_bar.html')
+fig.write_html('html_figures/int_bar.html')
 # +
 labels = ['6 Apr 2020']#, '8 Apr 2020',  '15 Apr 2020']
 result_count = [26]#, 0, 0]
@@ -566,7 +566,7 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
                   xaxis_title='Number of Trials')
 
 fig.show()
-#fig.write_html('html_figures/int_bar.html')
+fig.write_html('html_figures/int_bar.html')
 # -
 
 
