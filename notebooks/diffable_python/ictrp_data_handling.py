@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-927-trials_7Apr2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-1135-trials_15Apr2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,4,1)
-this_extract_date = date(2020,4,7)
+prior_extract_date = date(2020,4,7)
+this_extract_date = date(2020,4,15)
 # -
 
 df['Date enrollement'] = pd.to_datetime(df['Date enrollement'])
@@ -88,7 +88,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-01.csv')
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-07.csv')
 
 # +
 #Joining in the 'first_seen' field
@@ -143,11 +143,19 @@ df_cond_nc = df_cond_rec[~((df_cond_rec['Public_title'].str.contains('Cancelled'
                          ~(df_cond_rec['TrialID'].isin(exclude))].reset_index(drop=True)
 
 print(f'{len(df_cond_nc)} trials remain')
-
-
 # -
 
-# Now we just need to take a quick look at trials that came and went since the last update. We can add in any additional trials that we know about that are not accounted for in the ICTRP database.
+# As a general rule, simply for quality and ease of use, we will default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is the EUCTR entry. The first step is to remove the EUCTR entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
+
+# +
+c_reg = pd.read_excel('manual_data.xlsx', sheet_name = 'cross registrations')
+replace_ids = c_reg.id_to_replace.tolist()
+
+replaced = len(df_cond_nc[df_cond_nc.TrialID.isin(replace_ids)])
+print(f'{replaced} known cross registrations will be replaced')
+
+df_cond_nc = df_cond_nc[~(df_cond_nc.TrialID.isin(replace_ids))].reset_index(drop=True)
+
 
 # +
 #Function for checking changes
@@ -163,26 +171,41 @@ def trial_diffs(new=True):
 
 
 # +
-print(f'There are {len(trial_diffs(new=True))} new trials')
-
-added = ['NCT04299152', 'NCT04307459', 'NCT04290780', 'NCT04303299', 'NCT04321369', 'NCT04323527']
-recruitments = [20, 50, 300, 80]
-
-print(f'The following trials were removed since the last time and were manually checked:')
-print(list(set(trial_diffs(new=False)) - set(added)))
-
-# +
-#These are trials we know about that are not showing up in the ICTRP data pull
-
 additions = pd.read_excel('manual_data.xlsx', sheet_name = 'additional_trials')
 
-print(f'An additional {len(additions)} known trials were not in the ICTRP data')
+print(f'There are approximately {len(trial_diffs(new=True))} new trials')
 
-print(set(additions['TrialID'].tolist()).difference(df_cond_nc['TrialID'].tolist()))
+added = additions.TrialID.tolist()
 
-df_cond_nc = df_cond_nc.append(additions)
+print(f'The following trials were removed since the last time and were manually checked to confirm:')
+print(list(set(trial_diffs(new=False)) - set(added) - set(replace_ids)))
+# -
 
-print(f'The final dataset is {len(df_cond_nc)} trials')
+# Now we just need to take a quick look at trials that came and went since the last update. We can add in any additional trials that we know about that are not accounted for in the ICTRP database.
+
+# +
+#These are trials we know about that are not showing up in the ICTRP data pull or are re-added as cross-registrations
+
+print(f'An additional {len(additions)} known trials, or preferred cross registrations were added to the data')
+
+print(added)
+
+df_cond_all = df_cond_nc.append(additions)
+
+print(f'The final dataset is {len(df_cond_all)} trials')
+
+# +
+#finally, add cross-registration field
+
+df_cond_all = df_cond_nc.merge(c_reg[['trial_id_keep', 'additional_ids']], 
+                              left_on='TrialID', 
+                              right_on='trial_id_keep', 
+                              how='left').drop('trial_id_keep', axis=1).rename(columns=
+                                                                               {'additional_ids':
+                                                                                'cross_registrations'}
+                                                                              ).reset_index(drop=True)
+
+df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('None')
 
 
 # -
@@ -193,49 +216,51 @@ print(f'The final dataset is {len(df_cond_nc)} trials')
 #A small function to help quickly check the contents of various columns
 
 def check_fields(field):
-    return df_cond_nc[field].unique()
+    return df_cond_all[field].unique()
 
 #Check fields for new unique values that require normalisation
-#check_fields('Recruitment_Status')
-
+check_fields('Countries')
 
 # +
 #Data cleaning various fields. 
 #One important thing we have to do is make sure there are no nulls or else the data won't properly load onto the website
 
 #semi-colons in the intervention field mess with CSV
-df_cond_nc['Intervention'] = df_cond_nc['Intervention'].str.replace(';', '')
+df_cond_all['Intervention'] = df_cond_all['Intervention'].str.replace(';', '')
 
 #phase
-df_cond_nc['Phase'] = df_cond_nc['Phase'].fillna('Not Applicable')
+df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
 phase_fixes = {'0':'Not Applicable', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
                '1-2':'Phase 1/Phase 2', 'Retrospective study':'Not Applicable', 
                'Not applicable':'Not Applicable', 'Early Phase 1':'Phase 1',
                'New Treatment Measure Clinical Study':'Not Applicable', 
                '2020-02-01 00:00:00':'Phase 1/Phase 2', 'Phase II/III':'Phase 2/Phase 3',
                '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3',
+               'Phase I/II':'Phase 1/Phase 2', 'Phase 0': 'Not Applicable',
+               'Phase 1 / Phase 2': 'Phase 1/Phase 2',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n': 'Phase 4',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n': 'Phase 3/Phase 4',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 2/Phase 3'
               }
-df_cond_nc['Phase'] = df_cond_nc['Phase'].replace(phase_fixes)
+df_cond_all['Phase'] = df_cond_all['Phase'].replace(phase_fixes)
 
 #Study Type
 obv_replace = ['Observational [Patient Registry]', 'observational']
 int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment']
+hs_replace = ['Health services reaserch', 'Health Services reaserch', 'Health Services Research']
 
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].str.replace(' study', '')
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(obv_replace, 'Observational')
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace(int_replace, 'Interventional')
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Epidemilogical research', 'Epidemiological research')
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Health services reaserch', 'Health services research')
-df_cond_nc['Study_type'] = df_cond_nc['Study_type'].replace('Health Services reaserch', 'Health services research')
+df_cond_all['Study_type'] = df_cond_all['Study_type'].str.replace(' study', '')
+df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(obv_replace, 'Observational')
+df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(int_replace, 'Interventional')
+df_cond_all['Study_type'] = df_cond_all['Study_type'].replace('Epidemilogical research', 'Epidemiological research')
+df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(hs_replace, 'Health services research')
+
 
 #Recruitment Status
-df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].replace('Not recruiting', 'Not Recruiting')
-df_cond_nc['Recruitment_Status'] = df_cond_nc['Recruitment_Status'].fillna('No Status Given')
+df_cond_all['Recruitment_Status'] = df_cond_all['Recruitment_Status'].replace('Not recruiting', 'Not Recruiting')
+df_cond_all['Recruitment_Status'] = df_cond_all['Recruitment_Status'].fillna('No Status Given')
 
 #Get rid of messy accents
 
@@ -243,17 +268,17 @@ def norm_names(x):
     normed = unicodedata.normalize('NFKD', str(x)).encode('ASCII', 'ignore').decode()
     return normed 
 
-df_cond_nc['Primary_sponsor'] = df_cond_nc.Primary_sponsor.apply(norm_names)
-df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('NA', 'No Sponsor Name Given')
-df_cond_nc['Primary_sponsor'] = df_cond_nc['Primary_sponsor'].replace('nan', 'No Sponsor Name Given')
+df_cond_all['Primary_sponsor'] = df_cond_all.Primary_sponsor.apply(norm_names)
+df_cond_all['Primary_sponsor'] = df_cond_all['Primary_sponsor'].replace('NA', 'No Sponsor Name Given')
+df_cond_all['Primary_sponsor'] = df_cond_all['Primary_sponsor'].replace('nan', 'No Sponsor Name Given')
 
 # +
 #Countries
-df_cond_nc['Countries'] = df_cond_nc['Countries'].fillna('No Country Given')
+df_cond_all['Countries'] = df_cond_all['Countries'].fillna('No Country Given').replace('??', 'No Country Given')
 
 china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china', 'Taiwan, Province Of China']
 
-country_values = df_cond_nc['Countries'].tolist()
+country_values = df_cond_all['Countries'].tolist()
 
 new_list = []
 
@@ -299,7 +324,7 @@ for c in country_values:
         country_list.append(c)
     new_list.append(', '.join(country_list))
 
-df_cond_nc['Countries'] = new_list
+df_cond_all['Countries'] = new_list
 # -
 
 # Last space for manual intervention. This will include manual normalisation of new names, any updates to the normalisation schedule from the last update, and updating manually-coded intervention type data.
@@ -311,7 +336,7 @@ df_cond_nc['Countries'] = new_list
 
 spon_norm = pd.read_excel('manual_data.xlsx', sheet_name = 'sponsor')
 
-df_cond_norm = df_cond_nc.merge(spon_norm, left_on = 'Primary_sponsor', right_on ='unique_spon_names', how='left')
+df_cond_norm = df_cond_all.merge(spon_norm, left_on = 'Primary_sponsor', right_on ='unique_spon_names', how='left')
 df_cond_norm = df_cond_norm.drop('unique_spon_names', axis=1)
 
 new_unique_spon_names = (df_cond_norm[df_cond_norm['normed_spon_names'].isna()][['Primary_sponsor', 'TrialID']]
@@ -329,16 +354,16 @@ else:
 #producing the all-clear message
 
 int_type = pd.read_excel('manual_data.xlsx', sheet_name = 'intervention')
-df_cond_int = df_cond_norm.merge(int_type[['trial_id', 'intervention_type',
+df_cond_int = df_cond_norm.merge(int_type[['trial_id', 'study_focus',
                                            'intervention', 'intervention_list']], 
                                  left_on = 'TrialID', right_on = 'trial_id', how='left')
 
 df_cond_int = df_cond_int.drop('trial_id', axis=1)
 
-new_int_trials = df_cond_int[(df_cond_int['intervention_type'].isna()) | (df_cond_int['intervention'].isna())]
+new_int_trials = df_cond_int[(df_cond_int['study_focus'].isna()) | (df_cond_int['intervention'].isna())]
 
 if len(new_int_trials) > 0:
-    new_int_trials[['TrialID', 'Public_title', 'Intervention', 'intervention_type', 
+    new_int_trials[['TrialID', 'Public_title', 'Intervention', 'study_focus', 
                     'intervention', 'intervention_list']].to_csv('int_to_assess.csv')
     print('Update the intervention type assessments and rerun')
 else:
@@ -422,9 +447,9 @@ df_results.columns = col_names
 
 reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
-           'intervention_type', 'intervention', 'target_enrollment', 'primary_completion_date', 
+           'study_focus', 'intervention', 'target_enrollment', 'primary_completion_date', 
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
-           'last_refreshed_on', 'first_seen']
+           'last_refreshed_on', 'first_seen', 'cross_registration']
 
 df_final = df_results[reorder].reset_index(drop=True).reset_index()
 # -
@@ -530,7 +555,7 @@ fig.write_html("html_figures/registered trials.html")
 # -
 
 
-int_types = df_final.intervention_type.value_counts()
+int_types = df_final.study_category.value_counts()
 int_types
 
 # +
