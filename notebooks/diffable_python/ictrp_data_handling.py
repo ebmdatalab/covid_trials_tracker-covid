@@ -547,6 +547,11 @@ plt.show()
 # +
 import plotly.graph_objects as go
 
+labels = []
+
+for x in list(grouped.index):
+    labels.append(str(x.date()))
+
 fig = go.Figure()
 
 fig.add_trace(go.Scatter(x=labels[:-1], y=grouped['trialid'][:-1], fill=None, name='New Trials'))
@@ -569,19 +574,22 @@ int_types = df_final.study_category.value_counts()
 int_types
 
 # +
-treatment_dict = dict(drugs = int_types['Drug'], 
+treatment_dict = dict(drugs = int_types['Drug'] + int_types['Drug (Chemoprophylaxis)'], 
                       atmp = int_types['ATMP'], 
-                      clinical_char = int_types['Clinical Presentation'] + int_types['Diagnosis'] + int_types['Prognosis'],
+                      clinical_char = int_types['Clinical Presentation'] + int_types['Diagnostics'] + int_types['Prognosis'],
                       drug_other_combo = int_types['Drug (+ATMP +Other (renal))'] + int_types['Drug (+ATMP)'],
                       supp = int_types['Supplement'],
                       geno = int_types['Genomics'],
+                      th = int_types['Telehealth'],
                       tm = int_types[[s.startswith('Traditional Medicine') for s in int_types.index]].sum(),
-                      other = int_types[[s.startswith('Other') for s in int_types.index]].sum()
+                      other = (int_types[[s.startswith('Other') for s in int_types.index]].sum() 
+                               + int_types['Health System'] + int_types['Procedure'])
                      )
 
 fig = go.Figure(go.Bar(
             x=list(treatment_dict.values()),
-            y=['Drugs', 'ATMP', 'Clinical Characteristics', 'Drug + Other Therapy', 'Supplement', 'Genomics', 'Traditional Medicine', 'Other'],
+            y=['Drugs', 'ATMP', 'Clinical Characteristics', 'Drug + Other Therapy', 'Supplement', 'Genomics', 
+               'Telehealth', 'Traditional Medicine', 'Other'],
             orientation='h'))
 
 fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanchor': 'center', 'x': 0.5}, 
@@ -589,19 +597,6 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
 
 fig.show()
 fig.write_html('html_figures/int_bar.html')
-# +
-labels = ['6 Apr 2020']#, '8 Apr 2020',  '15 Apr 2020']
-result_count = [26]#, 0, 0]
-
-fig = go.Figure(go.Bar(
-            x=labels,
-            y=result_count,))
-
-fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanchor': 'center', 'x': 0.5}, 
-                  xaxis_title='Number of Trials')
-
-fig.show()
-#fig.write_html('html_figures/int_bar.html')
 # -
 
 
