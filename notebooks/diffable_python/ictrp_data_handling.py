@@ -222,7 +222,8 @@ def check_fields(field):
     return df_cond_all[field].unique()
 
 #Check fields for new unique values that require normalisation
-check_fields('Countries')
+#check_fields('Countries')
+
 
 # +
 #Data cleaning various fields. 
@@ -455,7 +456,7 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
            'study_category', 'intervention', 'target_enrollment', 'primary_completion_date', 
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
-           'last_refreshed_on', 'first_seen', 'cross_registration']
+           'last_refreshed_on', 'first_seen', 'cross_registrations']
 
 df_final = df_results[reorder].reset_index(drop=True).reset_index()
 # -
@@ -466,8 +467,11 @@ df_final[df_final.isna().any(axis=1)]
 #Quick look at the data
 df_final.head()
 
+# +
 #Export final dataset
 df_final.to_csv(f'processed_data_sets/trial_list_{this_extract_date}.csv', index=False)
+
+df_final.to_csv(f'tableau_data/current_data.csv', index=False)
 
 # +
 just_results = df_final[df_final.results_type != 'No Results']
@@ -533,7 +537,7 @@ gr = grouped['trialid'].to_list()
 cs = cumsum['trialid'].to_list()
 
 plt.xticks(x_pos, labels, rotation=45, fontsize=8)
-plt.ylim(-50,1000)
+plt.ylim(-50,1200)
 plt.xlabel('Week Ending Date')
 plt.ylabel('Registered Trials')
 plt.title('Registered COVID-19 Trials by Week on the ICTRP')
@@ -597,7 +601,7 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
                   xaxis_title='Number of Trials')
 
 fig.show()
-fig.write_html('html_figures/int_bar.html')
+#fig.write_html('html_figures/int_bar.html')
 # -
 
 
