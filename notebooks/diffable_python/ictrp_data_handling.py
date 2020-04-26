@@ -135,9 +135,10 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #NCT04246242 This trial registration doesn't exist anymore
 #NCT04337320 is monitoring of complications from a device in the context of COVID but has nothing
 #to do with COVID monitoring or treatment.
-#NCT04341480 is talking about treating gynecological tumors during COVID, not anyting 
+#NCT03680274 simply allows inclusion of COVID pts but has nothing to do with COVID
+#JPRN-UMIN000040188 is a systematic review, not an individual study
 
-exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT04341480']
+exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -223,8 +224,9 @@ def check_fields(field):
     return df_cond_all[field].unique()
 
 #Check fields for new unique values that require normalisation
-for x in check_fields('Countries'):
-    print(x)
+#for x in check_fields('Countries'):
+#    print(x)
+
 
 # +
 #Data cleaning various fields. 
@@ -410,7 +412,12 @@ def var_counts(var_list, split_char, lower=False):
 # +
 comp_dates = pd.read_excel('manual_data.xlsx', sheet_name = 'Completion Dates')
 df_comp_dates = df_cond_int.merge(comp_dates, 
-                                  left_on='TrialID', right_on='trialid', how='left').drop('trialid', axis=1)
+                                  left_on='TrialID', right_on='trialid', 
+                                  how='left', indicator=True).drop('trialid', axis=1)
+
+print(df_comp_dates[df_comp_dates['_merge'] == 'left_only'].TrialID.to_list())
+
+df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
 
 def fix_dates(x):
     if isinstance(x, str):
