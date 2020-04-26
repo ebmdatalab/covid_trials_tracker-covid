@@ -40,6 +40,14 @@ df = pd.read_excel('this_weeks_data/COVID19-1528-trials_22Apr2020.xlsx', dtype={
 #UPDATE THESE WITH EACH RUN
 prior_extract_date = date(2020,4,15)
 this_extract_date = date(2020,4,22)
+
+def fix_dates(x):
+    if isinstance(x, str):
+        return x
+    else:
+        return x.date()
+
+
 # -
 
 df['Date enrollement'] = pd.to_datetime(df['Date enrollement'], errors='coerce')
@@ -67,7 +75,7 @@ df['target_enrollment'] = extracted_size
 
 #Creating retrospective registration
 df['retrospective_registration'] = np.where(df['Date registration'] > df['Date enrollement'], True, False)
-df['Date enrollement'] = df['Date enrollement'].fillna('No Date Available')
+df['Date enrollement'] = df['Date enrollement'].fillna('No Date Available').apply(fix_dates)
 
 # +
 #Taking only what we need right now
@@ -418,12 +426,6 @@ df_comp_dates = df_cond_int.merge(comp_dates,
 print(df_comp_dates[df_comp_dates['_merge'] == 'left_only'].TrialID.to_list())
 
 df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
-
-def fix_dates(x):
-    if isinstance(x, str):
-        return x
-    else:
-        return x.date()
     
 df_comp_dates['primary_completion_date'] = (pd.to_datetime(df_comp_dates['primary_completion_date'], 
                                                           errors='coerce', 
