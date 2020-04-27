@@ -42,10 +42,13 @@ prior_extract_date = date(2020,4,15)
 this_extract_date = date(2020,4,22)
 
 def fix_dates(x):
-    if isinstance(x, str):
+    try:
+        if isinstance(x, str):
+            return x
+        else:
+            return x.date()
+    except AttributeError:
         return x
-    else:
-        return x.date()
 
 
 # -
@@ -204,13 +207,14 @@ print(f'An additional {len(additions)} known trials, or preferred cross registra
 print(added)
 
 df_cond_all = df_cond_nc.append(additions)
+df_cond_all['Date_enrollement'] = df_cond_all['Date_enrollement'].apply(fix_dates)
 
 print(f'The final dataset is {len(df_cond_all)} trials')
 
 # +
 #finally, add cross-registration field
 
-df_cond_all = df_cond_nc.merge(c_reg[['trial_id_keep', 'additional_ids']].drop_duplicates(), 
+df_cond_all = df_cond_all.merge(c_reg[['trial_id_keep', 'additional_ids']].drop_duplicates(), 
                               left_on='TrialID', 
                               right_on='trial_id_keep', 
                               how='left').drop('trial_id_keep', axis=1).rename(columns=
