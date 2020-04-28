@@ -35,14 +35,25 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-1135-trials_15Apr2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-1528-trials_22Apr2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,4,7)
-this_extract_date = date(2020,4,15)
+prior_extract_date = date(2020,4,15)
+this_extract_date = date(2020,4,22)
+
+def fix_dates(x):
+    try:
+        if isinstance(x, str):
+            return x
+        else:
+            return x.date()
+    except AttributeError:
+        return x
+
+
 # -
 
-df['Date enrollement'] = pd.to_datetime(df['Date enrollement'])
+df['Date enrollement'] = pd.to_datetime(df['Date enrollement'], errors='coerce')
 
 # +
 #Extracting target enrollment
@@ -67,6 +78,7 @@ df['target_enrollment'] = extracted_size
 
 #Creating retrospective registration
 df['retrospective_registration'] = np.where(df['Date registration'] > df['Date enrollement'], True, False)
+df['Date enrollement'] = df['Date enrollement'].fillna('No Date Available').apply(fix_dates)
 
 # +
 #Taking only what we need right now
@@ -88,7 +100,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-07.csv')
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-15.csv')
 
 # +
 #Joining in the 'first_seen' field
@@ -134,9 +146,10 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #NCT04246242 This trial registration doesn't exist anymore
 #NCT04337320 is monitoring of complications from a device in the context of COVID but has nothing
 #to do with COVID monitoring or treatment.
-#NCT04341480 is talking about treating gynecological tumors during COVID, not anyting 
+#NCT03680274 simply allows inclusion of COVID pts but has nothing to do with COVID
+#JPRN-UMIN000040188 is a systematic review, not an individual study
 
-exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT04341480']
+exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -194,13 +207,14 @@ print(f'An additional {len(additions)} known trials, or preferred cross registra
 print(added)
 
 df_cond_all = df_cond_nc.append(additions)
+df_cond_all['Date_enrollement'] = df_cond_all['Date_enrollement'].apply(fix_dates)
 
 print(f'The final dataset is {len(df_cond_all)} trials')
 
 # +
 #finally, add cross-registration field
 
-df_cond_all = df_cond_nc.merge(c_reg[['trial_id_keep', 'additional_ids']].drop_duplicates(), 
+df_cond_all = df_cond_all.merge(c_reg[['trial_id_keep', 'additional_ids']].drop_duplicates(), 
                               left_on='TrialID', 
                               right_on='trial_id_keep', 
                               how='left').drop('trial_id_keep', axis=1).rename(columns=
@@ -222,7 +236,8 @@ def check_fields(field):
     return df_cond_all[field].unique()
 
 #Check fields for new unique values that require normalisation
-#check_fields('Countries')
+#for x in check_fields('Countries'):
+#    print(x)
 
 
 # +
@@ -234,7 +249,8 @@ df_cond_all['Intervention'] = df_cond_all['Intervention'].str.replace(';', '')
 
 #Study Type
 obv_replace = ['Observational [Patient Registry]', 'observational']
-int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment']
+int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment', 
+               'INTERVENTIONAL', 'Intervention']
 hs_replace = ['Health services reaserch', 'Health Services reaserch', 'Health Services Research']
 
 df_cond_all['Study_type'] = df_cond_all['Study_type'].str.replace(' study', '')
@@ -242,17 +258,20 @@ df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(obv_replace, 'Obse
 df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(int_replace, 'Interventional')
 df_cond_all['Study_type'] = df_cond_all['Study_type'].replace('Epidemilogical research', 'Epidemiological research')
 df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(hs_replace, 'Health services research')
+df_cond_all['Study_type'] = df_cond_all['Study_type'].replace('Others,meta-analysis etc', 'Other')
 
 #phase
 df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
 phase_fixes = {'0':'Not Applicable', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
                '1-2':'Phase 1/Phase 2', 'Retrospective study':'Not Applicable', 
                'Not applicable':'Not Applicable', 'Early Phase 1':'Phase 1',
-               'New Treatment Measure Clinical Study':'Not Applicable', 
+               'New Treatment Measure Clinical Study':'Not Applicable', 'Not selected': 'Not Applicable',
                '2020-02-01 00:00:00':'Phase 1/Phase 2', 'Phase II/III':'Phase 2/Phase 3',
                '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3',
                'Phase I/II':'Phase 1/Phase 2', 'Phase 0': 'Not Applicable',
-               'Phase 1 / Phase 2': 'Phase 1/Phase 2',
+               'Phase 1 / Phase 2': 'Phase 1/Phase 2', 'I': 'Phase 1', 'II':'Phase 2', 
+               'II-III':'Phase 2/Phase 3', 'IV': 'Phase 4', 'Phase-3': 'Phase 3', 
+               'Diagnostic New Technique Clincal Study': 'Not Applicable',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3',
                'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n': 'Phase 4',
@@ -283,7 +302,8 @@ df_cond_all['Primary_sponsor'] = df_cond_all['Primary_sponsor'].replace('nan', '
 #Countries
 df_cond_all['Countries'] = df_cond_all['Countries'].fillna('No Country Given').replace('??', 'No Country Given')
 
-china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china', 'Taiwan, Province Of China']
+china_corr = ['Chian', 'China?', 'Chinese', 'Wuhan', 'Chinaese', 'china', 'Taiwan, Province Of China', 
+              "The People's Republic of China"]
 
 country_values = df_cond_all['Countries'].tolist()
 
@@ -301,14 +321,18 @@ for c in country_values:
         country_list.append('Iran')
     elif c in ['Viet nam', 'Viet Nam']:
         country_list.append('Vietnam')
-    elif c in ['Korea, Republic of', 'Korea, Republic Of'] :
+    elif c in ['Korea, Republic of', 'Korea, Republic Of', 'KOREA'] :
         country_list.append('South Korea')
-    elif c == 'United States of America':
+    elif c in ['USA', 'United States of America']:
         country_list.append('United States')
     elif c == 'Japan,Asia(except Japan),Australia,Europe':
         country_list = ['Japan', 'Australia', 'Asia', 'Europe']
     elif c == 'The Netherlands':
         country_list.append('Netherlands')
+    elif c == 'England':
+        country_list.append('United Kingdom')
+    elif c == 'Japan,North America':
+        country_list = ['Japan', 'North America']
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -317,14 +341,16 @@ for c in country_values:
                 country_list.append('China')
             elif v in ['Iran (Islamic Republic of)', 'Iran, Islamic Republic of']:
                 country_list.append('Iran')
-            elif v in ['Korea, Republic of', 'Korea, Republic Of']:
+            elif v in ['Korea, Republic of', 'Korea, Republic Of', 'KOREA']:
                 country_list.append('South Korea')
             elif v in ['Viet nam', 'Viet Nam']:
                 country_list.append('Vietnam')
-            elif v == 'United States of America':
+            elif v in ['USA', 'United States of America']:
                 country_list.append('United States')
             elif v == 'The Netherlands':
                 country_list.append('Netherlands')
+            elif v == 'England':
+                country_list.append('United Kingdom')
             else:
                 country_list.append(v)
     else:
@@ -398,13 +424,12 @@ def var_counts(var_list, split_char, lower=False):
 # +
 comp_dates = pd.read_excel('manual_data.xlsx', sheet_name = 'Completion Dates')
 df_comp_dates = df_cond_int.merge(comp_dates, 
-                                  left_on='TrialID', right_on='trialid', how='left').drop('trialid', axis=1)
+                                  left_on='TrialID', right_on='trialid', 
+                                  how='left', indicator=True).drop('trialid', axis=1)
 
-def fix_dates(x):
-    if isinstance(x, str):
-        return x
-    else:
-        return x.date()
+print(df_comp_dates[df_comp_dates['_merge'] == 'left_only'].TrialID.to_list())
+
+df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
     
 df_comp_dates['primary_completion_date'] = (pd.to_datetime(df_comp_dates['primary_completion_date'], 
                                                           errors='coerce', 
@@ -576,20 +601,23 @@ int_types
 # +
 treatment_dict = dict(drugs = int_types['Drug'] + int_types['Drug (Chemoprophylaxis)'], 
                       atmp = int_types['ATMP'], 
-                      clinical_char = int_types['Clinical Presentation'] + int_types['Diagnostics'] + int_types['Prognosis'],
-                      drug_other_combo = int_types['Drug (+ATMP +Other (renal))'] + int_types['Drug (+ATMP)'],
+                      clinical_char = (int_types['Clinical Presentation'] + int_types['Diagnostics'] + 
+                                       int_types['Prognosis'] + int_types['Clinical Presentation (Epidemiology)']),
+                      drug_other_combo = (int_types['Drug (+ATMP +Other (renal))'] + int_types['Drug (+ATMP)'] + 
+                                          int_types['ATMP (+ Drug)']),
                       supp = int_types['Supplement'],
                       geno = int_types['Genomics'],
                       th = int_types['Telehealth'],
+                      pro = int_types['Procedure'],
                       tm = int_types[[s.startswith('Traditional Medicine') for s in int_types.index]].sum(),
                       other = (int_types[[s.startswith('Other') for s in int_types.index]].sum() 
-                               + int_types['Health System'] + int_types['Procedure'])
+                               + int_types['Health System'])
                      )
 
 fig = go.Figure(go.Bar(
             x=list(treatment_dict.values()),
             y=['Drugs', 'ATMP', 'Clinical Characteristics', 'Drug + Other Therapy', 'Supplement', 'Genomics', 
-               'Telehealth', 'Traditional Medicine', 'Other'],
+               'Telehealth', 'Procedure', 'Traditional Medicine', 'Other'],
             orientation='h'))
 
 fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanchor': 'center', 'x': 0.5}, 
