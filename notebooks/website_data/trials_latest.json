@@ -14961,7 +14961,7 @@
       "Authorised",
       "Phase 2/Phase 3",
       "Interventional",
-      "Canada, Japan, Russian Federation, Italy, France, Spain, Germany, Israel",
+      "Spain, Israel, Germany, Japan, Russian Federation, France, Italy, Canada",
       "Sarilumab COVID-19",
       "Drug",
       "Sarilumab",
@@ -15316,32 +15316,6 @@
     ],
     [
       "589",
-      "EUCTR2020-001224-33-DE",
-      "EU Clinical Trials Register",
-      "2020-03-24",
-      "2020-03-25",
-      "False",
-      "Universit\u00e4tsklinikum T\u00fcbingen",
-      "Authorised",
-      "Phase 2",
-      "Interventional",
-      "Germany",
-      "Systematic study of the medicine hydroxychloroquine against placebo for the treatment of adult patients with acute coronavirus disease 2019 \u201a\u00c4\u00ec COVID-19",
-      "Drug",
-      "Hydroxychloroquine",
-      "220",
-      "Not Available",
-      "Not Available",
-      "https://www.clinicaltrialsregister.eu/ctr-search/search?query=eudract_number:2020-001224-33",
-      "No Results",
-      "No Results",
-      "No Results",
-      "2020-03-30",
-      "2020-04-01",
-      "None"
-    ],
-    [
-      "590",
       "ChiCTR2000030817",
       "ChiCTR",
       "2020-03-15",
@@ -15367,7 +15341,7 @@
       "None"
     ],
     [
-      "591",
+      "590",
       "EUCTR2020-001023-14-GB",
       "EU Clinical Trials Register",
       "2020-03-17",
@@ -15393,7 +15367,7 @@
       "None"
     ],
     [
-      "592",
+      "591",
       "ChiCTR2000029982",
       "ChiCTR",
       "2020-02-18",
@@ -15419,7 +15393,7 @@
       "None"
     ],
     [
-      "593",
+      "592",
       "NCT04321421",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -15445,7 +15419,7 @@
       "None"
     ],
     [
-      "594",
+      "593",
       "NCT04323332",
       "ClinicalTrials.gov",
       "2020-03-08",
@@ -15471,7 +15445,7 @@
       "None"
     ],
     [
-      "595",
+      "594",
       "NCT04320017",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -15497,7 +15471,7 @@
       "None"
     ],
     [
-      "596",
+      "595",
       "NCT04323514",
       "ClinicalTrials.gov",
       "2020-03-18",
@@ -15523,7 +15497,7 @@
       "None"
     ],
     [
-      "597",
+      "596",
       "NCT04305106",
       "ClinicalTrials.gov",
       "2020-03-09",
@@ -15549,7 +15523,7 @@
       "None"
     ],
     [
-      "598",
+      "597",
       "NCT04321928",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -15575,7 +15549,7 @@
       "None"
     ],
     [
-      "599",
+      "598",
       "NCT04323345",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -15601,7 +15575,7 @@
       "None"
     ],
     [
-      "600",
+      "599",
       "NCT04323592",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -15627,7 +15601,7 @@
       "None"
     ],
     [
-      "601",
+      "600",
       "NCT04323631",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -15653,7 +15627,7 @@
       "None"
     ],
     [
-      "602",
+      "601",
       "NCT04325919",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -15679,7 +15653,7 @@
       "None"
     ],
     [
-      "603",
+      "602",
       "NCT04288713",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -15705,7 +15679,7 @@
       "None"
     ],
     [
-      "604",
+      "603",
       "NCT04322786",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -15731,7 +15705,7 @@
       "None"
     ],
     [
-      "605",
+      "604",
       "NCT04324996",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -15757,7 +15731,7 @@
       "None"
     ],
     [
-      "606",
+      "605",
       "NCT04324463",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -15783,7 +15757,7 @@
       "None"
     ],
     [
-      "607",
+      "606",
       "NCT04324866",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -15809,7 +15783,7 @@
       "None"
     ],
     [
-      "608",
+      "607",
       "NCT04290871",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -15835,7 +15809,7 @@
       "None"
     ],
     [
-      "609",
+      "608",
       "NCT04303507",
       "ClinicalTrials.gov",
       "2020-03-06",
@@ -15861,7 +15835,7 @@
       "None"
     ],
     [
-      "610",
+      "609",
       "NCT04325412",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -15887,7 +15861,7 @@
       "None"
     ],
     [
-      "611",
+      "610",
       "NCT04326309",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -15913,7 +15887,7 @@
       "None"
     ],
     [
-      "612",
+      "611",
       "NCT04331860",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -15939,7 +15913,7 @@
       "None"
     ],
     [
-      "613",
+      "612",
       "ISRCTN14966673",
       "ISRCTN",
       "2020-03-18",
@@ -15965,7 +15939,7 @@
       "None"
     ],
     [
-      "614",
+      "613",
       "NCT04327570",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -15991,7 +15965,7 @@
       "None"
     ],
     [
-      "615",
+      "614",
       "ChiCTR2000031539",
       "ChiCTR",
       "2020-04-03",
@@ -16017,7 +15991,7 @@
       "None"
     ],
     [
-      "616",
+      "615",
       "ChiCTR2000031627",
       "ChiCTR",
       "2020-04-05",
@@ -16043,7 +16017,7 @@
       "None"
     ],
     [
-      "617",
+      "616",
       "NCT04316299",
       "ClinicalTrials.gov",
       "2020-03-17",
@@ -16069,7 +16043,7 @@
       "None"
     ],
     [
-      "618",
+      "617",
       "NCT04318314",
       "ClinicalTrials.gov",
       "2020-03-17",
@@ -16095,7 +16069,7 @@
       "None"
     ],
     [
-      "619",
+      "618",
       "ChiCTR2000031639",
       "ChiCTR",
       "2020-04-05",
@@ -16121,7 +16095,7 @@
       "None"
     ],
     [
-      "620",
+      "619",
       "ChiCTR2000031533",
       "ChiCTR",
       "2020-04-03",
@@ -16147,7 +16121,7 @@
       "None"
     ],
     [
-      "621",
+      "620",
       "ChiCTR2000031494",
       "ChiCTR",
       "2020-04-02",
@@ -16173,7 +16147,7 @@
       "None"
     ],
     [
-      "622",
+      "621",
       "ChiCTR2000031503",
       "ChiCTR",
       "2020-04-03",
@@ -16199,7 +16173,7 @@
       "None"
     ],
     [
-      "623",
+      "622",
       "ChiCTR2000031501",
       "ChiCTR",
       "2020-04-02",
@@ -16225,7 +16199,7 @@
       "None"
     ],
     [
-      "624",
+      "623",
       "ChiCTR2000031199",
       "ChiCTR",
       "2020-03-23",
@@ -16251,7 +16225,7 @@
       "None"
     ],
     [
-      "625",
+      "624",
       "NCT04318444",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -16277,7 +16251,7 @@
       "None"
     ],
     [
-      "626",
+      "625",
       "NCT04322344",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -16303,7 +16277,7 @@
       "None"
     ],
     [
-      "627",
+      "626",
       "ChiCTR2000031465",
       "ChiCTR",
       "2020-04-02",
@@ -16329,7 +16303,7 @@
       "None"
     ],
     [
-      "628",
+      "627",
       "ChiCTR2000031500",
       "ChiCTR",
       "2020-04-02",
@@ -16355,7 +16329,7 @@
       "None"
     ],
     [
-      "629",
+      "628",
       "NCT04323644",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -16381,7 +16355,7 @@
       "None"
     ],
     [
-      "630",
+      "629",
       "ChiCTR2000031630",
       "ChiCTR",
       "2020-04-05",
@@ -16407,7 +16381,7 @@
       "None"
     ],
     [
-      "631",
+      "630",
       "ChiCTR2000031454",
       "ChiCTR",
       "2020-04-01",
@@ -16433,7 +16407,7 @@
       "None"
     ],
     [
-      "632",
+      "631",
       "ChiCTR2000031432",
       "ChiCTR",
       "2020-03-31",
@@ -16459,7 +16433,7 @@
       "None"
     ],
     [
-      "633",
+      "632",
       "ChiCTR2000031439",
       "ChiCTR",
       "2020-04-01",
@@ -16485,7 +16459,7 @@
       "None"
     ],
     [
-      "634",
+      "633",
       "ChiCTR2000031430",
       "ChiCTR",
       "2020-03-31",
@@ -16511,7 +16485,7 @@
       "None"
     ],
     [
-      "635",
+      "634",
       "ChiCTR2000031589",
       "ChiCTR",
       "2020-04-05",
@@ -16537,7 +16511,7 @@
       "None"
     ],
     [
-      "636",
+      "635",
       "ChiCTR2000031428",
       "ChiCTR",
       "2020-03-31",
@@ -16563,7 +16537,7 @@
       "None"
     ],
     [
-      "637",
+      "636",
       "ChiCTR2000031587",
       "ChiCTR",
       "2020-04-04",
@@ -16589,7 +16563,7 @@
       "None"
     ],
     [
-      "638",
+      "637",
       "ChiCTR2000031376",
       "ChiCTR",
       "2020-03-29",
@@ -16615,7 +16589,7 @@
       "None"
     ],
     [
-      "639",
+      "638",
       "EUCTR2020-001386-37-IT",
       "EU Clinical Trials Register",
       "2020-04-02",
@@ -16641,7 +16615,7 @@
       "None"
     ],
     [
-      "640",
+      "639",
       "ChiCTR2000031540",
       "ChiCTR",
       "2020-04-03",
@@ -16667,7 +16641,7 @@
       "None"
     ],
     [
-      "641",
+      "640",
       "ChiCTR2000031538",
       "ChiCTR",
       "2020-04-03",
@@ -16693,7 +16667,7 @@
       "None"
     ],
     [
-      "642",
+      "641",
       "EUCTR2020-001345-38-GR",
       "EU Clinical Trials Register",
       "2020-03-31",
@@ -16719,7 +16693,7 @@
       "None"
     ],
     [
-      "643",
+      "642",
       "ChiCTR2000031504",
       "ChiCTR",
       "2020-04-03",
@@ -16745,7 +16719,7 @@
       "None"
     ],
     [
-      "644",
+      "643",
       "ChiCTR2000031499",
       "ChiCTR",
       "2020-04-02",
@@ -16771,7 +16745,7 @@
       "None"
     ],
     [
-      "645",
+      "644",
       "EUCTR2020-001271-33-FR",
       "EU Clinical Trials Register",
       "2020-03-24",
@@ -16797,7 +16771,7 @@
       "None"
     ],
     [
-      "646",
+      "645",
       "ChiCTR2000031453",
       "ChiCTR",
       "2020-04-01",
@@ -16823,7 +16797,7 @@
       "None"
     ],
     [
-      "647",
+      "646",
       "ACTRN12620000417987",
       "ANZCTR",
       "2020-03-30",
@@ -16849,7 +16823,7 @@
       "None"
     ],
     [
-      "648",
+      "647",
       "ChiCTR2000031438",
       "ChiCTR",
       "2020-04-01",
@@ -16875,7 +16849,7 @@
       "None"
     ],
     [
-      "649",
+      "648",
       "ChiCTR2000031429",
       "ChiCTR",
       "2020-03-31",
@@ -16901,7 +16875,7 @@
       "None"
     ],
     [
-      "650",
+      "649",
       "EUCTR2020-001281-11-FR",
       "EU Clinical Trials Register",
       "2020-03-26",
@@ -16927,7 +16901,7 @@
       "None"
     ],
     [
-      "651",
+      "650",
       "ChiCTR2000031427",
       "ChiCTR",
       "2020-03-31",
@@ -16953,7 +16927,7 @@
       "None"
     ],
     [
-      "652",
+      "651",
       "EUCTR2020-001275-32-DK",
       "EU Clinical Trials Register",
       "2020-03-24",
@@ -16979,7 +16953,7 @@
       "None"
     ],
     [
-      "653",
+      "652",
       "NCT04298060",
       "ClinicalTrials.gov",
       "2020-02-28",
@@ -17005,7 +16979,7 @@
       "None"
     ],
     [
-      "654",
+      "653",
       "NCT04275414",
       "ClinicalTrials.gov",
       "2020-02-14",
@@ -17031,7 +17005,7 @@
       "None"
     ],
     [
-      "655",
+      "654",
       "NCT04315298",
       "ClinicalTrials.gov",
       "2020-03-15",
@@ -17057,7 +17031,7 @@
       "None"
     ],
     [
-      "656",
+      "655",
       "EUCTR2020-001236-10-NL",
       "EU Clinical Trials Register",
       "2020-03-31",
@@ -17083,7 +17057,7 @@
       "None"
     ],
     [
-      "657",
+      "656",
       "NCT04318366",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -17109,7 +17083,7 @@
       "None"
     ],
     [
-      "658",
+      "657",
       "NCT04321811",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -17135,7 +17109,7 @@
       "None"
     ],
     [
-      "659",
+      "658",
       "NCT04320238",
       "ClinicalTrials.gov",
       "2020-03-21",
@@ -17161,7 +17135,7 @@
       "None"
     ],
     [
-      "660",
+      "659",
       "NCT04321278",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -17187,7 +17161,7 @@
       "None"
     ],
     [
-      "661",
+      "660",
       "NCT04312243",
       "ClinicalTrials.gov",
       "2020-03-15",
@@ -17213,7 +17187,7 @@
       "None"
     ],
     [
-      "662",
+      "661",
       "NCT04316377",
       "ClinicalTrials.gov",
       "2020-03-13",
@@ -17239,7 +17213,7 @@
       "None"
     ],
     [
-      "663",
+      "662",
       "EUCTR2020-001010-38-NO",
       "EU Clinical Trials Register",
       "2020-03-16",
@@ -17265,7 +17239,7 @@
       "None"
     ],
     [
-      "664",
+      "663",
       "ACTRN12620000421932",
       "ANZCTR",
       "2020-03-30",
@@ -17275,7 +17249,7 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "Australia, Indonesia, Thailand, Japan, United Kingdom, Vietnam, United States, Singapore, China, Hong Kong, Italy, South Korea",
+      "Vietnam, Japan, Indonesia, China, United Kingdom, Italy, South Korea, Hong Kong, Australia, Thailand, Singapore, United States",
       "ExtraCorporeal Membrane Oxygenation for 2019 novel Coronavirus Acute Respiratory Disease (COVID-19)",
       "Drug",
       "Oxygen",
@@ -17291,7 +17265,7 @@
       "None"
     ],
     [
-      "665",
+      "664",
       "NCT04322188",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -17317,7 +17291,7 @@
       "None"
     ],
     [
-      "666",
+      "665",
       "NCT04326452",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17343,7 +17317,7 @@
       "None"
     ],
     [
-      "667",
+      "666",
       "NCT04321096",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -17369,7 +17343,7 @@
       "None"
     ],
     [
-      "668",
+      "667",
       "NCT04324489",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17395,7 +17369,7 @@
       "None"
     ],
     [
-      "669",
+      "668",
       "NCT04324047",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17421,7 +17395,7 @@
       "EUCTR2020-001246-18"
     ],
     [
-      "670",
+      "669",
       "NCT04324047",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17445,6 +17419,32 @@
       "2020-04-14",
       "2020-04-01",
       "EUCTR2020-001456-18"
+    ],
+    [
+      "670",
+      "NCT04324047",
+      "ClinicalTrials.gov",
+      "2020-03-25",
+      "2020-03-27",
+      "False",
+      "Assistance Publique \u2013 H\u00f4pitaux de Paris",
+      "Recruiting",
+      "Not Applicable",
+      "Observational",
+      "France",
+      "Cohort Multiple Randomized Controlled Trials Open-label of Immune Modulatory Drugs and Other Treatments in COVID-19 Patients",
+      "Drug",
+      "Unspecified Drug",
+      "1000",
+      "2021-03-27",
+      "2021-12-31",
+      "https://clinicaltrials.gov/show/NCT04324047",
+      "No Results",
+      "No Results",
+      "No Results",
+      "2020-04-14",
+      "2020-04-01",
+      "EUCTR2020-001246-18"
     ],
     [
       "671",
@@ -17470,36 +17470,10 @@
       "No Results",
       "2020-04-14",
       "2020-04-01",
-      "EUCTR2020-001246-18"
-    ],
-    [
-      "672",
-      "NCT04324047",
-      "ClinicalTrials.gov",
-      "2020-03-25",
-      "2020-03-27",
-      "False",
-      "Assistance Publique \u2013 H\u00f4pitaux de Paris",
-      "Recruiting",
-      "Not Applicable",
-      "Observational",
-      "France",
-      "Cohort Multiple Randomized Controlled Trials Open-label of Immune Modulatory Drugs and Other Treatments in COVID-19 Patients",
-      "Drug",
-      "Unspecified Drug",
-      "1000",
-      "2021-03-27",
-      "2021-12-31",
-      "https://clinicaltrials.gov/show/NCT04324047",
-      "No Results",
-      "No Results",
-      "No Results",
-      "2020-04-14",
-      "2020-04-01",
       "EUCTR2020-001456-18"
     ],
     [
-      "673",
+      "672",
       "NCT04325867",
       "ClinicalTrials.gov",
       "2020-03-21",
@@ -17525,7 +17499,7 @@
       "None"
     ],
     [
-      "674",
+      "673",
       "NCT04326075",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -17551,7 +17525,7 @@
       "None"
     ],
     [
-      "675",
+      "674",
       "NCT04326114",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -17577,7 +17551,7 @@
       "None"
     ],
     [
-      "676",
+      "675",
       "NCT04324528",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17603,7 +17577,7 @@
       "None"
     ],
     [
-      "677",
+      "676",
       "NCT04328272",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17629,7 +17603,7 @@
       "None"
     ],
     [
-      "678",
+      "677",
       "NCT04328480",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -17655,7 +17629,7 @@
       "None"
     ],
     [
-      "679",
+      "678",
       "NCT04328493",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -17681,7 +17655,7 @@
       "None"
     ],
     [
-      "680",
+      "679",
       "NCT04326426",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -17707,7 +17681,7 @@
       "None"
     ],
     [
-      "681",
+      "680",
       "NCT04326920",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -17717,7 +17691,7 @@
       "Recruiting",
       "Phase 4",
       "Interventional",
-      "Italy, Belgium",
+      "Belgium, Italy",
       "Sargramostim in Patients With Acute Hypoxic Respiratory Failure Due to COVID-19 (SARPAC)",
       "Drug",
       "Sargramostim",
@@ -17733,7 +17707,7 @@
       "None"
     ],
     [
-      "682",
+      "681",
       "NCT04280705",
       "ClinicalTrials.gov",
       "2020-02-20",
@@ -17743,7 +17717,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "Mexico, United States, Japan, United Kingdom, South Korea, Singapore, Germany, Denmark",
+      "United States, Germany, Japan, Mexico, United Kingdom, Denmark, Singapore, South Korea",
       "Adaptive COVID-19 Treatment Trial (ACTT)",
       "Drug",
       "Remdesivir",
@@ -17759,7 +17733,7 @@
       "EUCTR2020-001052-18"
     ],
     [
-      "683",
+      "682",
       "NCT04313946",
       "ClinicalTrials.gov",
       "2020-03-17",
@@ -17769,7 +17743,7 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "Romania, Italy, United Kingdom",
+      "Italy, Romania, United Kingdom",
       "Artificial Intelligence Algorithms for Discriminating Between COVID-19 and Influenza Pneumonitis Using Chest X-Rays",
       "Diagnostics",
       "Diagnostic Test or Assessment",
@@ -17785,7 +17759,7 @@
       "None"
     ],
     [
-      "684",
+      "683",
       "NCT04326790",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -17811,7 +17785,7 @@
       "EUCTR2020-001455-40"
     ],
     [
-      "685",
+      "684",
       "NCT04327505",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -17837,7 +17811,7 @@
       "None"
     ],
     [
-      "686",
+      "685",
       "NCT04327531",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -17863,7 +17837,7 @@
       "None"
     ],
     [
-      "687",
+      "686",
       "NCT04328441",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -17889,7 +17863,7 @@
       "None"
     ],
     [
-      "688",
+      "687",
       "NCT04320511",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -17915,7 +17889,7 @@
       "None"
     ],
     [
-      "689",
+      "688",
       "NCT04320732",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -17941,7 +17915,7 @@
       "None"
     ],
     [
-      "690",
+      "689",
       "NCT04329507",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -17967,7 +17941,7 @@
       "None"
     ],
     [
-      "691",
+      "690",
       "NCT04330144",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -17993,7 +17967,7 @@
       "KCT0004907"
     ],
     [
-      "692",
+      "691",
       "NCT04328961",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -18019,7 +17993,7 @@
       "None"
     ],
     [
-      "693",
+      "692",
       "NCT04330261",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -18045,7 +18019,7 @@
       "None"
     ],
     [
-      "694",
+      "693",
       "NCT04330586",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -18071,7 +18045,7 @@
       "None"
     ],
     [
-      "695",
+      "694",
       "NCT04330599",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -18097,7 +18071,7 @@
       "None"
     ],
     [
-      "696",
+      "695",
       "NCT04323878",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -18123,7 +18097,7 @@
       "None"
     ],
     [
-      "697",
+      "696",
       "NCT04325646",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -18149,7 +18123,7 @@
       "None"
     ],
     [
-      "698",
+      "697",
       "NCT04330521",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -18175,7 +18149,7 @@
       "None"
     ],
     [
-      "699",
+      "698",
       "NCT04331613",
       "ClinicalTrials.gov",
       "2020-02-06",
@@ -18201,7 +18175,7 @@
       "None"
     ],
     [
-      "700",
+      "699",
       "NCT04331574",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -18227,7 +18201,7 @@
       "None"
     ],
     [
-      "701",
+      "700",
       "NCT04332016",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -18253,7 +18227,7 @@
       "None"
     ],
     [
-      "702",
+      "701",
       "NCT04325906",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -18279,7 +18253,7 @@
       "None"
     ],
     [
-      "703",
+      "702",
       "NCT04326036",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -18305,7 +18279,7 @@
       "None"
     ],
     [
-      "704",
+      "703",
       "NCT04332835",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -18331,7 +18305,7 @@
       "None"
     ],
     [
-      "705",
+      "704",
       "NCT04333251",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -18357,7 +18331,7 @@
       "None"
     ],
     [
-      "706",
+      "705",
       "NCT04327180",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -18383,7 +18357,7 @@
       "None"
     ],
     [
-      "707",
+      "706",
       "NCT04327349",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -18409,7 +18383,7 @@
       "None"
     ],
     [
-      "708",
+      "707",
       "NCT04331899",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -18435,7 +18409,7 @@
       "None"
     ],
     [
-      "709",
+      "708",
       "NCT04333862",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -18461,7 +18435,7 @@
       "None"
     ],
     [
-      "710",
+      "709",
       "NCT04332666",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -18487,7 +18461,7 @@
       "None"
     ],
     [
-      "711",
+      "710",
       "NCT04333550",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -18513,7 +18487,7 @@
       "None"
     ],
     [
-      "712",
+      "711",
       "NCT04327674",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -18539,7 +18513,7 @@
       "None"
     ],
     [
-      "713",
+      "712",
       "NCT04328454",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -18565,7 +18539,7 @@
       "None"
     ],
     [
-      "714",
+      "713",
       "NCT04333693",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -18591,7 +18565,7 @@
       "None"
     ],
     [
-      "715",
+      "714",
       "NCT04334967",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -18617,7 +18591,7 @@
       "None"
     ],
     [
-      "716",
+      "715",
       "NCT04334629",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -18643,7 +18617,7 @@
       "None"
     ],
     [
-      "717",
+      "716",
       "NCT04334850",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -18669,7 +18643,7 @@
       "EUCTR2020-001324-33"
     ],
     [
-      "718",
+      "717",
       "ACTRN12620000438954",
       "ANZCTR",
       "2020-04-06",
@@ -18695,7 +18669,7 @@
       "None"
     ],
     [
-      "719",
+      "718",
       "NCT04329559",
       "ClinicalTrials.gov",
       "2020-03-29",
@@ -18721,7 +18695,7 @@
       "None"
     ],
     [
-      "720",
+      "719",
       "NCT04331600",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -18747,7 +18721,7 @@
       "None"
     ],
     [
-      "721",
+      "720",
       "ACTRN12620000449932",
       "ANZCTR",
       "2020-04-06",
@@ -18773,7 +18747,7 @@
       "None"
     ],
     [
-      "722",
+      "721",
       "ACTRN12620000457943",
       "ANZCTR",
       "2020-04-08",
@@ -18799,7 +18773,7 @@
       "None"
     ],
     [
-      "723",
+      "722",
       "NCT04335019",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -18825,7 +18799,7 @@
       "None"
     ],
     [
-      "724",
+      "723",
       "NCT04335084",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -18851,7 +18825,7 @@
       "None"
     ],
     [
-      "725",
+      "724",
       "NCT04335279",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -18877,7 +18851,7 @@
       "None"
     ],
     [
-      "726",
+      "725",
       "ACTRN12620000443998",
       "ANZCTR",
       "2020-04-06",
@@ -18903,7 +18877,7 @@
       "None"
     ],
     [
-      "727",
+      "726",
       "ACTRN12620000454976",
       "ANZCTR",
       "2020-04-08",
@@ -18929,7 +18903,7 @@
       "None"
     ],
     [
-      "728",
+      "727",
       "NCT04335201",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -18955,7 +18929,7 @@
       "None"
     ],
     [
-      "729",
+      "728",
       "ACTRN12620000448943",
       "ANZCTR",
       "2020-04-06",
@@ -18981,7 +18955,7 @@
       "None"
     ],
     [
-      "730",
+      "729",
       "NCT04332380",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -19007,7 +18981,7 @@
       "None"
     ],
     [
-      "731",
+      "730",
       "NCT04333355",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -19033,7 +19007,7 @@
       "None"
     ],
     [
-      "732",
+      "731",
       "ChiCTR2000031836",
       "ChiCTR",
       "2020-04-11",
@@ -19059,7 +19033,7 @@
       "None"
     ],
     [
-      "733",
+      "732",
       "ChiCTR2000031794",
       "ChiCTR",
       "2020-04-10",
@@ -19085,7 +19059,7 @@
       "None"
     ],
     [
-      "734",
+      "733",
       "ChiCTR2000031772",
       "ChiCTR",
       "2020-04-09",
@@ -19111,7 +19085,7 @@
       "None"
     ],
     [
-      "735",
+      "734",
       "NCT04333472",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -19137,7 +19111,7 @@
       "None"
     ],
     [
-      "736",
+      "735",
       "ACTRN12620000444987",
       "ANZCTR",
       "2020-04-06",
@@ -19163,7 +19137,7 @@
       "None"
     ],
     [
-      "737",
+      "736",
       "ACTRN12620000447954",
       "ANZCTR",
       "2020-04-06",
@@ -19189,7 +19163,7 @@
       "None"
     ],
     [
-      "738",
+      "737",
       "ChiCTR2000031770",
       "ChiCTR",
       "2020-04-09",
@@ -19215,7 +19189,7 @@
       "None"
     ],
     [
-      "739",
+      "738",
       "ChiCTR2000031782",
       "ChiCTR",
       "2020-04-10",
@@ -19241,7 +19215,7 @@
       "None"
     ],
     [
-      "740",
+      "739",
       "ChiCTR2000031783",
       "ChiCTR",
       "2020-04-10",
@@ -19267,7 +19241,7 @@
       "None"
     ],
     [
-      "741",
+      "740",
       "ChiCTR2000031781",
       "ChiCTR",
       "2020-04-10",
@@ -19293,7 +19267,7 @@
       "None"
     ],
     [
-      "742",
+      "741",
       "ChiCTR2000031752",
       "ChiCTR",
       "2020-04-09",
@@ -19319,7 +19293,7 @@
       "None"
     ],
     [
-      "743",
+      "742",
       "ChiCTR2000031860",
       "ChiCTR",
       "2020-04-12",
@@ -19345,7 +19319,7 @@
       "None"
     ],
     [
-      "744",
+      "743",
       "ChiCTR2000031734",
       "ChiCTR",
       "2020-04-08",
@@ -19371,7 +19345,7 @@
       "None"
     ],
     [
-      "745",
+      "744",
       "ChiCTR2000031751",
       "ChiCTR",
       "2020-04-08",
@@ -19397,7 +19371,7 @@
       "None"
     ],
     [
-      "746",
+      "745",
       "ChiCTR2000031779",
       "ChiCTR",
       "2020-04-10",
@@ -19423,7 +19397,7 @@
       "None"
     ],
     [
-      "747",
+      "746",
       "ChiCTR2000031707",
       "ChiCTR",
       "2020-04-07",
@@ -19449,7 +19423,7 @@
       "None"
     ],
     [
-      "748",
+      "747",
       "ChiCTR2000031705",
       "ChiCTR",
       "2020-04-07",
@@ -19475,7 +19449,7 @@
       "None"
     ],
     [
-      "749",
+      "748",
       "ChiCTR2000031834",
       "ChiCTR",
       "2020-04-11",
@@ -19501,7 +19475,7 @@
       "None"
     ],
     [
-      "750",
+      "749",
       "ChiCTR2000031700",
       "ChiCTR",
       "2020-04-07",
@@ -19527,7 +19501,7 @@
       "None"
     ],
     [
-      "751",
+      "750",
       "ChiCTR2000031735",
       "ChiCTR",
       "2020-04-08",
@@ -19553,7 +19527,7 @@
       "None"
     ],
     [
-      "752",
+      "751",
       "ChiCTR2000031699",
       "ChiCTR",
       "2020-04-07",
@@ -19579,7 +19553,7 @@
       "None"
     ],
     [
-      "753",
+      "752",
       "ChiCTR2000031672",
       "ChiCTR",
       "2020-04-06",
@@ -19605,7 +19579,7 @@
       "None"
     ],
     [
-      "754",
+      "753",
       "ChiCTR2000031675",
       "ChiCTR",
       "2020-04-06",
@@ -19631,7 +19605,7 @@
       "None"
     ],
     [
-      "755",
+      "754",
       "ChiCTR2000030750",
       "ChiCTR",
       "2020-03-13",
@@ -19657,7 +19631,7 @@
       "None"
     ],
     [
-      "756",
+      "755",
       "ChiCTR2000030494",
       "ChiCTR",
       "2020-03-05",
@@ -19683,7 +19657,7 @@
       "None"
     ],
     [
-      "757",
+      "756",
       "ChiCTR2000030331",
       "ChiCTR",
       "2020-02-28",
@@ -19709,7 +19683,7 @@
       "None"
     ],
     [
-      "758",
+      "757",
       "EUCTR2020-001381-11-FR",
       "EU Clinical Trials Register",
       "2020-03-29",
@@ -19735,7 +19709,7 @@
       "None"
     ],
     [
-      "759",
+      "758",
       "EUCTR2020-001301-23-FR",
       "EU Clinical Trials Register",
       "2020-03-26",
@@ -19761,7 +19735,7 @@
       "None"
     ],
     [
-      "760",
+      "759",
       "EUCTR2020-001310-38-DE",
       "EU Clinical Trials Register",
       "2020-03-31",
@@ -19787,7 +19761,7 @@
       "None"
     ],
     [
-      "761",
+      "760",
       "EUCTR2020-001335-28-NL",
       "EU Clinical Trials Register",
       "2020-03-27",
@@ -19813,7 +19787,7 @@
       "None"
     ],
     [
-      "762",
+      "761",
       "EUCTR2020-001500-41-BE",
       "EU Clinical Trials Register",
       "2020-04-04",
@@ -19839,7 +19813,7 @@
       "None"
     ],
     [
-      "763",
+      "762",
       "EUCTR2020-001435-27-FR",
       "EU Clinical Trials Register",
       "2020-04-01",
@@ -19865,7 +19839,7 @@
       "None"
     ],
     [
-      "764",
+      "763",
       "EUCTR2020-001333-13-FR",
       "EU Clinical Trials Register",
       "2020-04-02",
@@ -19891,7 +19865,7 @@
       "None"
     ],
     [
-      "765",
+      "764",
       "EUCTR2020-001409-21-ES",
       "EU Clinical Trials Register",
       "2020-04-03",
@@ -19917,7 +19891,7 @@
       "None"
     ],
     [
-      "766",
+      "765",
       "EUCTR2020-001457-43-FR",
       "EU Clinical Trials Register",
       "2020-04-02",
@@ -19943,7 +19917,7 @@
       "None"
     ],
     [
-      "767",
+      "766",
       "EUCTR2020-001492-33-FR",
       "EU Clinical Trials Register",
       "2020-04-01",
@@ -19969,7 +19943,7 @@
       "None"
     ],
     [
-      "768",
+      "767",
       "EUCTR2020-001442-19-ES",
       "EU Clinical Trials Register",
       "2020-04-03",
@@ -19995,7 +19969,7 @@
       "None"
     ],
     [
-      "769",
+      "768",
       "EUCTR2020-001194-69-ES",
       "EU Clinical Trials Register",
       "2020-04-07",
@@ -20021,7 +19995,7 @@
       "None"
     ],
     [
-      "770",
+      "769",
       "EUCTR2020-001385-11-ES",
       "EU Clinical Trials Register",
       "2020-04-03",
@@ -20047,7 +20021,7 @@
       "None"
     ],
     [
-      "771",
+      "770",
       "EUCTR2020-001421-31-ES",
       "EU Clinical Trials Register",
       "2020-04-07",
@@ -20073,7 +20047,7 @@
       "None"
     ],
     [
-      "772",
+      "771",
       "EUCTR2020-001565-37-ES",
       "EU Clinical Trials Register",
       "2020-04-07",
@@ -20099,7 +20073,7 @@
       "None"
     ],
     [
-      "773",
+      "772",
       "EUCTR2020-001270-29-GB",
       "EU Clinical Trials Register",
       "2020-03-30",
@@ -20109,7 +20083,7 @@
       "Authorised",
       "Phase 2/Phase 3",
       "Interventional",
-      "United Kingdom, Czech Republic, France, Germany, Denmark, Hungary",
+      "Germany, Czech Republic, United Kingdom, France, Denmark, Hungary",
       "Hydroxychloroquine for COVID 19 in moderately to severely ill hospitalized patients",
       "Drug",
       "Hydroxychloroquine",
@@ -20125,7 +20099,7 @@
       "None"
     ],
     [
-      "774",
+      "773",
       "EUCTR2020-001606-33-ES",
       "EU Clinical Trials Register",
       "2020-04-07",
@@ -20151,7 +20125,7 @@
       "None"
     ],
     [
-      "775",
+      "774",
       "EUCTR2020-001307-16-ES",
       "EU Clinical Trials Register",
       "2020-04-08",
@@ -20177,7 +20151,7 @@
       "None"
     ],
     [
-      "776",
+      "775",
       "NCT04244591",
       "ClinicalTrials.gov",
       "2020-01-23",
@@ -20203,7 +20177,7 @@
       "None"
     ],
     [
-      "777",
+      "776",
       "NCT04252274",
       "ClinicalTrials.gov",
       "2020-01-29",
@@ -20229,7 +20203,7 @@
       "None"
     ],
     [
-      "778",
+      "777",
       "NCT04274322",
       "ClinicalTrials.gov",
       "2020-02-16",
@@ -20255,7 +20229,7 @@
       "None"
     ],
     [
-      "779",
+      "778",
       "NCT04252664",
       "ClinicalTrials.gov",
       "2020-01-31",
@@ -20281,7 +20255,7 @@
       "None"
     ],
     [
-      "780",
+      "779",
       "NCT04261517",
       "ClinicalTrials.gov",
       "2020-02-06",
@@ -20307,7 +20281,7 @@
       "None"
     ],
     [
-      "781",
+      "780",
       "NCT04252118",
       "ClinicalTrials.gov",
       "2020-01-27",
@@ -20333,7 +20307,7 @@
       "None"
     ],
     [
-      "782",
+      "781",
       "NCT04273321",
       "ClinicalTrials.gov",
       "2020-02-15",
@@ -20359,7 +20333,7 @@
       "None"
     ],
     [
-      "783",
+      "782",
       "NCT04245631",
       "ClinicalTrials.gov",
       "2020-01-26",
@@ -20385,7 +20359,7 @@
       "None"
     ],
     [
-      "784",
+      "783",
       "NCT04276688",
       "ClinicalTrials.gov",
       "2020-02-11",
@@ -20411,7 +20385,7 @@
       "None"
     ],
     [
-      "785",
+      "784",
       "NCT04291729",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -20437,7 +20411,7 @@
       "None"
     ],
     [
-      "786",
+      "785",
       "NCT04273646",
       "ClinicalTrials.gov",
       "2020-02-14",
@@ -20463,7 +20437,7 @@
       "None"
     ],
     [
-      "787",
+      "786",
       "NCT04304690",
       "ClinicalTrials.gov",
       "2020-03-09",
@@ -20489,7 +20463,7 @@
       "None"
     ],
     [
-      "788",
+      "787",
       "NCT04257656",
       "ClinicalTrials.gov",
       "2020-01-31",
@@ -20515,7 +20489,7 @@
       "None"
     ],
     [
-      "789",
+      "788",
       "NCT04280224",
       "ClinicalTrials.gov",
       "2020-02-13",
@@ -20541,7 +20515,7 @@
       "None"
     ],
     [
-      "790",
+      "789",
       "NCT04283461",
       "ClinicalTrials.gov",
       "2020-02-21",
@@ -20567,7 +20541,7 @@
       "None"
     ],
     [
-      "791",
+      "790",
       "NCT04288102",
       "ClinicalTrials.gov",
       "2020-02-24",
@@ -20593,7 +20567,7 @@
       "None"
     ],
     [
-      "792",
+      "791",
       "NCT04299152",
       "ClinicalTrials.gov",
       "2020-02-28",
@@ -20619,7 +20593,7 @@
       "None"
     ],
     [
-      "793",
+      "792",
       "NCT04303299",
       "ClinicalTrials.gov",
       "2020-02-24",
@@ -20645,7 +20619,7 @@
       "None"
     ],
     [
-      "794",
+      "793",
       "NCT04312997",
       "ClinicalTrials.gov",
       "2020-03-16",
@@ -20671,7 +20645,7 @@
       "None"
     ],
     [
-      "795",
+      "794",
       "NCT04313127",
       "ClinicalTrials.gov",
       "2020-03-15",
@@ -20697,7 +20671,7 @@
       "None"
     ],
     [
-      "796",
+      "795",
       "NCT04290780",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -20723,7 +20697,7 @@
       "None"
     ],
     [
-      "797",
+      "796",
       "NCT04302766",
       "ClinicalTrials.gov",
       "2020-03-02",
@@ -20749,7 +20723,7 @@
       "None"
     ],
     [
-      "798",
+      "797",
       "NCT04292730",
       "ClinicalTrials.gov",
       "2020-02-28",
@@ -20759,7 +20733,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "Switzerland, United States, Japan, United Kingdom, South Korea, Iran, France, Singapore, China, Hong Kong, Spain, Sweden, Italy, Germany, Taiwan, Netherlands",
+      "Spain, United States, Germany, Japan, China, Netherlands, Taiwan, Sweden, United Kingdom, France, Italy, Hong Kong, Iran, Singapore, Switzerland, South Korea",
       "Study to Evaluate the Safety and Antiviral Activity of Remdesivir (GS-5734\u201a\u00d1\u00a2) in Participants With Moderate Coronavirus Disease (COVID-19) Compared to Standard of Care Treatment",
       "Drug",
       "Remdesivir",
@@ -20775,7 +20749,7 @@
       "EUCTR2020-000842-32"
     ],
     [
-      "799",
+      "798",
       "NCT04292899",
       "ClinicalTrials.gov",
       "2020-02-28",
@@ -20785,7 +20759,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "Switzerland, United States, Japan, United Kingdom, South Korea, France, Singapore, Hong Kong, Spain, Sweden, Italy, Germany, Taiwan, Netherlands",
+      "Spain, United States, Germany, Japan, Netherlands, Taiwan, Sweden, United Kingdom, France, Italy, Hong Kong, Singapore, Switzerland, South Korea",
       "Study to Evaluate the Safety and Antiviral Activity of Remdesivir (GS-5734\u201a\u00d1\u00a2) in Participants With Severe Coronavirus Disease (COVID-19)",
       "Drug",
       "Remdesivir",
@@ -20801,7 +20775,7 @@
       "EUCTR2020-000841-15"
     ],
     [
-      "800",
+      "799",
       "NCT04305457",
       "ClinicalTrials.gov",
       "2020-03-09",
@@ -20827,7 +20801,7 @@
       "None"
     ],
     [
-      "801",
+      "800",
       "NCT04306393",
       "ClinicalTrials.gov",
       "2020-03-10",
@@ -20853,7 +20827,7 @@
       "EUCTR2020-001490-68"
     ],
     [
-      "802",
+      "801",
       "NCT04311177",
       "ClinicalTrials.gov",
       "2020-03-13",
@@ -20879,7 +20853,7 @@
       "None"
     ],
     [
-      "803",
+      "802",
       "NCT04311697",
       "ClinicalTrials.gov",
       "2020-03-14",
@@ -20889,7 +20863,7 @@
       "Not Recruiting",
       "Phase 2",
       "Interventional",
-      "United States, Israel",
+      "Israel, United States",
       "Intravenous Aviptadil for COVID-19 Associated Acute Respiratory Distress",
       "Drug",
       "Aviptadil",
@@ -20905,7 +20879,7 @@
       "None"
     ],
     [
-      "804",
+      "803",
       "NCT04317092",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -20931,7 +20905,7 @@
       "EUCTR2020-001110-38"
     ],
     [
-      "805",
+      "804",
       "NCT04318301",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -20957,7 +20931,7 @@
       "None"
     ],
     [
-      "806",
+      "805",
       "NCT04308668",
       "ClinicalTrials.gov",
       "2020-03-11",
@@ -20983,7 +20957,7 @@
       "None"
     ],
     [
-      "807",
+      "806",
       "NCT04310228",
       "ClinicalTrials.gov",
       "2020-03-09",
@@ -21009,7 +20983,7 @@
       "None"
     ],
     [
-      "808",
+      "807",
       "NCT04304053",
       "ClinicalTrials.gov",
       "2020-03-05",
@@ -21035,7 +21009,7 @@
       "EUCTR2020-001031-27"
     ],
     [
-      "809",
+      "808",
       "NCT04306055",
       "ClinicalTrials.gov",
       "2020-03-08",
@@ -21061,7 +21035,7 @@
       "None"
     ],
     [
-      "810",
+      "809",
       "NCT04312009",
       "ClinicalTrials.gov",
       "2020-03-13",
@@ -21087,7 +21061,7 @@
       "None"
     ],
     [
-      "811",
+      "810",
       "NCT04313023",
       "ClinicalTrials.gov",
       "2020-03-16",
@@ -21113,7 +21087,7 @@
       "None"
     ],
     [
-      "812",
+      "811",
       "NCT04315987",
       "ClinicalTrials.gov",
       "2020-03-18",
@@ -21139,7 +21113,7 @@
       "None"
     ],
     [
-      "813",
+      "812",
       "NCT04319016",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -21165,7 +21139,7 @@
       "None"
     ],
     [
-      "814",
+      "813",
       "NCT04320472",
       "ClinicalTrials.gov",
       "2020-03-22",
@@ -21191,7 +21165,7 @@
       "None"
     ],
     [
-      "815",
+      "814",
       "NCT04322123",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21217,7 +21191,7 @@
       "None"
     ],
     [
-      "816",
+      "815",
       "NCT04319315",
       "ClinicalTrials.gov",
       "2020-03-16",
@@ -21243,7 +21217,7 @@
       "None"
     ],
     [
-      "817",
+      "816",
       "NCT04320953",
       "ClinicalTrials.gov",
       "2020-03-21",
@@ -21269,7 +21243,7 @@
       "None"
     ],
     [
-      "818",
+      "817",
       "NCT04315480",
       "ClinicalTrials.gov",
       "2020-03-14",
@@ -21295,7 +21269,7 @@
       "None"
     ],
     [
-      "819",
+      "818",
       "NCT04315896",
       "ClinicalTrials.gov",
       "2020-03-18",
@@ -21321,7 +21295,7 @@
       "None"
     ],
     [
-      "820",
+      "819",
       "NCT04319445",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -21347,7 +21321,7 @@
       "None"
     ],
     [
-      "821",
+      "820",
       "NCT04321616",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21373,7 +21347,7 @@
       "None"
     ],
     [
-      "822",
+      "821",
       "NCT04322396",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21399,7 +21373,7 @@
       "None"
     ],
     [
-      "823",
+      "822",
       "NCT04323761",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21409,7 +21383,7 @@
       "Not Recruiting",
       "Phase 3",
       "Expanded Access",
-      "Switzerland, United States, United Kingdom, Italy, France, Spain, Germany",
+      "Spain, United States, Germany, United Kingdom, France, Italy, Switzerland",
       "Expanded Access Treatment Protocol: Remdesivir (RDV; GS-5734) for the Treatment of SARS-CoV2 (CoV) Infection (COVID-19)",
       "Drug",
       "Remdesivir",
@@ -21425,7 +21399,7 @@
       "EUCTR2020-001453-49"
     ],
     [
-      "824",
+      "823",
       "NCT04317040",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -21451,7 +21425,7 @@
       "None"
     ],
     [
-      "825",
+      "824",
       "NCT04318015",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -21477,7 +21451,7 @@
       "None"
     ],
     [
-      "826",
+      "825",
       "NCT04323787",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21503,7 +21477,7 @@
       "None"
     ],
     [
-      "827",
+      "826",
       "NCT04323800",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21529,7 +21503,7 @@
       "None"
     ],
     [
-      "828",
+      "827",
       "NCT04320615",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21539,7 +21513,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "Canada, United States, United Kingdom, France, Spain, Italy, Germany, Denmark, Netherlands",
+      "Spain, United States, Germany, Netherlands, United Kingdom, France, Italy, Denmark, Canada",
       "A Study to Evaluate the Safety and Efficacy of Tocilizumab in Patients With Severe COVID-19 Pneumonia",
       "Drug",
       "Tocilizumab",
@@ -21555,7 +21529,7 @@
       "EUCTR2020-001154-22"
     ],
     [
-      "829",
+      "828",
       "NCT04320862",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21581,7 +21555,7 @@
       "None"
     ],
     [
-      "830",
+      "829",
       "NCT04322487",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21607,7 +21581,7 @@
       "None"
     ],
     [
-      "831",
+      "830",
       "NCT04322565",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21633,7 +21607,7 @@
       "None"
     ],
     [
-      "832",
+      "831",
       "NCT04321265",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -21643,7 +21617,7 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "France, Germany, Denmark, Norway",
+      "France, Norway, Germany, Denmark",
       "Outcomes and Prognostic Factors in COVID-19",
       "Prognosis",
       "No Intervention",
@@ -21659,7 +21633,7 @@
       "None"
     ],
     [
-      "833",
+      "832",
       "NCT04322682",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21685,7 +21659,7 @@
       "None"
     ],
     [
-      "834",
+      "833",
       "NCT04323839",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21711,7 +21685,7 @@
       "None"
     ],
     [
-      "835",
+      "834",
       "NCT04325061",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -21737,7 +21711,7 @@
       "EUCTR2020-001278-31"
     ],
     [
-      "836",
+      "835",
       "NCT04321369",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21763,7 +21737,7 @@
       "None"
     ],
     [
-      "837",
+      "836",
       "NCT04321993",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21789,7 +21763,7 @@
       "None"
     ],
     [
-      "838",
+      "837",
       "NCT04324073",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -21815,7 +21789,7 @@
       "None"
     ],
     [
-      "839",
+      "838",
       "NCT04324190",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -21841,7 +21815,7 @@
       "None"
     ],
     [
-      "840",
+      "839",
       "NCT04322773",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -21867,7 +21841,7 @@
       "None"
     ],
     [
-      "841",
+      "840",
       "NCT04323228",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21893,7 +21867,7 @@
       "None"
     ],
     [
-      "842",
+      "841",
       "NCT04322513",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -21919,7 +21893,7 @@
       "None"
     ],
     [
-      "843",
+      "842",
       "NCT04324021",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -21945,7 +21919,7 @@
       "None"
     ],
     [
-      "844",
+      "843",
       "NCT04324736",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -21971,7 +21945,7 @@
       "None"
     ],
     [
-      "845",
+      "844",
       "NCT04325672",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -21997,7 +21971,7 @@
       "None"
     ],
     [
-      "846",
+      "845",
       "NCT04327388",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22007,7 +21981,7 @@
       "Recruiting",
       "Phase 2/Phase 3",
       "Interventional",
-      "Canada, Japan, France, Spain, Italy, Germany",
+      "Spain, Japan, Germany, France, Italy, Canada",
       "Sarilumab COVID-19",
       "Drug",
       "Sarilumab",
@@ -22023,7 +21997,7 @@
       "None"
     ],
     [
-      "847",
+      "846",
       "NCT04327401",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22049,7 +22023,7 @@
       "None"
     ],
     [
-      "848",
+      "847",
       "NCT04324606",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -22075,7 +22049,7 @@
       "None"
     ],
     [
-      "849",
+      "848",
       "NCT04324684",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -22101,7 +22075,7 @@
       "None"
     ],
     [
-      "850",
+      "849",
       "NCT04325048",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -22127,7 +22101,7 @@
       "None"
     ],
     [
-      "851",
+      "850",
       "NCT04325633",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22153,7 +22127,7 @@
       "None"
     ],
     [
-      "852",
+      "851",
       "NCT04326725",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22179,7 +22153,7 @@
       "None"
     ],
     [
-      "853",
+      "852",
       "NCT04327206",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -22205,7 +22179,7 @@
       "None"
     ],
     [
-      "854",
+      "853",
       "NCT04325893",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -22231,7 +22205,7 @@
       "None"
     ],
     [
-      "855",
+      "854",
       "NCT04327804",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22257,7 +22231,7 @@
       "None"
     ],
     [
-      "856",
+      "855",
       "NCT04328285",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -22283,7 +22257,7 @@
       "EUCTR2020-001188-96"
     ],
     [
-      "857",
+      "856",
       "NCT04328467",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -22309,7 +22283,7 @@
       "None"
     ],
     [
-      "858",
+      "857",
       "NCT04326387",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22335,7 +22309,7 @@
       "None"
     ],
     [
-      "859",
+      "858",
       "NCT04328129",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -22361,7 +22335,7 @@
       "None"
     ],
     [
-      "860",
+      "859",
       "NCT04327479",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22387,7 +22361,7 @@
       "None"
     ],
     [
-      "861",
+      "860",
       "NCT04328012",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -22413,7 +22387,7 @@
       "None"
     ],
     [
-      "862",
+      "861",
       "NCT04329572",
       "ClinicalTrials.gov",
       "2020-03-29",
@@ -22439,7 +22413,7 @@
       "None"
     ],
     [
-      "863",
+      "862",
       "NCT04329650",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -22465,7 +22439,7 @@
       "None"
     ],
     [
-      "864",
+      "863",
       "NCT04329533",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -22491,7 +22465,7 @@
       "None"
     ],
     [
-      "865",
+      "864",
       "NCT04330300",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -22517,7 +22491,7 @@
       "None"
     ],
     [
-      "866",
+      "865",
       "NCT04329832",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -22543,7 +22517,7 @@
       "None"
     ],
     [
-      "867",
+      "866",
       "NCT04331054",
       "ClinicalTrials.gov",
       "2020-03-29",
@@ -22569,7 +22543,7 @@
       "None"
     ],
     [
-      "868",
+      "867",
       "NCT04329546",
       "ClinicalTrials.gov",
       "2020-03-29",
@@ -22595,7 +22569,7 @@
       "None"
     ],
     [
-      "869",
+      "868",
       "NCT04329611",
       "ClinicalTrials.gov",
       "2020-03-29",
@@ -22621,7 +22595,7 @@
       "None"
     ],
     [
-      "870",
+      "869",
       "NCT04331106",
       "ClinicalTrials.gov",
       "2020-03-27",
@@ -22647,7 +22621,7 @@
       "None"
     ],
     [
-      "871",
+      "870",
       "NCT04331171",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -22673,7 +22647,7 @@
       "None"
     ],
     [
-      "872",
+      "871",
       "NCT04329923",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -22699,7 +22673,7 @@
       "None"
     ],
     [
-      "873",
+      "872",
       "NCT04331470",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -22725,7 +22699,7 @@
       "None"
     ],
     [
-      "874",
+      "873",
       "NCT04330495",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -22751,7 +22725,7 @@
       "None"
     ],
     [
-      "875",
+      "874",
       "NCT04330638",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -22777,7 +22751,7 @@
       "None"
     ],
     [
-      "876",
+      "875",
       "NCT04331366",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -22803,7 +22777,7 @@
       "None"
     ],
     [
-      "877",
+      "876",
       "NCT04331509",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -22829,7 +22803,7 @@
       "None"
     ],
     [
-      "878",
+      "877",
       "NCT04331834",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -22855,7 +22829,7 @@
       "None"
     ],
     [
-      "879",
+      "878",
       "NCT04331665",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -22881,7 +22855,7 @@
       "None"
     ],
     [
-      "880",
+      "879",
       "NCT04331795",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -22907,7 +22881,7 @@
       "None"
     ],
     [
-      "881",
+      "880",
       "NCT04332107",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -22933,7 +22907,7 @@
       "None"
     ],
     [
-      "882",
+      "881",
       "NCT04333420",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -22959,7 +22933,7 @@
       "None"
     ],
     [
-      "883",
+      "882",
       "NCT04331808",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -22985,7 +22959,7 @@
       "None"
     ],
     [
-      "884",
+      "883",
       "NCT04332913",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -23011,7 +22985,7 @@
       "None"
     ],
     [
-      "885",
+      "884",
       "NCT04332094",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23037,7 +23011,7 @@
       "None"
     ],
     [
-      "886",
+      "885",
       "NCT04333407",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23063,7 +23037,7 @@
       "None"
     ],
     [
-      "887",
+      "886",
       "NCT04331886",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23089,7 +23063,7 @@
       "None"
     ],
     [
-      "888",
+      "887",
       "NCT04332081",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -23115,7 +23089,7 @@
       "None"
     ],
     [
-      "889",
+      "888",
       "NCT04333732",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23125,7 +23099,7 @@
       "Not Recruiting",
       "Phase 3",
       "Interventional",
-      "Ireland, Zambia, Australia, Canada, United States, United Kingdom, South Africa",
+      "United States, United Kingdom, Zambia, Australia, Ireland, Canada, South Africa",
       "CROWN CORONATION: Chloroquine RepurpOsing to healthWorkers for Novel CORONAvirus mitigaTION",
       "Drug (Chemoprophylaxis)",
       "Chloroquine/hydroxychloroquine",
@@ -23141,7 +23115,7 @@
       "None"
     ],
     [
-      "890",
+      "889",
       "NCT04333849",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23167,7 +23141,7 @@
       "None"
     ],
     [
-      "891",
+      "890",
       "NCT04333589",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23193,7 +23167,7 @@
       "None"
     ],
     [
-      "892",
+      "891",
       "NCT04333654",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23219,7 +23193,7 @@
       "None"
     ],
     [
-      "893",
+      "892",
       "NCT04332991",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23245,7 +23219,7 @@
       "None"
     ],
     [
-      "894",
+      "893",
       "NCT04333225",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23271,7 +23245,7 @@
       "None"
     ],
     [
-      "895",
+      "894",
       "NCT04334148",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23297,7 +23271,7 @@
       "None"
     ],
     [
-      "896",
+      "895",
       "NCT04334460",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23323,7 +23297,7 @@
       "None"
     ],
     [
-      "897",
+      "896",
       "NCT04334252",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23349,7 +23323,7 @@
       "None"
     ],
     [
-      "898",
+      "897",
       "NCT04334265",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23375,7 +23349,7 @@
       "None"
     ],
     [
-      "899",
+      "898",
       "NCT04333628",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23401,7 +23375,7 @@
       "None"
     ],
     [
-      "900",
+      "899",
       "NCT04333953",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23427,7 +23401,7 @@
       "None"
     ],
     [
-      "901",
+      "900",
       "NCT04333914",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23453,7 +23427,7 @@
       "EUCTR2020-001373-70"
     ],
     [
-      "902",
+      "901",
       "NCT04334005",
       "ClinicalTrials.gov",
       "2020-03-29",
@@ -23479,7 +23453,7 @@
       "None"
     ],
     [
-      "903",
+      "902",
       "NCT04334291",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23505,7 +23479,7 @@
       "None"
     ],
     [
-      "904",
+      "903",
       "NCT04335162",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -23531,7 +23505,7 @@
       "None"
     ],
     [
-      "905",
+      "904",
       "NCT04334044",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23557,7 +23531,7 @@
       "None"
     ],
     [
-      "906",
+      "905",
       "NCT04334382",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23583,7 +23557,7 @@
       "None"
     ],
     [
-      "907",
+      "906",
       "NCT04334512",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23609,7 +23583,7 @@
       "None"
     ],
     [
-      "908",
+      "907",
       "NCT04334980",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23635,7 +23609,7 @@
       "None"
     ],
     [
-      "909",
+      "908",
       "NCT04334928",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23661,7 +23635,7 @@
       "None"
     ],
     [
-      "910",
+      "909",
       "NCT04335123",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23687,7 +23661,7 @@
       "None"
     ],
     [
-      "911",
+      "910",
       "NCT04335188",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23713,7 +23687,7 @@
       "None"
     ],
     [
-      "912",
+      "911",
       "NCT04335305",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -23739,7 +23713,7 @@
       "None"
     ],
     [
-      "913",
+      "912",
       "NCT04335032",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23765,7 +23739,7 @@
       "None"
     ],
     [
-      "914",
+      "913",
       "NCT04335071",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23791,7 +23765,7 @@
       "None"
     ],
     [
-      "915",
+      "914",
       "NCT04335630",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23817,7 +23791,7 @@
       "None"
     ],
     [
-      "916",
+      "915",
       "NCT04335773",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -23843,7 +23817,7 @@
       "None"
     ],
     [
-      "917",
+      "916",
       "NCT04335851",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23869,7 +23843,7 @@
       "None"
     ],
     [
-      "918",
+      "917",
       "NCT04336462",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -23895,7 +23869,7 @@
       "None"
     ],
     [
-      "919",
+      "918",
       "NCT04335747",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -23921,7 +23895,7 @@
       "None"
     ],
     [
-      "920",
+      "919",
       "NCT04336254",
       "ClinicalTrials.gov",
       "2020-03-28",
@@ -23947,7 +23921,7 @@
       "None"
     ],
     [
-      "921",
+      "920",
       "NCT04334434",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -23973,7 +23947,7 @@
       "None"
     ],
     [
-      "922",
+      "921",
       "NCT04335097",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -23999,7 +23973,7 @@
       "None"
     ],
     [
-      "923",
+      "922",
       "NCT04336215",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -24025,7 +23999,7 @@
       "None"
     ],
     [
-      "924",
+      "923",
       "NCT04336774",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24051,7 +24025,7 @@
       "None"
     ],
     [
-      "925",
+      "924",
       "NCT04336332",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -24077,7 +24051,7 @@
       "None"
     ],
     [
-      "926",
+      "925",
       "NCT04337008",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24103,7 +24077,7 @@
       "None"
     ],
     [
-      "927",
+      "926",
       "NCT04336657",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24129,7 +24103,7 @@
       "None"
     ],
     [
-      "928",
+      "927",
       "NCT04336904",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24155,7 +24129,7 @@
       "None"
     ],
     [
-      "929",
+      "928",
       "NCT04336956",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -24181,7 +24155,7 @@
       "None"
     ],
     [
-      "930",
+      "929",
       "NCT04337216",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -24207,7 +24181,7 @@
       "None"
     ],
     [
-      "931",
+      "930",
       "NCT04337151",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24233,7 +24207,7 @@
       "None"
     ],
     [
-      "932",
+      "931",
       "NCT04337190",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24259,7 +24233,7 @@
       "None"
     ],
     [
-      "933",
+      "932",
       "NCT04337047",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24285,7 +24259,7 @@
       "None"
     ],
     [
-      "934",
+      "933",
       "NCT04337502",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -24311,7 +24285,7 @@
       "None"
     ],
     [
-      "935",
+      "934",
       "NCT04335136",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -24321,7 +24295,7 @@
       "Not Recruiting",
       "Phase 2",
       "Interventional",
-      "Austria, Denmark, Germany",
+      "Austria, Germany, Denmark",
       "Recombinant Human Angiotensin-converting Enzyme 2 (rhACE2) as a Treatment for Patients With COVID-19",
       "Drug",
       "ACE enzyme",
@@ -24337,7 +24311,7 @@
       "None"
     ],
     [
-      "936",
+      "935",
       "NCT04336345",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -24363,7 +24337,7 @@
       "None"
     ],
     [
-      "937",
+      "936",
       "NCT04337359",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24389,7 +24363,7 @@
       "None"
     ],
     [
-      "938",
+      "937",
       "NCT04337996",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -24415,7 +24389,7 @@
       "None"
     ],
     [
-      "939",
+      "938",
       "NCT04337541",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -24441,7 +24415,7 @@
       "None"
     ],
     [
-      "940",
+      "939",
       "NCT04337762",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -24467,7 +24441,7 @@
       "None"
     ],
     [
-      "941",
+      "940",
       "NCT04336384",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -24493,7 +24467,7 @@
       "None"
     ],
     [
-      "942",
+      "941",
       "NCT04336410",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24519,7 +24493,7 @@
       "None"
     ],
     [
-      "943",
+      "942",
       "NCT04338074",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -24545,7 +24519,7 @@
       "None"
     ],
     [
-      "944",
+      "943",
       "NCT04338100",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -24571,7 +24545,7 @@
       "None"
     ],
     [
-      "945",
+      "944",
       "NCT04337983",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -24597,7 +24571,7 @@
       "None"
     ],
     [
-      "946",
+      "945",
       "NCT04338828",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -24623,7 +24597,7 @@
       "None"
     ],
     [
-      "947",
+      "946",
       "NCT04336761",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24649,7 +24623,7 @@
       "None"
     ],
     [
-      "948",
+      "947",
       "NCT04336787",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24675,7 +24649,7 @@
       "None"
     ],
     [
-      "949",
+      "948",
       "NCT04338347",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -24701,7 +24675,7 @@
       "None"
     ],
     [
-      "950",
+      "949",
       "NCT04338672",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -24727,7 +24701,7 @@
       "None"
     ],
     [
-      "951",
+      "950",
       "NCT04339712",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -24753,7 +24727,7 @@
       "EUCTR2020-001039-29"
     ],
     [
-      "952",
+      "951",
       "NCT04340349",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -24779,7 +24753,7 @@
       "None"
     ],
     [
-      "953",
+      "952",
       "NCT04338932",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -24805,7 +24779,7 @@
       "None"
     ],
     [
-      "954",
+      "953",
       "NCT04338945",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -24831,7 +24805,7 @@
       "None"
     ],
     [
-      "955",
+      "954",
       "NCT04338958",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -24857,7 +24831,7 @@
       "None"
     ],
     [
-      "956",
+      "955",
       "NCT04338698",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -24883,7 +24857,7 @@
       "None"
     ],
     [
-      "957",
+      "956",
       "NCT04338906",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24909,7 +24883,7 @@
       "None"
     ],
     [
-      "958",
+      "957",
       "NCT04337346",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -24935,7 +24909,7 @@
       "None"
     ],
     [
-      "959",
+      "958",
       "NCT04337489",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -24961,7 +24935,7 @@
       "None"
     ],
     [
-      "960",
+      "959",
       "NCT04337788",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -24987,7 +24961,7 @@
       "None"
     ],
     [
-      "961",
+      "960",
       "NCT04341012",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25013,7 +24987,7 @@
       "None"
     ],
     [
-      "962",
+      "961",
       "NCT04341038",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25039,7 +25013,7 @@
       "EUCTR2020-001445-39"
     ],
     [
-      "963",
+      "962",
       "NCT04337918",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25065,7 +25039,7 @@
       "None"
     ],
     [
-      "964",
+      "963",
       "NCT04338009",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -25091,7 +25065,7 @@
       "None"
     ],
     [
-      "965",
+      "964",
       "NCT04339387",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25117,7 +25091,7 @@
       "None"
     ],
     [
-      "966",
+      "965",
       "NCT04339608",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25143,7 +25117,7 @@
       "None"
     ],
     [
-      "967",
+      "966",
       "NCT04339322",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25169,7 +25143,7 @@
       "None"
     ],
     [
-      "968",
+      "967",
       "NCT04339660",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -25195,7 +25169,7 @@
       "None"
     ],
     [
-      "969",
+      "968",
       "NCT04338360",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -25221,7 +25195,7 @@
       "None"
     ],
     [
-      "970",
+      "969",
       "NCT04338568",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -25247,7 +25221,7 @@
       "None"
     ],
     [
-      "971",
+      "970",
       "NCT04339634",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25273,7 +25247,7 @@
       "None"
     ],
     [
-      "972",
+      "971",
       "NCT04339816",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25299,7 +25273,7 @@
       "None"
     ],
     [
-      "973",
+      "972",
       "NCT04341441",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25325,7 +25299,7 @@
       "None"
     ],
     [
-      "974",
+      "973",
       "NCT04341480",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25351,7 +25325,7 @@
       "None"
     ],
     [
-      "975",
+      "974",
       "NCT04338802",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -25377,7 +25351,7 @@
       "None"
     ],
     [
-      "976",
+      "975",
       "NCT04339426",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25403,7 +25377,7 @@
       "None"
     ],
     [
-      "977",
+      "976",
       "NCT04340219",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -25429,7 +25403,7 @@
       "None"
     ],
     [
-      "978",
+      "977",
       "NCT04340544",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -25455,7 +25429,7 @@
       "None"
     ],
     [
-      "979",
+      "978",
       "NCT04340050",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25481,7 +25455,7 @@
       "None"
     ],
     [
-      "980",
+      "979",
       "NCT04340466",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25507,7 +25481,7 @@
       "None"
     ],
     [
-      "981",
+      "980",
       "NCT04341675",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -25533,7 +25507,7 @@
       "None"
     ],
     [
-      "982",
+      "981",
       "NCT04341688",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25559,7 +25533,7 @@
       "None"
     ],
     [
-      "983",
+      "982",
       "NCT04339790",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -25585,7 +25559,7 @@
       "None"
     ],
     [
-      "984",
+      "983",
       "NCT04339998",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25611,7 +25585,7 @@
       "None"
     ],
     [
-      "985",
+      "984",
       "NCT04340479",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25637,7 +25611,7 @@
       "None"
     ],
     [
-      "986",
+      "985",
       "NCT04340921",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -25663,7 +25637,7 @@
       "None"
     ],
     [
-      "987",
+      "986",
       "NCT04341103",
       "ClinicalTrials.gov",
       "2020-03-16",
@@ -25689,7 +25663,7 @@
       "None"
     ],
     [
-      "988",
+      "987",
       "NCT04341168",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -25715,7 +25689,7 @@
       "None"
     ],
     [
-      "989",
+      "988",
       "NCT04340232",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -25741,7 +25715,7 @@
       "None"
     ],
     [
-      "990",
+      "989",
       "NCT04340414",
       "ClinicalTrials.gov",
       "2020-03-03",
@@ -25767,7 +25741,7 @@
       "None"
     ],
     [
-      "991",
+      "990",
       "NCT04341870",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -25793,7 +25767,7 @@
       "None"
     ],
     [
-      "992",
+      "991",
       "NCT04342104",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -25819,7 +25793,7 @@
       "None"
     ],
     [
-      "993",
+      "992",
       "NCT04341285",
       "ClinicalTrials.gov",
       "2020-03-30",
@@ -25845,7 +25819,7 @@
       "None"
     ],
     [
-      "994",
+      "993",
       "NCT04341493",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25871,7 +25845,7 @@
       "None"
     ],
     [
-      "995",
+      "994",
       "NCT04341116",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -25897,7 +25871,7 @@
       "None"
     ],
     [
-      "996",
+      "995",
       "NCT04341142",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -25923,7 +25897,7 @@
       "None"
     ],
     [
-      "997",
+      "996",
       "NCT04341519",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25949,7 +25923,7 @@
       "None"
     ],
     [
-      "998",
+      "997",
       "NCT04341610",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -25975,7 +25949,7 @@
       "None"
     ],
     [
-      "999",
+      "998",
       "NCT04341584",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26001,7 +25975,7 @@
       "None"
     ],
     [
-      "1000",
+      "999",
       "NCT04341766",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -26027,7 +26001,7 @@
       "None"
     ],
     [
-      "1001",
+      "1000",
       "NCT04343001",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26053,7 +26027,7 @@
       "None"
     ],
     [
-      "1002",
+      "1001",
       "NCT04343183",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26079,7 +26053,7 @@
       "None"
     ],
     [
-      "1003",
+      "1002",
       "NCT04341207",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26105,7 +26079,7 @@
       "EUCTR2020-001250-21"
     ],
     [
-      "1004",
+      "1003",
       "NCT04341389",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26131,7 +26105,7 @@
       "None"
     ],
     [
-      "1005",
+      "1004",
       "NCT04341935",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -26157,7 +26131,7 @@
       "None"
     ],
     [
-      "1006",
+      "1005",
       "NCT04342169",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26183,7 +26157,7 @@
       "None"
     ],
     [
-      "1007",
+      "1006",
       "NCT04341792",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26209,7 +26183,7 @@
       "None"
     ],
     [
-      "1008",
+      "1007",
       "NCT04342195",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26235,7 +26209,7 @@
       "None"
     ],
     [
-      "1009",
+      "1008",
       "NCT04341415",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26261,7 +26235,7 @@
       "None"
     ],
     [
-      "1010",
+      "1009",
       "NCT04341506",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26287,7 +26261,7 @@
       "None"
     ],
     [
-      "1011",
+      "1010",
       "NCT04342208",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26313,7 +26287,7 @@
       "None"
     ],
     [
-      "1012",
+      "1011",
       "NCT04342221",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26336,10 +26310,10 @@
       "No Results",
       "2020-04-20",
       "2020-04-15",
-      "None"
+      "EUCTR2020-001224-33"
     ],
     [
-      "1013",
+      "1012",
       "NCT04341714",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26365,7 +26339,7 @@
       "None"
     ],
     [
-      "1014",
+      "1013",
       "NCT04341922",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26391,7 +26365,7 @@
       "None"
     ],
     [
-      "1015",
+      "1014",
       "NCT04343404",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26417,7 +26391,7 @@
       "None"
     ],
     [
-      "1016",
+      "1015",
       "NCT04343651",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -26443,7 +26417,7 @@
       "None"
     ],
     [
-      "1017",
+      "1016",
       "NCT04342156",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26469,7 +26443,7 @@
       "None"
     ],
     [
-      "1018",
+      "1017",
       "NCT04342182",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -26495,7 +26469,7 @@
       "None"
     ],
     [
-      "1019",
+      "1018",
       "NCT04342702",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -26521,7 +26495,7 @@
       "None"
     ],
     [
-      "1020",
+      "1019",
       "NCT04342728",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26547,7 +26521,7 @@
       "None"
     ],
     [
-      "1021",
+      "1020",
       "NCT04342637",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -26557,7 +26531,7 @@
       "Not Recruiting",
       "Not Applicable",
       "Observational",
-      "Iran, United States, Egypt",
+      "United States, Iran, Egypt",
       "COVID-19 Endoscopy Survey",
       "Other",
       "Other",
@@ -26573,7 +26547,7 @@
       "None"
     ],
     [
-      "1022",
+      "1021",
       "NCT04342650",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -26599,7 +26573,7 @@
       "None"
     ],
     [
-      "1023",
+      "1022",
       "NCT04342689",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26625,7 +26599,7 @@
       "None"
     ],
     [
-      "1024",
+      "1023",
       "NCT04342806",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26651,7 +26625,7 @@
       "None"
     ],
     [
-      "1025",
+      "1024",
       "NCT04343144",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -26677,7 +26651,7 @@
       "None"
     ],
     [
-      "1026",
+      "1025",
       "NCT04343261",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26703,7 +26677,7 @@
       "None"
     ],
     [
-      "1027",
+      "1026",
       "NCT04344080",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -26729,7 +26703,7 @@
       "None"
     ],
     [
-      "1028",
+      "1027",
       "NCT04344730",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -26755,7 +26729,7 @@
       "None"
     ],
     [
-      "1029",
+      "1028",
       "NCT04342663",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26781,7 +26755,7 @@
       "None"
     ],
     [
-      "1030",
+      "1029",
       "NCT04342884",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26807,7 +26781,7 @@
       "None"
     ],
     [
-      "1031",
+      "1030",
       "NCT04342897",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -26833,7 +26807,7 @@
       "None"
     ],
     [
-      "1032",
+      "1031",
       "NCT04343248",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26859,7 +26833,7 @@
       "None"
     ],
     [
-      "1033",
+      "1032",
       "NCT04343677",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -26885,7 +26859,7 @@
       "None"
     ],
     [
-      "1034",
+      "1033",
       "NCT04343768",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -26911,7 +26885,7 @@
       "None"
     ],
     [
-      "1035",
+      "1034",
       "NCT04343092",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -26937,7 +26911,7 @@
       "None"
     ],
     [
-      "1036",
+      "1035",
       "NCT04343729",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -26963,7 +26937,7 @@
       "None"
     ],
     [
-      "1037",
+      "1036",
       "NCT04344925",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -26989,7 +26963,7 @@
       "None"
     ],
     [
-      "1038",
+      "1037",
       "NCT04344938",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27015,7 +26989,7 @@
       "None"
     ],
     [
-      "1039",
+      "1038",
       "NCT04344951",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -27041,7 +27015,7 @@
       "None"
     ],
     [
-      "1040",
+      "1039",
       "NCT04343742",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -27067,7 +27041,7 @@
       "None"
     ],
     [
-      "1041",
+      "1040",
       "NCT04343755",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -27093,7 +27067,7 @@
       "None"
     ],
     [
-      "1042",
+      "1041",
       "NCT04343794",
       "ClinicalTrials.gov",
       "2020-02-20",
@@ -27119,7 +27093,7 @@
       "None"
     ],
     [
-      "1043",
+      "1042",
       "NCT04344002",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27145,7 +27119,7 @@
       "None"
     ],
     [
-      "1044",
+      "1043",
       "NCT04343339",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -27171,7 +27145,7 @@
       "None"
     ],
     [
-      "1045",
+      "1044",
       "NCT04343664",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27197,7 +27171,7 @@
       "None"
     ],
     [
-      "1046",
+      "1045",
       "NCT04343963",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27223,7 +27197,7 @@
       "None"
     ],
     [
-      "1047",
+      "1046",
       "NCT04343976",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27249,7 +27223,7 @@
       "None"
     ],
     [
-      "1048",
+      "1047",
       "NCT04345159",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27275,7 +27249,7 @@
       "None"
     ],
     [
-      "1049",
+      "1048",
       "NCT04345601",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27301,7 +27275,7 @@
       "None"
     ],
     [
-      "1050",
+      "1049",
       "NCT04343690",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27327,7 +27301,7 @@
       "None"
     ],
     [
-      "1051",
+      "1050",
       "NCT04343781",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27353,7 +27327,7 @@
       "None"
     ],
     [
-      "1052",
+      "1051",
       "NCT04344171",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27379,7 +27353,7 @@
       "None"
     ],
     [
-      "1053",
+      "1052",
       "NCT04344184",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27405,7 +27379,7 @@
       "None"
     ],
     [
-      "1054",
+      "1053",
       "NCT04346017",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -27431,7 +27405,7 @@
       "None"
     ],
     [
-      "1055",
+      "1054",
       "NCT04346043",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -27457,7 +27431,7 @@
       "None"
     ],
     [
-      "1056",
+      "1055",
       "NCT04344119",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27483,7 +27457,7 @@
       "None"
     ],
     [
-      "1057",
+      "1056",
       "NCT04344145",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27509,7 +27483,7 @@
       "None"
     ],
     [
-      "1058",
+      "1057",
       "NCT04344210",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -27535,7 +27509,7 @@
       "None"
     ],
     [
-      "1059",
+      "1058",
       "NCT04344236",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -27561,7 +27535,7 @@
       "None"
     ],
     [
-      "1060",
+      "1059",
       "NCT04343898",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27587,7 +27561,7 @@
       "None"
     ],
     [
-      "1061",
+      "1060",
       "NCT04343989",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27613,7 +27587,7 @@
       "None"
     ],
     [
-      "1062",
+      "1061",
       "NCT04344197",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27639,7 +27613,7 @@
       "None"
     ],
     [
-      "1063",
+      "1062",
       "NCT04344587",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -27665,7 +27639,7 @@
       "None"
     ],
     [
-      "1064",
+      "1063",
       "NCT04346212",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27691,7 +27665,7 @@
       "None"
     ],
     [
-      "1065",
+      "1064",
       "NCT04346446",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -27717,7 +27691,7 @@
       "None"
     ],
     [
-      "1066",
+      "1065",
       "NCT04344015",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27743,7 +27717,7 @@
       "None"
     ],
     [
-      "1067",
+      "1066",
       "NCT04344106",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -27769,7 +27743,7 @@
       "None"
     ],
     [
-      "1068",
+      "1067",
       "NCT04344327",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27795,7 +27769,7 @@
       "None"
     ],
     [
-      "1069",
+      "1068",
       "NCT04344444",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27821,7 +27795,7 @@
       "None"
     ],
     [
-      "1070",
+      "1069",
       "NCT04344834",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -27847,7 +27821,7 @@
       "None"
     ],
     [
-      "1071",
+      "1070",
       "NCT04345276",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27873,7 +27847,7 @@
       "None"
     ],
     [
-      "1072",
+      "1071",
       "NCT04344249",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -27899,7 +27873,7 @@
       "None"
     ],
     [
-      "1073",
+      "1072",
       "NCT04344431",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -27925,7 +27899,7 @@
       "None"
     ],
     [
-      "1074",
+      "1073",
       "NCT04344535",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27951,7 +27925,7 @@
       "None"
     ],
     [
-      "1075",
+      "1074",
       "NCT04344561",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -27977,7 +27951,7 @@
       "None"
     ],
     [
-      "1076",
+      "1075",
       "NCT04346667",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -28003,7 +27977,7 @@
       "None"
     ],
     [
-      "1077",
+      "1076",
       "NCT04346693",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -28029,7 +28003,7 @@
       "None"
     ],
     [
-      "1078",
+      "1077",
       "NCT04345679",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -28055,7 +28029,7 @@
       "None"
     ],
     [
-      "1079",
+      "1078",
       "NCT04345692",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -28081,7 +28055,7 @@
       "None"
     ],
     [
-      "1080",
+      "1079",
       "NCT04344457",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -28107,7 +28081,7 @@
       "None"
     ],
     [
-      "1081",
+      "1080",
       "NCT04344548",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28133,7 +28107,7 @@
       "None"
     ],
     [
-      "1082",
+      "1081",
       "NCT04345887",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28159,7 +28133,7 @@
       "None"
     ],
     [
-      "1083",
+      "1082",
       "NCT04346121",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28185,7 +28159,7 @@
       "None"
     ],
     [
-      "1084",
+      "1083",
       "NCT04344977",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -28211,7 +28185,7 @@
       "None"
     ],
     [
-      "1085",
+      "1084",
       "NCT04345419",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -28237,7 +28211,7 @@
       "None"
     ],
     [
-      "1086",
+      "1085",
       "NCT04345445",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -28263,7 +28237,7 @@
       "None"
     ],
     [
-      "1087",
+      "1086",
       "NCT04344756",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -28289,7 +28263,7 @@
       "None"
     ],
     [
-      "1088",
+      "1087",
       "NCT04344782",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -28315,7 +28289,7 @@
       "None"
     ],
     [
-      "1089",
+      "1088",
       "NCT04347538",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -28341,7 +28315,7 @@
       "None"
     ],
     [
-      "1090",
+      "1089",
       "NCT04347954",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -28367,7 +28341,7 @@
       "None"
     ],
     [
-      "1091",
+      "1090",
       "NCT04344964",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28393,7 +28367,7 @@
       "None"
     ],
     [
-      "1092",
+      "1091",
       "NCT04345315",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28419,7 +28393,7 @@
       "None"
     ],
     [
-      "1093",
+      "1092",
       "NCT04345510",
       "ClinicalTrials.gov",
       "2020-04-12",
@@ -28445,7 +28419,7 @@
       "None"
     ],
     [
-      "1094",
+      "1093",
       "NCT04345536",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -28471,7 +28445,7 @@
       "None"
     ],
     [
-      "1095",
+      "1094",
       "NCT04345653",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -28497,7 +28471,7 @@
       "None"
     ],
     [
-      "1096",
+      "1095",
       "NCT04347980",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -28523,7 +28497,7 @@
       "None"
     ],
     [
-      "1097",
+      "1096",
       "NCT04347993",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -28549,7 +28523,7 @@
       "None"
     ],
     [
-      "1098",
+      "1097",
       "NCT04345406",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -28575,7 +28549,7 @@
       "None"
     ],
     [
-      "1099",
+      "1098",
       "NCT04345523",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -28601,7 +28575,7 @@
       "None"
     ],
     [
-      "1100",
+      "1099",
       "NCT04345861",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -28627,7 +28601,7 @@
       "None"
     ],
     [
-      "1101",
+      "1100",
       "NCT04346160",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28653,7 +28627,7 @@
       "None"
     ],
     [
-      "1102",
+      "1101",
       "NCT04346147",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -28679,7 +28653,7 @@
       "None"
     ],
     [
-      "1103",
+      "1102",
       "NCT04346329",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28705,7 +28679,7 @@
       "None"
     ],
     [
-      "1104",
+      "1103",
       "NCT04345549",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28731,7 +28705,7 @@
       "None"
     ],
     [
-      "1105",
+      "1104",
       "NCT04345614",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -28757,7 +28731,7 @@
       "None"
     ],
     [
-      "1106",
+      "1105",
       "NCT04346186",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -28783,7 +28757,7 @@
       "None"
     ],
     [
-      "1107",
+      "1106",
       "NCT04346277",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -28809,7 +28783,7 @@
       "None"
     ],
     [
-      "1108",
+      "1107",
       "NCT04348214",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -28835,7 +28809,7 @@
       "None"
     ],
     [
-      "1109",
+      "1108",
       "NCT04348383",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -28861,7 +28835,7 @@
       "None"
     ],
     [
-      "1110",
+      "1109",
       "NCT04346342",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -28887,7 +28861,7 @@
       "None"
     ],
     [
-      "1111",
+      "1110",
       "NCT04346355",
       "ClinicalTrials.gov",
       "2020-04-12",
@@ -28913,7 +28887,7 @@
       "None"
     ],
     [
-      "1112",
+      "1111",
       "NCT04345640",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -28939,7 +28913,7 @@
       "None"
     ],
     [
-      "1113",
+      "1112",
       "NCT04345848",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -28965,7 +28939,7 @@
       "None"
     ],
     [
-      "1114",
+      "1113",
       "NCT04346420",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -28991,7 +28965,7 @@
       "None"
     ],
     [
-      "1115",
+      "1114",
       "NCT04346628",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -29017,7 +28991,7 @@
       "None"
     ],
     [
-      "1116",
+      "1115",
       "NCT04345991",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -29043,7 +29017,7 @@
       "None"
     ],
     [
-      "1117",
+      "1116",
       "NCT04346056",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29069,7 +29043,7 @@
       "None"
     ],
     [
-      "1118",
+      "1117",
       "NCT04348396",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -29095,7 +29069,7 @@
       "None"
     ],
     [
-      "1119",
+      "1118",
       "NCT04348409",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -29121,7 +29095,7 @@
       "None"
     ],
     [
-      "1120",
+      "1119",
       "NCT04346368",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -29147,7 +29121,7 @@
       "None"
     ],
     [
-      "1121",
+      "1120",
       "NCT04346589",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -29173,7 +29147,7 @@
       "None"
     ],
     [
-      "1122",
+      "1121",
       "NCT04346810",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -29199,7 +29173,7 @@
       "None"
     ],
     [
-      "1123",
+      "1122",
       "NCT04346927",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29225,7 +29199,7 @@
       "None"
     ],
     [
-      "1124",
+      "1123",
       "NCT04348422",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29251,7 +29225,7 @@
       "None"
     ],
     [
-      "1125",
+      "1124",
       "NCT04348435",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -29277,7 +29251,7 @@
       "None"
     ],
     [
-      "1126",
+      "1125",
       "NCT04346082",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -29303,7 +29277,7 @@
       "None"
     ],
     [
-      "1127",
+      "1126",
       "NCT04346199",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -29329,7 +29303,7 @@
       "None"
     ],
     [
-      "1128",
+      "1127",
       "NCT04346953",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29355,7 +29329,7 @@
       "None"
     ],
     [
-      "1129",
+      "1128",
       "NCT04347070",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -29381,7 +29355,7 @@
       "None"
     ],
     [
-      "1130",
+      "1129",
       "NCT04346797",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -29407,7 +29381,7 @@
       "None"
     ],
     [
-      "1131",
+      "1130",
       "NCT04347226",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -29433,7 +29407,7 @@
       "None"
     ],
     [
-      "1132",
+      "1131",
       "NCT04348864",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29459,7 +29433,7 @@
       "None"
     ],
     [
-      "1133",
+      "1132",
       "NCT04350593",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -29485,7 +29459,7 @@
       "None"
     ],
     [
-      "1134",
+      "1133",
       "NCT04346264",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29511,7 +29485,7 @@
       "None"
     ],
     [
-      "1135",
+      "1134",
       "NCT04346615",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -29537,7 +29511,7 @@
       "None"
     ],
     [
-      "1136",
+      "1135",
       "NCT04347239",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29563,7 +29537,7 @@
       "None"
     ],
     [
-      "1137",
+      "1136",
       "NCT04347408",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -29589,7 +29563,7 @@
       "None"
     ],
     [
-      "1138",
+      "1137",
       "NCT04347278",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -29615,7 +29589,7 @@
       "None"
     ],
     [
-      "1139",
+      "1138",
       "NCT04347369",
       "ClinicalTrials.gov",
       "2020-03-18",
@@ -29641,7 +29615,7 @@
       "None"
     ],
     [
-      "1140",
+      "1139",
       "NCT04347174",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -29667,7 +29641,7 @@
       "None"
     ],
     [
-      "1141",
+      "1140",
       "NCT04347382",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -29693,7 +29667,7 @@
       "None"
     ],
     [
-      "1142",
+      "1141",
       "NCT04351646",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -29719,7 +29693,7 @@
       "None"
     ],
     [
-      "1143",
+      "1142",
       "NCT04351659",
       "ClinicalTrials.gov",
       "2020-04-16",
@@ -29745,7 +29719,7 @@
       "None"
     ],
     [
-      "1144",
+      "1143",
       "NCT04347850",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -29771,7 +29745,7 @@
       "None"
     ],
     [
-      "1145",
+      "1144",
       "NCT04347876",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -29797,7 +29771,7 @@
       "None"
     ],
     [
-      "1146",
+      "1145",
       "NCT04347460",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -29823,7 +29797,7 @@
       "None"
     ],
     [
-      "1147",
+      "1146",
       "NCT04347694",
       "ClinicalTrials.gov",
       "2020-04-12",
@@ -29849,7 +29823,7 @@
       "None"
     ],
     [
-      "1148",
+      "1147",
       "NCT04347681",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -29875,7 +29849,7 @@
       "None"
     ],
     [
-      "1149",
+      "1148",
       "NCT04347798",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29901,7 +29875,7 @@
       "None"
     ],
     [
-      "1150",
+      "1149",
       "NCT04347928",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -29927,7 +29901,7 @@
       "None"
     ],
     [
-      "1151",
+      "1150",
       "NCT04348227",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -29953,7 +29927,7 @@
       "None"
     ],
     [
-      "1152",
+      "1151",
       "NCT04347889",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -29979,7 +29953,7 @@
       "None"
     ],
     [
-      "1153",
+      "1152",
       "NCT04348071",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30005,7 +29979,7 @@
       "None"
     ],
     [
-      "1154",
+      "1153",
       "NCT04347824",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -30031,7 +30005,7 @@
       "None"
     ],
     [
-      "1155",
+      "1154",
       "NCT04347915",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -30057,7 +30031,7 @@
       "None"
     ],
     [
-      "1156",
+      "1155",
       "NCT04351906",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -30083,7 +30057,7 @@
       "None"
     ],
     [
-      "1157",
+      "1156",
       "ACTRN12620000468921",
       "ANZCTR",
       "2020-04-14",
@@ -30109,7 +30083,7 @@
       "None"
     ],
     [
-      "1158",
+      "1157",
       "NCT04348461",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -30135,7 +30109,7 @@
       "None"
     ],
     [
-      "1159",
+      "1158",
       "NCT04348552",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30161,7 +30135,7 @@
       "None"
     ],
     [
-      "1160",
+      "1159",
       "NCT04348305",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -30187,7 +30161,7 @@
       "None"
     ],
     [
-      "1161",
+      "1160",
       "NCT04348500",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30213,7 +30187,7 @@
       "None"
     ],
     [
-      "1162",
+      "1161",
       "NCT04347941",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -30239,7 +30213,7 @@
       "None"
     ],
     [
-      "1163",
+      "1162",
       "NCT04348240",
       "ClinicalTrials.gov",
       "2020-04-15",
@@ -30265,7 +30239,7 @@
       "None"
     ],
     [
-      "1164",
+      "1163",
       "ACTRN12620000480987",
       "ANZCTR",
       "2020-04-16",
@@ -30291,7 +30265,7 @@
       "None"
     ],
     [
-      "1165",
+      "1164",
       "NCT04348695",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30317,7 +30291,7 @@
       "EUCTR2020-001405-23"
     ],
     [
-      "1166",
+      "1165",
       "NCT04348877",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30343,7 +30317,7 @@
       "None"
     ],
     [
-      "1167",
+      "1166",
       "NCT04348448",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30369,7 +30343,7 @@
       "None"
     ],
     [
-      "1168",
+      "1167",
       "NCT04348474",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30395,7 +30369,7 @@
       "None"
     ],
     [
-      "1169",
+      "1168",
       "ACTRN12620000482965",
       "ANZCTR",
       "2020-04-17",
@@ -30421,7 +30395,7 @@
       "None"
     ],
     [
-      "1170",
+      "1169",
       "NCT04348513",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -30447,7 +30421,7 @@
       "None"
     ],
     [
-      "1171",
+      "1170",
       "NCT04348929",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -30473,7 +30447,7 @@
       "None"
     ],
     [
-      "1172",
+      "1171",
       "ACTRN12620000493943",
       "ANZCTR",
       "2020-04-20",
@@ -30499,7 +30473,7 @@
       "None"
     ],
     [
-      "1173",
+      "1172",
       "NCT04348656",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30525,7 +30499,7 @@
       "None"
     ],
     [
-      "1174",
+      "1173",
       "NCT04349098",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -30551,7 +30525,7 @@
       "EUCTR2020-001411-25"
     ],
     [
-      "1175",
+      "1174",
       "NCT04348942",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30577,7 +30551,7 @@
       "None"
     ],
     [
-      "1176",
+      "1175",
       "NCT04349371",
       "ClinicalTrials.gov",
       "2020-04-12",
@@ -30603,7 +30577,7 @@
       "None"
     ],
     [
-      "1177",
+      "1176",
       "NCT04349202",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30629,7 +30603,7 @@
       "None"
     ],
     [
-      "1178",
+      "1177",
       "NCT04350086",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30655,7 +30629,7 @@
       "None"
     ],
     [
-      "1179",
+      "1178",
       "ISRCTN18348009",
       "ISRCTN",
       "2020-04-15",
@@ -30681,7 +30655,7 @@
       "None"
     ],
     [
-      "1180",
+      "1179",
       "NCT04349241",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30707,7 +30681,7 @@
       "None"
     ],
     [
-      "1181",
+      "1180",
       "NCT04349982",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -30733,7 +30707,7 @@
       "None"
     ],
     [
-      "1182",
+      "1181",
       "NCT04349410",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -30759,7 +30733,7 @@
       "None"
     ],
     [
-      "1183",
+      "1182",
       "NCT04349618",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -30785,7 +30759,7 @@
       "None"
     ],
     [
-      "1184",
+      "1183",
       "ISRCTN10077335",
       "ISRCTN",
       "2020-04-07",
@@ -30811,7 +30785,7 @@
       "None"
     ],
     [
-      "1185",
+      "1184",
       "NCT04350073",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -30837,7 +30811,7 @@
       "None"
     ],
     [
-      "1186",
+      "1185",
       "NCT04350099",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -30863,7 +30837,7 @@
       "None"
     ],
     [
-      "1187",
+      "1186",
       "NCT04350320",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -30889,7 +30863,7 @@
       "None"
     ],
     [
-      "1188",
+      "1187",
       "NCT04350736",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -30915,7 +30889,7 @@
       "None"
     ],
     [
-      "1189",
+      "1188",
       "NCT04349631",
       "ClinicalTrials.gov",
       "2020-04-06",
@@ -30941,7 +30915,7 @@
       "None"
     ],
     [
-      "1190",
+      "1189",
       "NCT04350281",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -30967,7 +30941,7 @@
       "None"
     ],
     [
-      "1191",
+      "1190",
       "NCT04350450",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -30993,7 +30967,7 @@
       "None"
     ],
     [
-      "1192",
+      "1191",
       "NCT04350476",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31019,7 +30993,7 @@
       "None"
     ],
     [
-      "1193",
+      "1192",
       "NCT04351191",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31045,7 +31019,7 @@
       "None"
     ],
     [
-      "1194",
+      "1193",
       "NCT04351399",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31071,7 +31045,7 @@
       "None"
     ],
     [
-      "1195",
+      "1194",
       "NCT04351295",
       "ClinicalTrials.gov",
       "2020-04-15",
@@ -31097,7 +31071,7 @@
       "None"
     ],
     [
-      "1196",
+      "1195",
       "NCT04351529",
       "ClinicalTrials.gov",
       "2020-04-16",
@@ -31123,7 +31097,7 @@
       "None"
     ],
     [
-      "1197",
+      "1196",
       "ISRCTN40092247",
       "ISRCTN",
       "2020-04-01",
@@ -31149,7 +31123,7 @@
       "None"
     ],
     [
-      "1198",
+      "1197",
       "NCT04351620",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31175,7 +31149,7 @@
       "None"
     ],
     [
-      "1199",
+      "1198",
       "NCT04351711",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -31201,7 +31175,7 @@
       "None"
     ],
     [
-      "1200",
+      "1199",
       "NCT04350671",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31227,7 +31201,7 @@
       "None"
     ],
     [
-      "1201",
+      "1200",
       "NCT04350684",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31253,7 +31227,7 @@
       "None"
     ],
     [
-      "1202",
+      "1201",
       "ACTRN12620000486921",
       "ANZCTR",
       "2020-04-17",
@@ -31279,7 +31253,7 @@
       "None"
     ],
     [
-      "1203",
+      "1202",
       "ACTRN12620000473965",
       "ANZCTR",
       "2020-04-15",
@@ -31305,7 +31279,7 @@
       "None"
     ],
     [
-      "1204",
+      "1203",
       "ACTRN12620000474954",
       "ANZCTR",
       "2020-04-15",
@@ -31331,7 +31305,7 @@
       "None"
     ],
     [
-      "1205",
+      "1204",
       "NCT04351633",
       "ClinicalTrials.gov",
       "2020-04-15",
@@ -31357,7 +31331,7 @@
       "None"
     ],
     [
-      "1206",
+      "1205",
       "NCT04351724",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -31383,7 +31357,7 @@
       "None"
     ],
     [
-      "1207",
+      "1206",
       "NCT04350931",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -31409,7 +31383,7 @@
       "None"
     ],
     [
-      "1208",
+      "1207",
       "NCT04351139",
       "ClinicalTrials.gov",
       "2020-04-15",
@@ -31435,7 +31409,7 @@
       "None"
     ],
     [
-      "1209",
+      "1208",
       "ACTRN12620000445976",
       "ANZCTR",
       "2020-04-06",
@@ -31461,7 +31435,7 @@
       "None"
     ],
     [
-      "1210",
+      "1209",
       "ISRCTN83971151",
       "ISRCTN",
       "2020-03-25",
@@ -31471,7 +31445,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "Argentina, Switzerland, Qatar, Indonesia, Canada, Thailand, South Africa, Norway, Spain, Germany, Brazil, Peru, Iran",
+      "Spain, Germany, Indonesia, Brazil, Iran, Norway, Peru, Thailand, Qatar, Canada, Switzerland, South Africa, Argentina",
       "Public health emergency SOLIDARITY trial of treatments for COVID-19 infection in hospitalized patients",
       "Drug",
       "Remdesivir vs. chloroquine/hydroxychloroquine vs. lopinavir/ritonavir vs. interferon beta",
@@ -31487,7 +31461,7 @@
       "EUCTR2020-001366-11; NCT04330690; PER-010-20"
     ],
     [
-      "1211",
+      "1210",
       "ACTRN12620000492954",
       "ANZCTR",
       "2020-04-20",
@@ -31513,7 +31487,7 @@
       "None"
     ],
     [
-      "1212",
+      "1211",
       "ISRCTN51255782",
       "ISRCTN",
       "2020-04-14",
@@ -31539,7 +31513,7 @@
       "None"
     ],
     [
-      "1213",
+      "1212",
       "ACTRN12620000478910",
       "ANZCTR",
       "2020-04-16",
@@ -31565,7 +31539,7 @@
       "None"
     ],
     [
-      "1214",
+      "1213",
       "ISRCTN86534580",
       "ISRCTN",
       "2020-03-22",
@@ -31591,7 +31565,7 @@
       "EUCTR2020-001209-22"
     ],
     [
-      "1215",
+      "1214",
       "ISRCTN50189673",
       "ISRCTN",
       "2020-04-02",
@@ -31617,7 +31591,7 @@
       "EUCTR2020-001113-21"
     ],
     [
-      "1216",
+      "1215",
       "ISRCTN14326006",
       "ISRCTN",
       "2020-04-14",
@@ -31643,7 +31617,7 @@
       "None"
     ],
     [
-      "1217",
+      "1216",
       "ISRCTN13694948",
       "ISRCTN",
       "2020-04-01",
@@ -31653,7 +31627,7 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "Ireland, French Southern Territories, Lebanon, Czech Republic, Sweden, Slovenia, Italy, Germany, Luxembourg, United States, Israel, Turkey, Cyprus, Croatia, Belgium, Malta, France, Portugal, Liechtenstein, Greece, Brazil, Netherlands, Bulgaria, Lithuania, United Kingdom, South Africa, New Zealand, Spain, Switzerland, Australia, Slovakia, Norway, Austria, Finland, Isle of Man, Denmark",
+      "Lebanon, Cyprus, Czech Republic, Netherlands, Slovenia, Sweden, Bulgaria, New Zealand, United States, Israel, Luxembourg, Isle of Man, Finland, Malta, French Southern Territories, Switzerland, Turkey, Spain, Germany, France, Slovakia, Australia, Denmark, Portugal, Belgium, South Africa, Liechtenstein, Greece, Brazil, Norway, United Kingdom, Italy, Austria, Ireland, Croatia, Lithuania",
       "Distress and resilience of healthcare professionals during the COVID-19 (coronavirus) pandemic",
       "Other (psych)",
       "No Intervention",
@@ -31669,7 +31643,7 @@
       "None"
     ],
     [
-      "1218",
+      "1217",
       "ChiCTR2000032009",
       "ChiCTR",
       "2020-04-17",
@@ -31695,7 +31669,7 @@
       "None"
     ],
     [
-      "1219",
+      "1218",
       "ISRCTN15281137",
       "ISRCTN",
       "2020-04-06",
@@ -31721,7 +31695,7 @@
       "None"
     ],
     [
-      "1220",
+      "1219",
       "NCT04351152",
       "ClinicalTrials.gov",
       "2020-04-15",
@@ -31747,7 +31721,7 @@
       "None"
     ],
     [
-      "1221",
+      "1220",
       "NCT04351347",
       "ClinicalTrials.gov",
       "2020-04-15",
@@ -31773,7 +31747,7 @@
       "None"
     ],
     [
-      "1222",
+      "1221",
       "NCT04351542",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31799,7 +31773,7 @@
       "None"
     ],
     [
-      "1223",
+      "1222",
       "NCT04351581",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31825,7 +31799,7 @@
       "None"
     ],
     [
-      "1224",
+      "1223",
       "ISRCTN16912075",
       "ISRCTN",
       "2020-04-06",
@@ -31851,7 +31825,7 @@
       "None"
     ],
     [
-      "1225",
+      "1224",
       "ChiCTR2000031982",
       "ChiCTR",
       "2020-04-16",
@@ -31877,7 +31851,7 @@
       "None"
     ],
     [
-      "1226",
+      "1225",
       "ChiCTR2000031896",
       "ChiCTR",
       "2020-04-14",
@@ -31903,7 +31877,7 @@
       "None"
     ],
     [
-      "1227",
+      "1226",
       "NCT04351763",
       "ClinicalTrials.gov",
       "2020-04-14",
@@ -31929,7 +31903,7 @@
       "None"
     ],
     [
-      "1228",
+      "1227",
       "NCT04351789",
       "ClinicalTrials.gov",
       "2020-04-11",
@@ -31955,7 +31929,7 @@
       "None"
     ],
     [
-      "1229",
+      "1228",
       "ChiCTR2000032098",
       "ChiCTR",
       "2020-04-19",
@@ -31981,7 +31955,7 @@
       "None"
     ],
     [
-      "1230",
+      "1229",
       "NCT04351802",
       "ClinicalTrials.gov",
       "2020-04-16",
@@ -32007,7 +31981,7 @@
       "None"
     ],
     [
-      "1231",
+      "1230",
       "ACTRN12620000477921",
       "ANZCTR",
       "2020-04-16",
@@ -32033,7 +32007,7 @@
       "None"
     ],
     [
-      "1232",
+      "1231",
       "ACTRN12620000472976",
       "ANZCTR",
       "2020-04-15",
@@ -32059,7 +32033,7 @@
       "None"
     ],
     [
-      "1233",
+      "1232",
       "ACTRN12620000487910",
       "ANZCTR",
       "2020-04-20",
@@ -32085,7 +32059,7 @@
       "None"
     ],
     [
-      "1234",
+      "1233",
       "ACTRN12620000479909",
       "ANZCTR",
       "2020-04-16",
@@ -32095,7 +32069,7 @@
       "Not Recruiting",
       "Not Applicable",
       "Observational",
-      "Australia, Italy, China, Spain, United States, Germany",
+      "Spain, Germany, China, Italy, Australia, United States",
       "Mental health and wellbeing on general population during the COVID-19 outbreak",
       "Other (psych)",
       "No Intervention",
@@ -32111,7 +32085,7 @@
       "None"
     ],
     [
-      "1235",
+      "1234",
       "ACTRN12620000470998",
       "ANZCTR",
       "2020-04-14",
@@ -32137,7 +32111,7 @@
       "None"
     ],
     [
-      "1236",
+      "1235",
       "ChiCTR2000032095",
       "ChiCTR",
       "2020-04-19",
@@ -32163,7 +32137,7 @@
       "None"
     ],
     [
-      "1237",
+      "1236",
       "ChiCTR2000031955",
       "ChiCTR",
       "2020-04-16",
@@ -32189,7 +32163,7 @@
       "None"
     ],
     [
-      "1238",
+      "1237",
       "ISRCTN80453162",
       "ISRCTN",
       "2020-04-14",
@@ -32199,7 +32173,7 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "Palestinian Territory, Saint Martin (French part), Lesotho, Tunisia, Egypt, Virgin Islands, U.S., Congo, Democratic Republic, Luxembourg, Nigeria, Gibraltar, Equatorial Guinea, Israel, Antigua and Barbuda, Comoros, Norfolk Island, Peru, Turkey, Mongolia, Laos, Christmas Island, Nicaragua, Burundi, Croatia, Azerbaijan, Congo, France, Saint Lucia, Uganda, Senegal, Macedonia, Guatemala, Martinique, Monaco, Netherlands, New Caledonia, Sri Lanka, Svalbard and Jan Mayen, Saint Barthelemy, Aruba, Ukraine, El Salvador, Mozambique, Thailand, Kiribati, Tuvalu, China, Mauritius, French Polynesia, Papua New Guinea, Solomon Islands, Spain, Swaziland, Bahamas, Switzerland, Mauritania, Botswana, Slovakia, United Arab Emirates, Macao, Bouvet Island, Liberia, San Marino, Colombia, Finland, Yemen, Denmark, Grenada, Northern Mariana Islands, Kuwait, French Guiana, British Indian Ocean Territory, Cambodia, Guernsey, Oman, Uzbekistan, Jersey, Bonaire Saint Eustatius and Saba, Kenya, Sweden, Tonga, Cote d'Ivoire, Malawi, Mayotte, Somalia, Turks and Caicos Islands, Cyprus, Puerto Rico, Brunei, Greenland, Jamaica, Malta, Marshall Islands, Myanmar, Philippines, Vanuatu, Timor-Leste, Vietnam, Andorra, Libya, India, Reunion, Bulgaria, United Kingdom, Dominican Republic, Montenegro, Sao Tome and Principe, Falkland Islands, South Sudan, Algeria, Bermuda, Hungary, Zambia, Australia, Eritrea, Tanzania, Bangladesh, Georgia, Saint Pierre and Miquelon, Cocos (Keeling) Islands, Korea, North, Saint Kitts and Nevis, Niger, Uruguay, Taiwan, Ireland, Montserrat, Nauru, Virgin Islands, British, Mexico, Chad, Cayman Islands, French Southern Territories, Kyrgyzstan, Czech Republic, Lebanon, Nepal, Antarctica, Poland, South Georgia and the South Sandwich Is, Argentina, Saudi Arabia, Angola, Syria, Anguilla, Wallis and Futuna, Armenia, Hong Kong, Burkina Faso, Chile, Brazil, Fiji, Greece, Suriname, Pitcairn, Afghanistan, Malaysia, Belarus, Canada, Russian Federation, Gabon, Western Sahara, Singapore, Morocco, Saint Vincent and the Grenadines, Sudan, Guam, Saint Helena, Palau, Haiti, Bhutan, Faroe Islands, Indonesia, Curacao, Panama, Gambia, Maldives, Micronesia, Federated States of, Latvia, American Samoa, Austria, Netherlands Antilles, Isle of Man, Barbados, Central African Republic, Ethiopia, Ecuador, Qatar, Cameroon, Sierra Leone, Turkmenistan, Paraguay, Kazakhstan, Bosnia and Herzegovina, Japan, Kosovo, Bolivia, Guinea-Bissau, Madagascar, Seychelles, Sint Maarten (Dutch part), Trinidad and Tobago, Tokelau, Benin, Germany, Italy, Togo, United States, Iran, Belize, Rwanda, Costa Rica, Heard Island and Mcdonald Islands, United States Minor Outlying Islands, Djibouti, Honduras, Belgium, Guyana, Portugal, Iraq, Liechtenstein, Namibia, Cuba, Holy See (Vatican City State), Serbia, Bahrain, Cook Islands, Ghana, Jordan, Romania, Korea, South, Lithuania, South Africa, New Zealand, Samoa, Guadeloupe, Dominica, Iceland, Zimbabwe, Norway, Cape Verde, Guinea, Niue, Venezuela, Estonia, Albania, Slovenia, Tajikistan, Mali, Moldova, Pakistan",
+      "Wallis and Futuna, Estonia, Kosovo, Burundi, Faroe Islands, Hungary, Palau, Egypt, Seychelles, Thailand, Singapore, Trinidad and Tobago, United States, Nepal, Israel, Cocos (Keeling) Islands, Haiti, Equatorial Guinea, Cape Verde, Monaco, Malta, Kyrgyzstan, Saint Helena, Cameroon, Cuba, French Guiana, Romania, Morocco, Senegal, Benin, Micronesia, Federated States of, Philippines, Somalia, Panama, Cayman Islands, France, Australia, Denmark, Nicaragua, Yemen, Anguilla, Malaysia, Brazil, Togo, Belize, Armenia, Svalbard and Jan Mayen, Italy, Christmas Island, Hong Kong, Marshall Islands, Tonga, Grenada, Vanuatu, Croatia, Uruguay, Lithuania, Paraguay, Bolivia, Japan, Lebanon, Saint Kitts and Nevis, Virgin Islands, U.S., Virgin Islands, British, Tuvalu, New Zealand, Guatemala, Macao, San Marino, Tokelau, Rwanda, Pitcairn, Zimbabwe, Gambia, Uganda, Bhutan, Sri Lanka, Djibouti, Niue, Suriname, Belarus, Ghana, French Southern Territories, Spain, Switzerland, Botswana, Guinea-Bissau, United Arab Emirates, Kiribati, Germany, Guam, Antigua and Barbuda, Gabon, Algeria, Oman, Peru, Albania, Mayotte, Tunisia, Portugal, Belgium, Korea, South, Falkland Islands, Sint Maarten (Dutch part), Greece, Ethiopia, Korea, North, Macedonia, Liberia, Maldives, Ecuador, Greenland, Montserrat, Turkmenistan, Zambia, Ireland, United States Minor Outlying Islands, Gibraltar, Chad, Comoros, Lesotho, Madagascar, Samoa, Norfolk Island, Sao Tome and Principe, Netherlands Antilles, South Sudan, Pakistan, Iceland, Czech Republic, Guadeloupe, Jersey, Mauritius, Netherlands, Niger, Slovenia, Sweden, Tajikistan, Mozambique, Central African Republic, Angola, Antarctica, Luxembourg, Bouvet Island, Azerbaijan, Finland, American Samoa, Tanzania, Cook Islands, Libya, Qatar, Dominica, Saint Barthelemy, Mali, Saudi Arabia, Fiji, Honduras, Sierra Leone, South Georgia and the South Sandwich Is, Costa Rica, British Indian Ocean Territory, Cote d'Ivoire, Mongolia, China, Ukraine, Dominican Republic, Mexico, Bahamas, Bangladesh, Chile, New Caledonia, Burkina Faso, Slovakia, Georgia, Jordan, Uzbekistan, Laos, Liechtenstein, Saint Martin (French part), Iran, Indonesia, Barbados, Curacao, Norway, Taiwan, El Salvador, Sudan, Moldova, Saint Pierre and Miquelon, Reunion, Holy See (Vatican City State), Saint Lucia, Serbia, Malawi, Cyprus, Guinea, Bulgaria, Guernsey, Aruba, Kuwait, Montenegro, Mauritania, Latvia, Northern Mariana Islands, Jamaica, Vietnam, Isle of Man, Papua New Guinea, Myanmar, Cambodia, Kazakhstan, Turks and Caicos Islands, Swaziland, Canada, Solomon Islands, Argentina, Turkey, Andorra, French Polynesia, Puerto Rico, Martinique, Brunei, Guyana, Heard Island and Mcdonald Islands, India, Colombia, Afghanistan, Poland, Venezuela, Congo, Democratic Republic, Nauru, Syria, Palestinian Territory, Nigeria, Kenya, Timor-Leste, Bahrain, South Africa, Bermuda, Iraq, Russian Federation, Bosnia and Herzegovina, Congo, United Kingdom, Bonaire Saint Eustatius and Saba, Austria, Namibia, Saint Vincent and the Grenadines, Eritrea, Western Sahara",
       "The impact of the COVID-19 pandemic on the provision, practice, and outcomes of vascular surgery (COVER study)",
       "Clinical Presentation",
       "No Intervention",
@@ -32215,7 +32189,7 @@
       "None"
     ],
     [
-      "1239",
+      "1238",
       "ChiCTR2000031944",
       "ChiCTR",
       "2020-04-15",
@@ -32241,7 +32215,7 @@
       "None"
     ],
     [
-      "1240",
+      "1239",
       "ChiCTR2000031928",
       "ChiCTR",
       "2020-04-14",
@@ -32267,7 +32241,7 @@
       "None"
     ],
     [
-      "1241",
+      "1240",
       "ChiCTR2000031954",
       "ChiCTR",
       "2020-04-16",
@@ -32293,7 +32267,7 @@
       "None"
     ],
     [
-      "1242",
+      "1241",
       "NL8498",
       "Netherlands Trial Register",
       "2020-03-31",
@@ -32319,7 +32293,7 @@
       "None"
     ],
     [
-      "1243",
+      "1242",
       "ISRCTN43900695",
       "ISRCTN",
       "2020-04-08",
@@ -32345,7 +32319,7 @@
       "None"
     ],
     [
-      "1244",
+      "1243",
       "ISRCTN77353041",
       "ISRCTN",
       "2020-04-07",
@@ -32371,7 +32345,7 @@
       "None"
     ],
     [
-      "1245",
+      "1244",
       "ChiCTR2000029976",
       "ChiCTR",
       "2020-02-18",
@@ -32397,7 +32371,7 @@
       "None"
     ],
     [
-      "1246",
+      "1245",
       "ChiCTR2000032040",
       "ChiCTR",
       "2020-04-18",
@@ -32423,7 +32397,7 @@
       "None"
     ],
     [
-      "1247",
+      "1246",
       "ChiCTR2000032013",
       "ChiCTR",
       "2020-04-17",
@@ -32449,7 +32423,7 @@
       "None"
     ],
     [
-      "1248",
+      "1247",
       "NL8512",
       "Netherlands Trial Register",
       "2020-04-02",
@@ -32475,7 +32449,7 @@
       "None"
     ],
     [
-      "1249",
+      "1248",
       "ChiCTR2000032011",
       "ChiCTR",
       "2020-04-17",
@@ -32501,7 +32475,7 @@
       "None"
     ],
     [
-      "1250",
+      "1249",
       "ChiCTR2000032010",
       "ChiCTR",
       "2020-04-17",
@@ -32527,7 +32501,7 @@
       "None"
     ],
     [
-      "1251",
+      "1250",
       "ChiCTR2000031930",
       "ChiCTR",
       "2020-04-15",
@@ -32553,7 +32527,7 @@
       "None"
     ],
     [
-      "1252",
+      "1251",
       "ChiCTR2000031888",
       "ChiCTR",
       "2020-04-13",
@@ -32579,7 +32553,7 @@
       "None"
     ],
     [
-      "1253",
+      "1252",
       "EUCTR2020-001257-51-DK",
       "EU Clinical Trials Register",
       "2020-03-26",
@@ -32605,7 +32579,7 @@
       "None"
     ],
     [
-      "1254",
+      "1253",
       "NL8513",
       "Netherlands Trial Register",
       "2020-04-07",
@@ -32631,7 +32605,7 @@
       "None"
     ],
     [
-      "1255",
+      "1254",
       "NL8473",
       "Netherlands Trial Register",
       "2020-03-23",
@@ -32657,7 +32631,7 @@
       "None"
     ],
     [
-      "1256",
+      "1255",
       "NL8485",
       "Netherlands Trial Register",
       "2020-03-27",
@@ -32683,7 +32657,7 @@
       "None"
     ],
     [
-      "1257",
+      "1256",
       "ChiCTR2000031712",
       "ChiCTR",
       "2020-04-07",
@@ -32709,7 +32683,7 @@
       "None"
     ],
     [
-      "1258",
+      "1257",
       "NL8490",
       "Netherlands Trial Register",
       "2020-03-31",
@@ -32735,7 +32709,7 @@
       "None"
     ],
     [
-      "1259",
+      "1258",
       "ChiCTR2000029434",
       "ChiCTR",
       "2020-02-01",
@@ -32761,7 +32735,7 @@
       "None"
     ],
     [
-      "1260",
+      "1259",
       "ChiCTR2000029433",
       "ChiCTR",
       "2020-02-01",
@@ -32787,7 +32761,7 @@
       "None"
     ],
     [
-      "1261",
+      "1260",
       "EUCTR2020-001420-34-DK",
       "EU Clinical Trials Register",
       "2020-04-01",
@@ -32813,7 +32787,7 @@
       "None"
     ],
     [
-      "1262",
+      "1261",
       "NL8501",
       "Netherlands Trial Register",
       "2020-04-01",
@@ -32839,7 +32813,7 @@
       "None"
     ],
     [
-      "1263",
+      "1262",
       "NL8521",
       "Netherlands Trial Register",
       "2020-04-13",
@@ -32865,7 +32839,7 @@
       "None"
     ],
     [
-      "1264",
+      "1263",
       "EUCTR2020-001290-74-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -32891,7 +32865,7 @@
       "None"
     ],
     [
-      "1265",
+      "1264",
       "NL8460",
       "Netherlands Trial Register",
       "2020-03-16",
@@ -32917,7 +32891,7 @@
       "None"
     ],
     [
-      "1266",
+      "1265",
       "NL8483",
       "Netherlands Trial Register",
       "2020-03-26",
@@ -32943,7 +32917,7 @@
       "None"
     ],
     [
-      "1267",
+      "1266",
       "EUCTR2020-001262-11-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -32969,7 +32943,7 @@
       "None"
     ],
     [
-      "1268",
+      "1267",
       "NL8497",
       "Netherlands Trial Register",
       "2020-03-31",
@@ -32995,7 +32969,7 @@
       "None"
     ],
     [
-      "1269",
+      "1268",
       "EUCTR2020-001406-27-FR",
       "EU Clinical Trials Register",
       "2020-04-03",
@@ -33021,7 +32995,7 @@
       "None"
     ],
     [
-      "1270",
+      "1269",
       "NL8491",
       "Netherlands Trial Register",
       "2020-03-31",
@@ -33047,7 +33021,7 @@
       "None"
     ],
     [
-      "1271",
+      "1270",
       "NL8504",
       "Netherlands Trial Register",
       "2020-04-03",
@@ -33073,7 +33047,7 @@
       "None"
     ],
     [
-      "1272",
+      "1271",
       "EUCTR2020-001156-18-ES",
       "EU Clinical Trials Register",
       "2020-04-03",
@@ -33099,7 +33073,7 @@
       "None"
     ],
     [
-      "1273",
+      "1272",
       "EUCTR2020-001530-35-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33125,7 +33099,7 @@
       "None"
     ],
     [
-      "1274",
+      "1273",
       "EUCTR2020-001437-12-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33151,7 +33125,7 @@
       "None"
     ],
     [
-      "1275",
+      "1274",
       "EUCTR2020-001160-28-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33177,7 +33151,7 @@
       "None"
     ],
     [
-      "1276",
+      "1275",
       "EUCTR2020-001587-29-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33203,7 +33177,7 @@
       "None"
     ],
     [
-      "1277",
+      "1276",
       "EUCTR2020-001321-31-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33229,7 +33203,7 @@
       "None"
     ],
     [
-      "1278",
+      "1277",
       "EUCTR2020-001682-36-ES",
       "EU Clinical Trials Register",
       "2020-04-14",
@@ -33255,7 +33229,7 @@
       "None"
     ],
     [
-      "1279",
+      "1278",
       "EUCTR2020-001172-15-DK",
       "EU Clinical Trials Register",
       "2020-03-23",
@@ -33281,33 +33255,7 @@
       "None"
     ],
     [
-      "1280",
-      "EUCTR2020-001331-26-GB",
-      "EU Clinical Trials Register",
-      "2020-04-14",
-      "2020-04-14",
-      "False",
-      "Cambridge University Hospitals NHS Foundation Trust",
-      "Authorised",
-      "Phase 3",
-      "Interventional",
-      "United Kingdom",
-      "Preventative Drug Treatment for COVID-19 Infectious Disease",
-      "Drug (chemoprophylaxis)",
-      "Hydroxychloroquine",
-      "1000",
-      "Not Available",
-      "Not Available",
-      "https://www.clinicaltrialsregister.eu/ctr-search/search?query=eudract_number:2020-001331-26",
-      "No Results",
-      "No Results",
-      "No Results",
-      "2020-04-20",
-      "2020-04-22",
-      "None"
-    ],
-    [
-      "1281",
+      "1279",
       "EUCTR2020-001634-36-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33333,7 +33281,7 @@
       "None"
     ],
     [
-      "1282",
+      "1280",
       "EUCTR2020-001413-20-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33359,7 +33307,7 @@
       "None"
     ],
     [
-      "1283",
+      "1281",
       "EUCTR2020-001266-11-ES",
       "EU Clinical Trials Register",
       "2020-04-16",
@@ -33385,7 +33333,7 @@
       "None"
     ],
     [
-      "1284",
+      "1282",
       "EUCTR2020-001689-12-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33411,7 +33359,7 @@
       "None"
     ],
     [
-      "1285",
+      "1283",
       "EUCTR2020-001765-37-ES",
       "EU Clinical Trials Register",
       "2020-04-13",
@@ -33437,7 +33385,7 @@
       "None"
     ],
     [
-      "1286",
+      "1284",
       "EUCTR2020-001448-24-GB",
       "EU Clinical Trials Register",
       "2020-04-17",
@@ -33447,7 +33395,7 @@
       "Authorised",
       "Phase 3",
       "Interventional",
-      "Ghana, India, United Kingdom, South Africa, Nigeria",
+      "India, United Kingdom, Ghana, Nigeria, South Africa",
       "Preventing Pulmonary Complications in Surgical Patients at Risk of COVID-19",
       "Drug (chemoprophylaxis)",
       "Hydroxychloroquine, Lopinavir/Ritonavir",
@@ -33463,7 +33411,7 @@
       "None"
     ],
     [
-      "1287",
+      "1285",
       "EUCTR2020-000982-18-NO",
       "EU Clinical Trials Register",
       "2020-03-24",
@@ -33489,7 +33437,7 @@
       "None"
     ],
     [
-      "1288",
+      "1286",
       "EUCTR2020-001511-25-ES",
       "EU Clinical Trials Register",
       "2020-04-15",
@@ -33515,7 +33463,7 @@
       "None"
     ],
     [
-      "1289",
+      "1287",
       "EUCTR2020-001466-11-GR",
       "EU Clinical Trials Register",
       "2020-04-14",
@@ -33541,7 +33489,7 @@
       "None"
     ],
     [
-      "1290",
+      "1288",
       "EUCTR2020-001379-34-ES",
       "EU Clinical Trials Register",
       "2020-04-14",
@@ -33567,7 +33515,7 @@
       "None"
     ],
     [
-      "1291",
+      "1289",
       "EUCTR2020-001254-22-BE",
       "EU Clinical Trials Register",
       "2020-03-24",
@@ -33593,7 +33541,7 @@
       "None"
     ],
     [
-      "1292",
+      "1290",
       "DRKS00021214",
       "German Clinical Trials Register",
       "2020-04-01",
@@ -33619,7 +33567,7 @@
       "None"
     ],
     [
-      "1293",
+      "1291",
       "DRKS00021225",
       "German Clinical Trials Register",
       "2020-04-01",
@@ -33645,7 +33593,7 @@
       "None"
     ],
     [
-      "1294",
+      "1292",
       "DRKS00021220",
       "German Clinical Trials Register",
       "2020-04-01",
@@ -33671,7 +33619,7 @@
       "None"
     ],
     [
-      "1295",
+      "1293",
       "DRKS00021395",
       "German Clinical Trials Register",
       "2020-04-17",
@@ -33697,7 +33645,7 @@
       "None"
     ],
     [
-      "1296",
+      "1294",
       "DRKS00021420",
       "German Clinical Trials Register",
       "2020-04-16",
@@ -33723,7 +33671,7 @@
       "None"
     ],
     [
-      "1297",
+      "1295",
       "DRKS00021166",
       "German Clinical Trials Register",
       "2020-03-27",
@@ -33749,7 +33697,7 @@
       "None"
     ],
     [
-      "1298",
+      "1296",
       "DRKS00021231",
       "German Clinical Trials Register",
       "2020-04-02",
@@ -33759,7 +33707,7 @@
       "Not Recruiting",
       "Not Applicable",
       "Observational",
-      "Germany, Austria",
+      "Austria, Germany",
       "Accompanying monitoring of primary care in GP practices during the COVID-19 pandemic",
       "Health System",
       "No Intervention",
@@ -33775,7 +33723,7 @@
       "None"
     ],
     [
-      "1299",
+      "1297",
       "DRKS00021254",
       "German Clinical Trials Register",
       "2020-04-03",
@@ -33801,7 +33749,7 @@
       "None"
     ],
     [
-      "1300",
+      "1298",
       "DRKS00021206",
       "German Clinical Trials Register",
       "2020-03-30",
@@ -33827,7 +33775,7 @@
       "None"
     ],
     [
-      "1301",
+      "1299",
       "DRKS00021161",
       "German Clinical Trials Register",
       "2020-04-07",
@@ -33853,7 +33801,7 @@
       "None"
     ],
     [
-      "1302",
+      "1300",
       "DRKS00021208",
       "German Clinical Trials Register",
       "2020-03-31",
@@ -33879,7 +33827,7 @@
       "None"
     ],
     [
-      "1303",
+      "1301",
       "DRKS00021164",
       "German Clinical Trials Register",
       "2020-03-27",
@@ -33905,7 +33853,7 @@
       "None"
     ],
     [
-      "1304",
+      "1302",
       "DRKS00021306",
       "German Clinical Trials Register",
       "2020-04-14",
@@ -33931,7 +33879,7 @@
       "None"
     ],
     [
-      "1305",
+      "1303",
       "DRKS00021153",
       "German Clinical Trials Register",
       "2020-04-06",
@@ -33957,7 +33905,7 @@
       "None"
     ],
     [
-      "1306",
+      "1304",
       "DRKS00021186",
       "German Clinical Trials Register",
       "2020-03-26",
@@ -33983,7 +33931,7 @@
       "None"
     ],
     [
-      "1307",
+      "1305",
       "DRKS00021145",
       "German Clinical Trials Register",
       "2020-04-08",
@@ -33993,7 +33941,7 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "Ireland, Switzerland, United Kingdom, Belgium, France, Portugal, Austria, Spain, Italy, Germany, Iceland",
+      "Spain, Germany, Iceland, United Kingdom, Italy, France, Austria, Ireland, Portugal, Belgium, Switzerland",
       "Lean European Open Survey on \nSARS-CoV-2 (COVID-19)",
       "Clinical Presentation",
       "No Intervention",
@@ -34009,7 +33957,7 @@
       "None"
     ],
     [
-      "1308",
+      "1306",
       "CTRI/2020/04/024442",
       "CTRI",
       "2020-04-01",
@@ -34035,7 +33983,7 @@
       "None"
     ],
     [
-      "1309",
+      "1307",
       "DRKS00021300",
       "German Clinical Trials Register",
       "2020-04-08",
@@ -34061,7 +34009,7 @@
       "None"
     ],
     [
-      "1310",
+      "1308",
       "DRKS00021152",
       "German Clinical Trials Register",
       "2020-04-07",
@@ -34087,7 +34035,7 @@
       "None"
     ],
     [
-      "1311",
+      "1309",
       "IRCT20170117032004N3",
       "IRCT",
       "2020-03-29",
@@ -34113,7 +34061,7 @@
       "None"
     ],
     [
-      "1312",
+      "1310",
       "DRKS00021289",
       "German Clinical Trials Register",
       "2020-04-14",
@@ -34139,7 +34087,7 @@
       "None"
     ],
     [
-      "1313",
+      "1311",
       "DRKS00021301",
       "German Clinical Trials Register",
       "2020-04-16",
@@ -34165,7 +34113,7 @@
       "None"
     ],
     [
-      "1314",
+      "1312",
       "IRCT20200310046736N1",
       "IRCT",
       "2020-04-01",
@@ -34191,7 +34139,7 @@
       "None"
     ],
     [
-      "1315",
+      "1313",
       "IRCT20100228003449N29",
       "IRCT",
       "2020-03-19",
@@ -34217,7 +34165,7 @@
       "None"
     ],
     [
-      "1316",
+      "1314",
       "DRKS00021268",
       "German Clinical Trials Register",
       "2020-04-09",
@@ -34243,7 +34191,7 @@
       "None"
     ],
     [
-      "1317",
+      "1315",
       "DRKS00021270",
       "German Clinical Trials Register",
       "2020-04-15",
@@ -34269,7 +34217,7 @@
       "None"
     ],
     [
-      "1318",
+      "1316",
       "IRCT20151113025025N3",
       "IRCT",
       "2020-03-29",
@@ -34295,7 +34243,7 @@
       "None"
     ],
     [
-      "1319",
+      "1317",
       "DRKS00021276",
       "German Clinical Trials Register",
       "2020-04-06",
@@ -34321,7 +34269,7 @@
       "None"
     ],
     [
-      "1320",
+      "1318",
       "IRCT20131113015393N6",
       "IRCT",
       "2020-03-30",
@@ -34347,7 +34295,7 @@
       "None"
     ],
     [
-      "1321",
+      "1319",
       "IRCT20100228003449N30",
       "IRCT",
       "2020-03-22",
@@ -34373,7 +34321,7 @@
       "None"
     ],
     [
-      "1322",
+      "1320",
       "CTRI/2020/04/024413",
       "CTRI",
       "2020-04-01",
@@ -34399,7 +34347,7 @@
       "None"
     ],
     [
-      "1323",
+      "1321",
       "IRCT20200312046749N1",
       "IRCT",
       "2020-03-28",
@@ -34425,7 +34373,7 @@
       "None"
     ],
     [
-      "1324",
+      "1322",
       "IRCT20200316046792N1",
       "IRCT",
       "2020-03-17",
@@ -34451,7 +34399,7 @@
       "None"
     ],
     [
-      "1325",
+      "1323",
       "DRKS00021134",
       "German Clinical Trials Register",
       "2020-03-19",
@@ -34477,7 +34425,7 @@
       "None"
     ],
     [
-      "1326",
+      "1324",
       "CTRI/2020/04/024479",
       "CTRI",
       "2020-04-07",
@@ -34503,7 +34451,7 @@
       "None"
     ],
     [
-      "1327",
+      "1325",
       "IRCT20140911019125N6",
       "IRCT",
       "2020-04-04",
@@ -34529,7 +34477,7 @@
       "None"
     ],
     [
-      "1328",
+      "1326",
       "CTRI/2020/03/024402",
       "CTRI",
       "2020-03-31",
@@ -34555,7 +34503,7 @@
       "None"
     ],
     [
-      "1329",
+      "1327",
       "CTRI/2020/04/024636",
       "CTRI",
       "2020-04-15",
@@ -34581,7 +34529,7 @@
       "None"
     ],
     [
-      "1330",
+      "1328",
       "IRCT20160316027081N1",
       "IRCT",
       "2020-03-31",
@@ -34607,7 +34555,7 @@
       "None"
     ],
     [
-      "1331",
+      "1329",
       "CTRI/2020/04/024659",
       "CTRI",
       "2020-04-15",
@@ -34633,7 +34581,7 @@
       "None"
     ],
     [
-      "1332",
+      "1330",
       "IRCT20200317046797N1",
       "IRCT",
       "2020-04-03",
@@ -34659,7 +34607,7 @@
       "None"
     ],
     [
-      "1333",
+      "1331",
       "IRCT20120826010664N6",
       "IRCT",
       "2020-04-05",
@@ -34685,7 +34633,7 @@
       "None"
     ],
     [
-      "1334",
+      "1332",
       "CTRI/2020/04/024473",
       "CTRI",
       "2020-04-03",
@@ -34695,7 +34643,7 @@
       "Not Recruiting",
       "Not Applicable",
       "Observational",
-      "Italy, United Kingdom, India, United States",
+      "India, Italy, United Kingdom, United States",
       "Viral Infection and Respiratory illness Universal Study",
       "Clinical Presentation",
       "No Intervention",
@@ -34711,7 +34659,7 @@
       "None"
     ],
     [
-      "1335",
+      "1333",
       "IRCT20100228003449N28",
       "IRCT",
       "2020-03-19",
@@ -34737,7 +34685,7 @@
       "None"
     ],
     [
-      "1336",
+      "1334",
       "IRCT20100228003449N27",
       "IRCT",
       "2020-03-16",
@@ -34763,7 +34711,7 @@
       "None"
     ],
     [
-      "1337",
+      "1335",
       "IRCT20150303021315N17",
       "IRCT",
       "2020-04-12",
@@ -34789,7 +34737,7 @@
       "None"
     ],
     [
-      "1338",
+      "1336",
       "IRCT20140528017891N8",
       "IRCT",
       "2020-03-28",
@@ -34815,7 +34763,7 @@
       "None"
     ],
     [
-      "1339",
+      "1337",
       "IRCT20190727044343N1",
       "IRCT",
       "2020-04-05",
@@ -34841,7 +34789,7 @@
       "None"
     ],
     [
-      "1340",
+      "1338",
       "IRCT20200128046294N2",
       "IRCT",
       "2020-03-14",
@@ -34867,7 +34815,7 @@
       "None"
     ],
     [
-      "1341",
+      "1339",
       "IRCT20200324046850N3",
       "IRCT",
       "2020-03-30",
@@ -34893,7 +34841,7 @@
       "None"
     ],
     [
-      "1342",
+      "1340",
       "IRCT20200314046764N1",
       "IRCT",
       "2020-04-20",
@@ -34919,7 +34867,7 @@
       "None"
     ],
     [
-      "1343",
+      "1341",
       "IRCT20200324046847N1",
       "IRCT",
       "2020-03-31",
@@ -34945,7 +34893,7 @@
       "None"
     ],
     [
-      "1344",
+      "1342",
       "IRCT20140617018126N2",
       "IRCT",
       "2020-03-29",
@@ -34971,7 +34919,7 @@
       "None"
     ],
     [
-      "1345",
+      "1343",
       "IRCT20150914024017N1",
       "IRCT",
       "2020-04-03",
@@ -34997,7 +34945,7 @@
       "None"
     ],
     [
-      "1346",
+      "1344",
       "IRCT20151227025726N12",
       "IRCT",
       "2020-03-23",
@@ -35023,7 +34971,7 @@
       "None"
     ],
     [
-      "1347",
+      "1345",
       "IRCT20180923041093N3",
       "IRCT",
       "2020-03-28",
@@ -35049,7 +34997,7 @@
       "None"
     ],
     [
-      "1348",
+      "1346",
       "IRCT20190727044343N2",
       "IRCT",
       "2020-04-19",
@@ -35075,7 +35023,7 @@
       "None"
     ],
     [
-      "1349",
+      "1347",
       "IRCT20160625028622N1",
       "IRCT",
       "2020-03-22",
@@ -35101,7 +35049,7 @@
       "None"
     ],
     [
-      "1350",
+      "1348",
       "IRCT20160310026998N10",
       "IRCT",
       "2020-03-26",
@@ -35127,7 +35075,7 @@
       "None"
     ],
     [
-      "1351",
+      "1349",
       "IRCT20200321046828N1",
       "IRCT",
       "2020-03-26",
@@ -35153,7 +35101,7 @@
       "None"
     ],
     [
-      "1352",
+      "1350",
       "IRCT20180610040049N3",
       "IRCT",
       "2020-03-29",
@@ -35179,7 +35127,7 @@
       "None"
     ],
     [
-      "1353",
+      "1351",
       "IRCT20200325046860N1",
       "IRCT",
       "2020-03-30",
@@ -35205,7 +35153,7 @@
       "None"
     ],
     [
-      "1354",
+      "1352",
       "IRCT20200324046850N2",
       "IRCT",
       "2020-03-29",
@@ -35231,7 +35179,7 @@
       "None"
     ],
     [
-      "1355",
+      "1353",
       "IRCT20200324046852N1",
       "IRCT",
       "2020-04-05",
@@ -35257,7 +35205,7 @@
       "None"
     ],
     [
-      "1356",
+      "1354",
       "IRCT20171122037571N2",
       "IRCT",
       "2020-04-12",
@@ -35283,7 +35231,7 @@
       "None"
     ],
     [
-      "1357",
+      "1355",
       "IRCT20151227025726N13",
       "IRCT",
       "2020-03-26",
@@ -35309,7 +35257,7 @@
       "None"
     ],
     [
-      "1358",
+      "1356",
       "IRCT20140907019073N4",
       "IRCT",
       "2020-03-29",
@@ -35335,7 +35283,7 @@
       "None"
     ],
     [
-      "1359",
+      "1357",
       "IRCT20200324046850N1",
       "IRCT",
       "2020-03-29",
@@ -35361,7 +35309,7 @@
       "None"
     ],
     [
-      "1360",
+      "1358",
       "IRCT20170611034452N11",
       "IRCT",
       "2020-03-31",
@@ -35387,7 +35335,7 @@
       "None"
     ],
     [
-      "1361",
+      "1359",
       "IRCT20160310026998N11",
       "IRCT",
       "2020-03-27",
@@ -35413,7 +35361,7 @@
       "None"
     ],
     [
-      "1362",
+      "1360",
       "IRCT20190804044429N1",
       "IRCT",
       "2020-04-11",
@@ -35439,7 +35387,7 @@
       "None"
     ],
     [
-      "1363",
+      "1361",
       "IRCT20200323046841N1",
       "IRCT",
       "2020-03-28",
@@ -35465,7 +35413,7 @@
       "None"
     ],
     [
-      "1364",
+      "1362",
       "IRCT20200324046850N5",
       "IRCT",
       "2020-04-04",
@@ -35491,7 +35439,7 @@
       "None"
     ],
     [
-      "1365",
+      "1363",
       "IRCT20200204046369N1",
       "IRCT",
       "2020-04-08",
@@ -35517,7 +35465,7 @@
       "None"
     ],
     [
-      "1366",
+      "1364",
       "IRCT20190917044805N2",
       "IRCT",
       "2020-03-31",
@@ -35543,7 +35491,7 @@
       "None"
     ],
     [
-      "1367",
+      "1365",
       "IRCT20180712040449N2",
       "IRCT",
       "2020-04-01",
@@ -35569,7 +35517,7 @@
       "None"
     ],
     [
-      "1368",
+      "1366",
       "IRCT20160313027033N2",
       "IRCT",
       "2020-04-16",
@@ -35595,7 +35543,7 @@
       "None"
     ],
     [
-      "1369",
+      "1367",
       "IRCT20120225009124N4",
       "IRCT",
       "2020-04-02",
@@ -35621,7 +35569,7 @@
       "None"
     ],
     [
-      "1370",
+      "1368",
       "IRCT20200317046797N2",
       "IRCT",
       "2020-04-03",
@@ -35647,7 +35595,7 @@
       "None"
     ],
     [
-      "1371",
+      "1369",
       "IRCT20200318046812N1",
       "IRCT",
       "2020-04-01",
@@ -35673,7 +35621,7 @@
       "None"
     ],
     [
-      "1372",
+      "1370",
       "IRCT20200325046859N1",
       "IRCT",
       "2020-04-02",
@@ -35699,7 +35647,7 @@
       "None"
     ],
     [
-      "1373",
+      "1371",
       "IRCT20151228025732N51",
       "IRCT",
       "2020-04-08",
@@ -35725,7 +35673,7 @@
       "None"
     ],
     [
-      "1374",
+      "1372",
       "IRCT20200325046860N2",
       "IRCT",
       "2020-04-01",
@@ -35751,7 +35699,7 @@
       "None"
     ],
     [
-      "1375",
+      "1373",
       "IRCT20180923041093N4",
       "IRCT",
       "2020-03-28",
@@ -35777,7 +35725,7 @@
       "None"
     ],
     [
-      "1376",
+      "1374",
       "IRCT20150704023055N2",
       "IRCT",
       "2020-04-03",
@@ -35803,7 +35751,7 @@
       "None"
     ],
     [
-      "1377",
+      "1375",
       "IRCT20200328046886N1",
       "IRCT",
       "2020-04-12",
@@ -35829,7 +35777,7 @@
       "None"
     ],
     [
-      "1378",
+      "1376",
       "IRCT20081019001369N2",
       "IRCT",
       "2020-04-07",
@@ -35855,7 +35803,7 @@
       "None"
     ],
     [
-      "1379",
+      "1377",
       "IRCT20200319046819N1",
       "IRCT",
       "2020-04-04",
@@ -35881,7 +35829,7 @@
       "None"
     ],
     [
-      "1380",
+      "1378",
       "IRCT20200322046833N1",
       "IRCT",
       "2020-04-03",
@@ -35907,7 +35855,7 @@
       "None"
     ],
     [
-      "1381",
+      "1379",
       "IRCT20130917014693N10",
       "IRCT",
       "2020-04-08",
@@ -35933,7 +35881,7 @@
       "None"
     ],
     [
-      "1382",
+      "1380",
       "IRCT20200404046933N1",
       "IRCT",
       "2020-04-12",
@@ -35959,7 +35907,7 @@
       "None"
     ],
     [
-      "1383",
+      "1381",
       "IRCT20200404046934N1",
       "IRCT",
       "2020-04-13",
@@ -35985,7 +35933,7 @@
       "None"
     ],
     [
-      "1384",
+      "1382",
       "IRCT20160131026298N2",
       "IRCT",
       "2020-04-20",
@@ -36011,7 +35959,7 @@
       "None"
     ],
     [
-      "1385",
+      "1383",
       "IRCT20200401046909N1",
       "IRCT",
       "2020-04-09",
@@ -36037,7 +35985,7 @@
       "None"
     ],
     [
-      "1386",
+      "1384",
       "IRCT20101219005416N2",
       "IRCT",
       "2020-04-03",
@@ -36063,7 +36011,7 @@
       "None"
     ],
     [
-      "1387",
+      "1385",
       "IRCT20200402046923N1",
       "IRCT",
       "2020-04-09",
@@ -36089,7 +36037,7 @@
       "None"
     ],
     [
-      "1388",
+      "1386",
       "IRCT20130306012728N8",
       "IRCT",
       "2020-04-12",
@@ -36115,7 +36063,7 @@
       "None"
     ],
     [
-      "1389",
+      "1387",
       "IRCT20200405046960N1",
       "IRCT",
       "2020-04-08",
@@ -36141,7 +36089,7 @@
       "None"
     ],
     [
-      "1390",
+      "1388",
       "IRCT20130812014333N145",
       "IRCT",
       "2020-03-30",
@@ -36167,7 +36115,7 @@
       "None"
     ],
     [
-      "1391",
+      "1389",
       "IRCT20180429039463N2",
       "IRCT",
       "2020-04-10",
@@ -36193,7 +36141,7 @@
       "None"
     ],
     [
-      "1392",
+      "1390",
       "IRCT20200404046935N1",
       "IRCT",
       "2020-04-20",
@@ -36219,7 +36167,7 @@
       "None"
     ],
     [
-      "1393",
+      "1391",
       "IRCT20200404046937N1",
       "IRCT",
       "2020-04-09",
@@ -36245,7 +36193,7 @@
       "None"
     ],
     [
-      "1394",
+      "1392",
       "IRCT20200318046812N2",
       "IRCT",
       "2020-04-08",
@@ -36271,7 +36219,7 @@
       "None"
     ],
     [
-      "1395",
+      "1393",
       "IRCT20080901001157N16",
       "IRCT",
       "2020-04-08",
@@ -36297,7 +36245,7 @@
       "None"
     ],
     [
-      "1396",
+      "1394",
       "IRCT20151227025726N14",
       "IRCT",
       "2020-04-10",
@@ -36323,7 +36271,7 @@
       "None"
     ],
     [
-      "1397",
+      "1395",
       "IRCT20200317046797N4",
       "IRCT",
       "2020-04-14",
@@ -36349,7 +36297,7 @@
       "None"
     ],
     [
-      "1398",
+      "1396",
       "IRCT20150808023559N20",
       "IRCT",
       "2020-04-11",
@@ -36375,7 +36323,7 @@
       "None"
     ],
     [
-      "1399",
+      "1397",
       "IRCT20200405046953N1",
       "IRCT",
       "2020-04-06",
@@ -36401,7 +36349,7 @@
       "None"
     ],
     [
-      "1400",
+      "1398",
       "IRCT20161204031229N3",
       "IRCT",
       "2020-04-08",
@@ -36427,7 +36375,7 @@
       "None"
     ],
     [
-      "1401",
+      "1399",
       "IRCT20180802040678N4",
       "IRCT",
       "2020-04-01",
@@ -36453,7 +36401,7 @@
       "None"
     ],
     [
-      "1402",
+      "1400",
       "IRCT20200405046958N1",
       "IRCT",
       "2020-04-14",
@@ -36479,7 +36427,7 @@
       "None"
     ],
     [
-      "1403",
+      "1401",
       "IRCT20200217046526N1",
       "IRCT",
       "2020-04-13",
@@ -36505,7 +36453,7 @@
       "None"
     ],
     [
-      "1404",
+      "1402",
       "IRCT20180610040049N4",
       "IRCT",
       "2020-04-03",
@@ -36531,7 +36479,7 @@
       "None"
     ],
     [
-      "1405",
+      "1403",
       "IRCT20200401046909N2",
       "IRCT",
       "2020-04-11",
@@ -36557,7 +36505,7 @@
       "None"
     ],
     [
-      "1406",
+      "1404",
       "IRCT20180725040596N2",
       "IRCT",
       "2020-04-18",
@@ -36583,7 +36531,7 @@
       "None"
     ],
     [
-      "1407",
+      "1405",
       "IRCT20180129038542N1",
       "IRCT",
       "2020-04-13",
@@ -36609,7 +36557,7 @@
       "None"
     ],
     [
-      "1408",
+      "1406",
       "IRCT20180520039738N2",
       "IRCT",
       "2020-04-10",
@@ -36635,7 +36583,7 @@
       "None"
     ],
     [
-      "1409",
+      "1407",
       "IRCT20200317046797N3",
       "IRCT",
       "2020-04-11",
@@ -36661,7 +36609,7 @@
       "None"
     ],
     [
-      "1410",
+      "1408",
       "IRCT20200413047053N1",
       "IRCT",
       "2020-04-15",
@@ -36687,7 +36635,7 @@
       "None"
     ],
     [
-      "1411",
+      "1409",
       "IRCT20200404046947N1",
       "IRCT",
       "2020-04-15",
@@ -36713,7 +36661,7 @@
       "None"
     ],
     [
-      "1412",
+      "1410",
       "IRCT20081019001369N3",
       "IRCT",
       "2020-04-11",
@@ -36739,7 +36687,7 @@
       "None"
     ],
     [
-      "1413",
+      "1411",
       "IRCT20200403046926N1",
       "IRCT",
       "2020-04-11",
@@ -36765,7 +36713,7 @@
       "None"
     ],
     [
-      "1414",
+      "1412",
       "IRCT20200408046990N1",
       "IRCT",
       "2020-04-18",
@@ -36791,7 +36739,7 @@
       "None"
     ],
     [
-      "1415",
+      "1413",
       "IRCT20151228025732N53",
       "IRCT",
       "2020-04-10",
@@ -36817,7 +36765,7 @@
       "None"
     ],
     [
-      "1416",
+      "1414",
       "IRCT20200317046797N5",
       "IRCT",
       "2020-04-19",
@@ -36843,7 +36791,7 @@
       "None"
     ],
     [
-      "1417",
+      "1415",
       "IRCT20200406046965N1",
       "IRCT",
       "2020-04-12",
@@ -36869,7 +36817,7 @@
       "None"
     ],
     [
-      "1418",
+      "1416",
       "IRCT20200217046526N2",
       "IRCT",
       "2020-04-13",
@@ -36895,7 +36843,7 @@
       "None"
     ],
     [
-      "1419",
+      "1417",
       "IRCT20200404046948N1",
       "IRCT",
       "2020-04-15",
@@ -36921,7 +36869,7 @@
       "None"
     ],
     [
-      "1420",
+      "1418",
       "IRCT20180923041093N5",
       "IRCT",
       "2020-04-10",
@@ -36947,7 +36895,7 @@
       "None"
     ],
     [
-      "1421",
+      "1419",
       "IRCT20081019001369N4",
       "IRCT",
       "2020-04-11",
@@ -36973,7 +36921,7 @@
       "None"
     ],
     [
-      "1422",
+      "1420",
       "IRCT20200411047025N1",
       "IRCT",
       "2020-04-14",
@@ -36999,7 +36947,7 @@
       "None"
     ],
     [
-      "1423",
+      "1421",
       "LBCTR2020043459",
       "LBCTR",
       "2020-04-16",
@@ -37025,7 +36973,7 @@
       "None"
     ],
     [
-      "1424",
+      "1422",
       "IRCT20080901001165N46",
       "IRCT",
       "2020-04-15",
@@ -37051,7 +36999,7 @@
       "None"
     ],
     [
-      "1425",
+      "1423",
       "IRCT20200415047089N1",
       "IRCT",
       "2020-04-19",
@@ -37077,7 +37025,7 @@
       "None"
     ],
     [
-      "1426",
+      "1424",
       "IRCT20200408046992N1",
       "IRCT",
       "2020-04-14",
@@ -37103,7 +37051,7 @@
       "None"
     ],
     [
-      "1427",
+      "1425",
       "IRCT20200415047092N1",
       "IRCT",
       "2020-04-20",
@@ -37129,7 +37077,7 @@
       "None"
     ],
     [
-      "1428",
+      "1426",
       "IRCT20200404046937N2",
       "IRCT",
       "2020-04-13",
@@ -37155,7 +37103,7 @@
       "None"
     ],
     [
-      "1429",
+      "1427",
       "IRCT20191125045492N2",
       "IRCT",
       "2020-04-18",
@@ -37181,7 +37129,7 @@
       "None"
     ],
     [
-      "1430",
+      "1428",
       "IRCT20200406046968N1",
       "IRCT",
       "2020-04-14",
@@ -37207,7 +37155,7 @@
       "None"
     ],
     [
-      "1431",
+      "1429",
       "IRCT20200409047007N1",
       "IRCT",
       "2020-04-12",
@@ -37233,7 +37181,7 @@
       "None"
     ],
     [
-      "1432",
+      "1430",
       "IRCT20190122042450N4",
       "IRCT",
       "2020-04-16",
@@ -37259,7 +37207,7 @@
       "None"
     ],
     [
-      "1433",
+      "1431",
       "PACTR202004693933092",
       "PACTR",
       "2020-04-12",
@@ -37285,7 +37233,7 @@
       "None"
     ],
     [
-      "1434",
+      "1432",
       "JPRN-jRCT2031190264",
       "JPRN",
       "2020-03-24",
@@ -37295,7 +37243,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "South Korea, Japan, United States",
+      "South Korea, United States, Japan",
       "A Multicenter, Adaptive, Randomized Blinded Controlled Trial of the Safety and Efficacy of Investigational Therapeutics for the Treatment of COVID-19 in Hospitalized Adults",
       "Drug",
       "Remdesivir",
@@ -37311,7 +37259,7 @@
       "None"
     ],
     [
-      "1435",
+      "1433",
       "JPRN-JapicCTI-205238",
       "JPRN",
       "2020-03-27",
@@ -37337,7 +37285,7 @@
       "None"
     ],
     [
-      "1436",
+      "1434",
       "IRCT20200411047030N1",
       "IRCT",
       "2020-04-17",
@@ -37363,7 +37311,7 @@
       "None"
     ],
     [
-      "1437",
+      "1435",
       "IRCT20200413047056N1",
       "IRCT",
       "2020-04-17",
@@ -37389,7 +37337,7 @@
       "None"
     ],
     [
-      "1438",
+      "1436",
       "PACTR202004761408382",
       "PACTR",
       "2020-04-13",
@@ -37415,7 +37363,7 @@
       "None"
     ],
     [
-      "1439",
+      "1437",
       "JPRN-jRCTs031190269",
       "JPRN",
       "2020-03-27",
@@ -37441,7 +37389,7 @@
       "None"
     ],
     [
-      "1440",
+      "1438",
       "JPRN-jRCTs031190226",
       "JPRN",
       "2020-02-27",
@@ -37467,7 +37415,7 @@
       "None"
     ],
     [
-      "1441",
+      "1439",
       "JPRN-jRCTs031190227",
       "JPRN",
       "2020-02-27",
@@ -37493,7 +37441,7 @@
       "None"
     ],
     [
-      "1442",
+      "1440",
       "JPRN-UMIN000039997",
       "JPRN",
       "2020-04-01",
@@ -37519,7 +37467,7 @@
       "None"
     ],
     [
-      "1443",
+      "1441",
       "RBR-3cbs3w",
       "REBEC",
       "2020-04-08",
@@ -37535,7 +37483,7 @@
       "Hydroxychloroquine",
       "1300",
       "Not Available",
-      "Not Available",
+      "2020-07-10",
       "http://www.ensaiosclinicos.gov.br/rg/RBR-3cbs3w/",
       "No Results",
       "No Results",
@@ -37545,7 +37493,7 @@
       "None"
     ],
     [
-      "1444",
+      "1442",
       "JPRN-UMIN000040162",
       "JPRN",
       "2020-04-15",
@@ -37571,7 +37519,7 @@
       "None"
     ],
     [
-      "1445",
+      "1443",
       "RBR-9d8z6m",
       "REBEC",
       "2020-03-27",
@@ -37587,7 +37535,7 @@
       "Combination: Hydroxychloroquine + Azithromycin vs. Hydroxychloroquine ",
       "630",
       "Not Available",
-      "Not Available",
+      "2020-07-31",
       "http://www.ensaiosclinicos.gov.br/rg/RBR-9d8z6m/",
       "No Results",
       "No Results",
@@ -37597,7 +37545,7 @@
       "None"
     ],
     [
-      "1446",
+      "1444",
       "JPRN-UMIN000039986",
       "JPRN",
       "2020-03-31",
@@ -37623,7 +37571,7 @@
       "None"
     ],
     [
-      "1447",
+      "1445",
       "TCTR20200409006",
       "TCTR",
       "2020-04-03",
@@ -37649,7 +37597,7 @@
       "None"
     ],
     [
-      "1448",
+      "1446",
       "PACTR202004801273802",
       "PACTR",
       "2020-04-02",
@@ -37675,7 +37623,7 @@
       "None"
     ],
     [
-      "1449",
+      "1447",
       "JPRN-UMIN000040185",
       "JPRN",
       "2020-04-17",
@@ -37701,7 +37649,7 @@
       "None"
     ],
     [
-      "1450",
+      "1448",
       "TCTR20200405001",
       "TCTR",
       "2020-04-05",
@@ -37727,7 +37675,7 @@
       "None"
     ],
     [
-      "1451",
+      "1449",
       "TCTR20200404004",
       "TCTR",
       "2020-03-31",
@@ -37753,7 +37701,7 @@
       "None"
     ],
     [
-      "1452",
+      "1450",
       "RBR-6m69fc",
       "REBEC",
       "2020-04-02",
@@ -37769,7 +37717,7 @@
       "Rehabilitation",
       "99",
       "Not Available",
-      "Not Available",
+      "2020-04-15",
       "http://www.ensaiosclinicos.gov.br/rg/RBR-6m69fc/",
       "No Results",
       "No Results",
@@ -37779,7 +37727,7 @@
       "None"
     ],
     [
-      "1453",
+      "1451",
       "TCTR20200324001",
       "TCTR",
       "2020-03-21",
@@ -37805,7 +37753,7 @@
       "None"
     ],
     [
-      "1454",
+      "1452",
       "RBR-9pgwfc",
       "REBEC",
       "2020-04-09",
@@ -37815,13 +37763,13 @@
       "Recruiting",
       "Not Applicable",
       "Observational",
-      "Canada, United States, United Kingdom, France, Portugal, Colombia, Spain, Chile, Brazil",
+      "Spain, United States, Brazil, Colombia, United Kingdom, Chile, France, Portugal, Canada",
       "Psychological effects of social isolation in the coronavirus pandemic",
       "Other (psych)",
       "No Intervention",
       "2300",
       "Not Available",
-      "Not Available",
+      "2020-05-30",
       "http://www.ensaiosclinicos.gov.br/rg/RBR-9pgwfc/",
       "No Results",
       "No Results",
@@ -37831,7 +37779,7 @@
       "None"
     ],
     [
-      "1455",
+      "1453",
       "RPCEC00000306",
       "RPCEC",
       "2020-04-13",
@@ -37857,7 +37805,7 @@
       "None"
     ],
     [
-      "1456",
+      "1454",
       "TCTR20200321001",
       "TCTR",
       "2020-03-20",
@@ -37883,7 +37831,7 @@
       "None"
     ],
     [
-      "1457",
+      "1455",
       "RBR-8969zg",
       "REBEC",
       "2020-04-13",
@@ -37899,7 +37847,7 @@
       "N-acetylcysteine",
       "200",
       "Not Available",
-      "Not Available",
+      "2020-10-14",
       "http://www.ensaiosclinicos.gov.br/rg/RBR-8969zg/",
       "No Results",
       "No Results",
@@ -37909,7 +37857,7 @@
       "None"
     ],
     [
-      "1458",
+      "1456",
       "TCTR20200401002",
       "TCTR",
       "2020-03-31",
@@ -37919,7 +37867,7 @@
       "Not Recruiting",
       "Not Applicable",
       "Observational",
-      "United Kingdom, Thailand, Malaysia, Italy",
+      "Italy, Malaysia, United Kingdom, Thailand",
       "Social, ethical and behavioural aspects of the novel coronavirus pandemic",
       "Other",
       "No Intervention",
@@ -37935,7 +37883,7 @@
       "None"
     ],
     [
-      "1459",
+      "1457",
       "NCT04299152",
       "ClinicalTrials.gov",
       "2020-02-28",
@@ -37961,7 +37909,7 @@
       "None"
     ],
     [
-      "1460",
+      "1458",
       "NCT04307459",
       "ClinicalTrials.gov",
       "2020-03-10",
@@ -37987,7 +37935,7 @@
       "None"
     ],
     [
-      "1461",
+      "1459",
       "NCT04290780",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -38013,7 +37961,7 @@
       "None"
     ],
     [
-      "1462",
+      "1460",
       "NCT04303299",
       "ClinicalTrials.gov",
       "2020-02-24",
@@ -38039,7 +37987,7 @@
       "None"
     ],
     [
-      "1463",
+      "1461",
       "NCT04321369",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -38065,7 +38013,7 @@
       "None"
     ],
     [
-      "1464",
+      "1462",
       "NCT04323527",
       "ClinicalTrials.gov",
       "2020-03-13",
@@ -38091,7 +38039,7 @@
       "None"
     ],
     [
-      "1465",
+      "1463",
       "NCT04333914",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -38117,7 +38065,7 @@
       "EUCTR2020-001373-70"
     ],
     [
-      "1466",
+      "1464",
       "NCT04328285",
       "ClinicalTrials.gov",
       "2020-03-25",
@@ -38143,7 +38091,7 @@
       "EUCTR2020-001188-96"
     ],
     [
-      "1467",
+      "1465",
       "NCT04341207",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -38169,7 +38117,7 @@
       "EUCTR2020-001250-21"
     ],
     [
-      "1468",
+      "1466",
       "NCT04339712",
       "ClinicalTrials.gov",
       "2020-04-01",
@@ -38195,7 +38143,7 @@
       "EUCTR2020-001039-29"
     ],
     [
-      "1469",
+      "1467",
       "NCT04341038",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -38221,7 +38169,7 @@
       "EUCTR2020-001445-39"
     ],
     [
-      "1470",
+      "1468",
       "NCT04335786",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -38247,7 +38195,7 @@
       "EUCTR2020-001320-34"
     ],
     [
-      "1471",
+      "1469",
       "NCT04345289",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -38273,7 +38221,7 @@
       "EUCTR2020-001367-88"
     ],
     [
-      "1472",
+      "1470",
       "NCT04359953",
       "ClinicalTrials.gov",
       "2020-04-17",
@@ -38299,7 +38247,7 @@
       "EUCTR2020-001303-16"
     ],
     [
-      "1473",
+      "1471",
       "NCT04334850",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -38325,7 +38273,7 @@
       "EUCTR2020-001324-33"
     ],
     [
-      "1474",
+      "1472",
       "NCT04344288",
       "ClinicalTrials.gov",
       "2020-04-10",
@@ -38351,7 +38299,7 @@
       "EUCTR2020-001553-48"
     ],
     [
-      "1475",
+      "1473",
       "NCT04350580",
       "ClinicalTrials.gov",
       "2020-04-08",
@@ -38377,7 +38325,7 @@
       "EUCTR2020-001570-30"
     ],
     [
-      "1476",
+      "1474",
       "NCT04344041",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -38403,7 +38351,7 @@
       "EUCTR2020-001602-34"
     ],
     [
-      "1477",
+      "1475",
       "NCT04335552",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -38429,7 +38377,7 @@
       "None"
     ],
     [
-      "1478",
+      "1476",
       "NCT04336748",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -38455,7 +38403,7 @@
       "None"
     ],
     [
-      "1479",
+      "1477",
       "NCT04341727",
       "ClinicalTrials.gov",
       "2020-04-04",
@@ -38479,6 +38427,58 @@
       "2020-04-10",
       "2020-04-22",
       "None"
+    ],
+    [
+      "1478",
+      "RBR-9ktwx6",
+      "REBEC",
+      "2020-03-27",
+      "2020-03-20",
+      "False",
+      "Socidade Brasileira de Reumatologia",
+      "Recruiting",
+      "Not Applicable",
+      "Observational",
+      "Brazil",
+      "Evaluation of the effect of chronic use of Antimalarials on the frequency of infection with the New Corona Virus 2019 (Severe Acute Respiratory Syndrome Coronavirus 2 - SARS-CoV-2) in patients with Immunomedical Rheumatic Diseases",
+      "Drug",
+      "Hydroxychloroquine or Chloroquine",
+      "6000",
+      "Not Available",
+      "2020-07-30",
+      "http://www.ensaiosclinicos.gov.br/rg/RBR-9ktwx6/",
+      "No Results",
+      "No Results",
+      "No Results",
+      "2020-04-09",
+      "2020-04-22",
+      "None"
+    ],
+    [
+      "1479",
+      "NCT04352933",
+      "ClinicalTrials.gov",
+      "2020-04-07",
+      "2020-04-01",
+      "True",
+      "Cambridge University Hospitals NHS Foundation Trust",
+      "Not Recruiting",
+      "Phase 3",
+      "Interventional",
+      "United Kingdom",
+      "PROLIFIC ChemoprophylaxisTrial (COVID-19)",
+      "Drug (chemoprophylaxis)",
+      "Hydroxychloroquine",
+      "1000",
+      "2020-10-31",
+      "2021-04-01",
+      "https://clinicaltrials.gov/ct2/show/NCT04352933",
+      "No Results",
+      "No Results",
+      "No Results",
+      "2020-04-20",
+      "2020-04-22",
+      "EUCTR2020-001331-26"
     ]
   ]
 }

@@ -601,20 +601,23 @@ int_types
 # +
 treatment_dict = dict(drugs = int_types['Drug'] + int_types['Drug (Chemoprophylaxis)'], 
                       atmp = int_types['ATMP'], 
-                      clinical_char = int_types['Clinical Presentation'] + int_types['Diagnostics'] + int_types['Prognosis'],
-                      drug_other_combo = int_types['Drug (+ATMP +Other (renal))'] + int_types['Drug (+ATMP)'],
+                      clinical_char = (int_types['Clinical Presentation'] + int_types['Diagnostics'] + 
+                                       int_types['Prognosis'] + int_types['Clinical Presentation (Epidemiology)']),
+                      drug_other_combo = (int_types['Drug (+ATMP +Other (renal))'] + int_types['Drug (+ATMP)'] + 
+                                          int_types['ATMP (+ Drug)']),
                       supp = int_types['Supplement'],
                       geno = int_types['Genomics'],
                       th = int_types['Telehealth'],
+                      pro = int_types['Procedure'],
                       tm = int_types[[s.startswith('Traditional Medicine') for s in int_types.index]].sum(),
                       other = (int_types[[s.startswith('Other') for s in int_types.index]].sum() 
-                               + int_types['Health System'] + int_types['Procedure'])
+                               + int_types['Health System'])
                      )
 
 fig = go.Figure(go.Bar(
             x=list(treatment_dict.values()),
             y=['Drugs', 'ATMP', 'Clinical Characteristics', 'Drug + Other Therapy', 'Supplement', 'Genomics', 
-               'Telehealth', 'Traditional Medicine', 'Other'],
+               'Telehealth', 'Procedure', 'Traditional Medicine', 'Other'],
             orientation='h'))
 
 fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanchor': 'center', 'x': 0.5}, 
