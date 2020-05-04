@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-1528-trials_22Apr2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/ICTRP_29apr.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,4,15)
-this_extract_date = date(2020,4,22)
+prior_extract_date = date(2020,4,22)
+this_extract_date = date(2020,4,29)
 
 def fix_dates(x):
     try:
@@ -100,7 +100,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-15.csv')
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-22.csv')
 
 # +
 #Joining in the 'first_seen' field
@@ -167,8 +167,8 @@ print(f'{len(df_cond_nc)} trials remain')
 c_reg = pd.read_excel('manual_data.xlsx', sheet_name = 'cross registrations')
 replace_ids = c_reg.id_to_replace.tolist()
 
-replaced = len(df_cond_nc[df_cond_nc.TrialID.isin(replace_ids)])
-print(f'{replaced} known cross registrations will be replaced')
+replaced = df_cond_nc[df_cond_nc.TrialID.isin(replace_ids)]
+print(f'{len(replaced)} known cross registrations will be replaced')
 
 df_cond_nc = df_cond_nc[~(df_cond_nc.TrialID.isin(replace_ids))].reset_index(drop=True)
 
@@ -187,7 +187,8 @@ def trial_diffs(new=True):
 
 
 # +
-additions = pd.read_excel('manual_data.xlsx', sheet_name = 'additional_trials')
+additions = pd.read_excel('manual_data.xlsx', sheet_name = 'additional_trials').drop('from', 
+                                                                                     axis=1).reset_index(drop=True)
 
 print(f'There are approximately {len(trial_diffs(new=True))} new trials')
 
@@ -200,7 +201,17 @@ print(list(set(trial_diffs(new=False)) - set(added) - set(replace_ids)))
 # Now we just need to take a quick look at trials that came and went since the last update. We can add in any additional trials that we know about that are not accounted for in the ICTRP database.
 
 # +
-#These are trials we know about that are not showing up in the ICTRP data pull or are re-added as cross-registrations
+#Here we check to see if any of our manual additions have been added to the dataset
+
+for t in added:
+    if t in df_cond_nc.TrialID.tolist():
+        print(f'{t} is already in the data')
+    else:
+        continue
+
+# +
+#These are trials we know about that are not showing up in the ICTRP data pull 
+#or are re-added as cross-registrations
 
 print(f'An additional {len(additions)} known trials, or preferred cross registrations were added to the data')
 
@@ -210,6 +221,24 @@ df_cond_all = df_cond_nc.append(additions)
 df_cond_all['Date_enrollement'] = df_cond_all['Date_enrollement'].apply(fix_dates)
 
 print(f'The final dataset is {len(df_cond_all)} trials')
+
+# +
+#This ensures our check for retrospective registration is accurate w/r/t cross-registrations
+
+c_r_comp_dates = c_reg[['trial_id_keep', 'cross_reg_date']].groupby('trial_id_keep', as_index=False).min()
+c_r_merged = c_r_comp_dates.merge(df_cond_nc[['TrialID', 'Date_registration', 'Date_enrollement']], 
+                                 left_on='trial_id_keep', right_on='TrialID', how='left')
+c_r_merged['earliest_reg'] = c_r_merged[['cross_reg_date', 'Date_registration']].min(axis=1)
+pre_reg = c_r_merged[c_r_merged.TrialID.notnull() & (c_r_merged.earliest_reg <= c_r_merged.Date_enrollement)].trial_id_keep.to_list()
+
+ret_reg = c_r_merged[c_r_merged.TrialID.notnull() & ~(c_r_merged.earliest_reg <= c_r_merged.Date_enrollement)].trial_id_keep.to_list()
+ret_reg
+
+for index, row in df_cond_all.iterrows():
+    if row.TrialID in pre_reg:
+        df_cond_all.at[index, 'retrospective_registration'] = True
+    elif row.TrialID in ret_reg:
+        df_cond_all.at[index, 'retrospective_registration'] = False
 
 # +
 #finally, add cross-registration field
@@ -253,32 +282,33 @@ int_replace = ['interventional', 'Interventional clinical trial of medicinal pro
                'INTERVENTIONAL', 'Intervention']
 hs_replace = ['Health services reaserch', 'Health Services reaserch', 'Health Services Research']
 
-df_cond_all['Study_type'] = df_cond_all['Study_type'].str.replace(' study', '')
-df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(obv_replace, 'Observational')
-df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(int_replace, 'Interventional')
-df_cond_all['Study_type'] = df_cond_all['Study_type'].replace('Epidemilogical research', 'Epidemiological research')
-df_cond_all['Study_type'] = df_cond_all['Study_type'].replace(hs_replace, 'Health services research')
-df_cond_all['Study_type'] = df_cond_all['Study_type'].replace('Others,meta-analysis etc', 'Other')
+df_cond_all['Study_type'] = (df_cond_all['Study_type'].str.replace(' study', '')
+                             .replace(obv_replace, 'Observational').replace(int_replace, 'Interventional')
+                             .replace('Epidemilogical research', 'Epidemiological research')
+                             .replace(hs_replace, 'Health services research')
+                             .replace('Others,meta-analysis etc', 'Other'))
 
 #phase
 df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
-phase_fixes = {'0':'Not Applicable', '1':'Phase 1', '2':'Phase 2', '3':'Phase 3', '4':'Phase 4', 
-               '1-2':'Phase 1/Phase 2', 'Retrospective study':'Not Applicable', 
-               'Not applicable':'Not Applicable', 'Early Phase 1':'Phase 1',
-               'New Treatment Measure Clinical Study':'Not Applicable', 'Not selected': 'Not Applicable',
-               '2020-02-01 00:00:00':'Phase 1/Phase 2', 'Phase II/III':'Phase 2/Phase 3',
-               '2020-03-02 00:00:00':'Phase 2/Phase 3', 'Phase III':'Phase 3',
-               'Phase I/II':'Phase 1/Phase 2', 'Phase 0': 'Not Applicable',
-               'Phase 1 / Phase 2': 'Phase 1/Phase 2', 'I': 'Phase 1', 'II':'Phase 2', 
-               'II-III':'Phase 2/Phase 3', 'IV': 'Phase 4', 'Phase-3': 'Phase 3', 
-               'Diagnostic New Technique Clincal Study': 'Not Applicable',
-               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n': 'Phase 2',
-               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 3',
-               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n': 'Phase 4',
-               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n': 'Phase 3/Phase 4',
-               'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n': 'Phase 2/Phase 3'
-              }
-df_cond_all['Phase'] = df_cond_all['Phase'].replace(phase_fixes)
+na = ['0', 'Retrospective study', 'Not applicable', 'New Treatment Measure Clinical Study', 'Not selected', 
+      'Phase 0', 'Diagnostic New Technique Clincal Study']
+p1 = ['1', 'Early Phase 1', 'I']
+p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 
+       'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
+p2 = ['2', 'II', 'Phase II', 
+      'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
+p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 
+       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
+p3 = ['3', 'Phase III', 'Phase-3', 
+      'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
+p34 = ['Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
+p4 = ['4', 'IV', 
+      'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
+
+df_cond_all['Phase'] = (df_cond_all['Phase'].replace(na, 'Not Applicable').replace(p1, 'Phase 1')
+                        .replace(p12, 'Phase 1/Phase 2').replace(p2, 'Phase 2')
+                        .replace(p23, 'Phase 2/Phase 3').replace(p3, 'Phase 3').replace(p34, 'Phase 3/Phase 4')
+                        .replace(p4, 'Phase 4'))
 
 #Fixing Observational studies incorrectly given a Phase in ICTRP data
 m = ((df_cond_all.Phase.str.contains('Phase')) & (df_cond_all.Study_type == 'Observational'))
@@ -289,7 +319,6 @@ df_cond_all['Recruitment_Status'] = df_cond_all['Recruitment_Status'].replace('N
 df_cond_all['Recruitment_Status'] = df_cond_all['Recruitment_Status'].fillna('No Status Given')
 
 #Get rid of messy accents
-
 def norm_names(x):
     normed = unicodedata.normalize('NFKD', str(x)).encode('ASCII', 'ignore').decode()
     return normed 
@@ -483,7 +512,7 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
            'last_refreshed_on', 'first_seen', 'cross_registrations']
 
-df_final = df_results[reorder].reset_index(drop=True).reset_index()
+df_final = df_results[reorder].drop_duplicates().reset_index(drop=True).reset_index()
 # -
 
 #Checking for any null values
