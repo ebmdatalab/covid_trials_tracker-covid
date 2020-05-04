@@ -16,7 +16,7 @@ ICTRP data is taken from: https://www.who.int/ictrp/en/.
 
 Sponsor names are normalised by Nick DeVito.
 
-Final determinations for Intervention and Intervention type are made by Dr. Jeffrey K. Aroson. 
+Original classifications for for `Intervention` and `Study Category` were made by Dr. Jeffrey K. Aroson. 
 
 ## How to cite
 
