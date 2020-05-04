@@ -16,11 +16,6 @@
 
 # # Data cleaning and handling
 
-# To do for 29 Apr:
-#
-# -ISRCTN15281137 has cross registrations in EUCTR and CT.gov
-# -Make something that checks cross-registrations for retrospective registration confirmation
-
 # +
 #ICTRP Search: "covid-19" or "novel coronavirus" or "2019-ncov" or "covid19" or "sars-cov-2"
 import xmltodict
@@ -172,8 +167,8 @@ print(f'{len(df_cond_nc)} trials remain')
 c_reg = pd.read_excel('manual_data.xlsx', sheet_name = 'cross registrations')
 replace_ids = c_reg.id_to_replace.tolist()
 
-replaced = len(df_cond_nc[df_cond_nc.TrialID.isin(replace_ids)])
-print(f'{replaced} known cross registrations will be replaced')
+replaced = df_cond_nc[df_cond_nc.TrialID.isin(replace_ids)]
+print(f'{len(replaced)} known cross registrations will be replaced')
 
 df_cond_nc = df_cond_nc[~(df_cond_nc.TrialID.isin(replace_ids))].reset_index(drop=True)
 
@@ -215,7 +210,8 @@ for t in added:
         continue
 
 # +
-#These are trials we know about that are not showing up in the ICTRP data pull or are re-added as cross-registrations
+#These are trials we know about that are not showing up in the ICTRP data pull 
+#or are re-added as cross-registrations
 
 print(f'An additional {len(additions)} known trials, or preferred cross registrations were added to the data')
 
@@ -225,6 +221,24 @@ df_cond_all = df_cond_nc.append(additions)
 df_cond_all['Date_enrollement'] = df_cond_all['Date_enrollement'].apply(fix_dates)
 
 print(f'The final dataset is {len(df_cond_all)} trials')
+
+# +
+#This ensures our check for retrospective registration is accurate w/r/t cross-registrations
+
+c_r_comp_dates = c_reg[['trial_id_keep', 'cross_reg_date']].groupby('trial_id_keep', as_index=False).min()
+c_r_merged = c_r_comp_dates.merge(df_cond_nc[['TrialID', 'Date_registration', 'Date_enrollement']], 
+                                 left_on='trial_id_keep', right_on='TrialID', how='left')
+c_r_merged['earliest_reg'] = c_r_merged[['cross_reg_date', 'Date_registration']].min(axis=1)
+pre_reg = c_r_merged[c_r_merged.TrialID.notnull() & (c_r_merged.earliest_reg <= c_r_merged.Date_enrollement)].trial_id_keep.to_list()
+
+ret_reg = c_r_merged[c_r_merged.TrialID.notnull() & ~(c_r_merged.earliest_reg <= c_r_merged.Date_enrollement)].trial_id_keep.to_list()
+ret_reg
+
+for index, row in df_cond_all.iterrows():
+    if row.TrialID in pre_reg:
+        df_cond_all.at[index, 'retrospective_registration'] = True
+    elif row.TrialID in ret_reg:
+        df_cond_all.at[index, 'retrospective_registration'] = False
 
 # +
 #finally, add cross-registration field
@@ -498,7 +512,7 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
            'last_refreshed_on', 'first_seen', 'cross_registrations']
 
-df_final = df_results[reorder].reset_index(drop=True).reset_index()
+df_final = df_results[reorder].drop_duplicates().reset_index(drop=True).reset_index()
 # -
 
 #Checking for any null values
