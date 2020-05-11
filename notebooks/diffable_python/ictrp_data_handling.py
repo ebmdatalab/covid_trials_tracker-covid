@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/ICTRP_29apr.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-2119-trials_6May2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,4,22)
-this_extract_date = date(2020,4,29)
+prior_extract_date = date(2020,4,29)
+this_extract_date = date(2020,5,5)
 
 def fix_dates(x):
     try:
@@ -100,7 +100,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-22.csv')
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-29.csv')
 
 # +
 #Joining in the 'first_seen' field
@@ -148,8 +148,14 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #to do with COVID monitoring or treatment.
 #NCT03680274 simply allows inclusion of COVID pts but has nothing to do with COVID
 #JPRN-UMIN000040188 is a systematic review, not an individual study
+#NCT04278404 is not really a study of COVID-19. Patients with COVID-19 can be included.
+#NCT04372069 This trial registration doesn't exist anymore
+#NCT04331860 This trial registration doesn't exist anymore
+#NCT04337216 This trial registration doesn't exist anymore
+#NCT04343677 This trial registration doesn't exist anymore
 
-exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188']
+exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
+           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -161,7 +167,7 @@ df_cond_nc = df_cond_rec[~((df_cond_rec['Public_title'].str.contains('Cancelled'
 print(f'{len(df_cond_nc)} trials remain')
 # -
 
-# As a general rule, simply for quality and ease of use, we will default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is the EUCTR entry. The first step is to remove the EUCTR entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
+# As a general rule, simply for quality and ease of use, we will usually default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is another entry. The first step is to remove the duplicate or replaced entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
 
 # +
 c_reg = pd.read_excel('manual_data.xlsx', sheet_name = 'cross registrations')
@@ -264,6 +270,8 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
+#check_fields('Recruitment_Status')
+
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
 #    print(x)
@@ -295,7 +303,7 @@ na = ['0', 'Retrospective study', 'Not applicable', 'New Treatment Measure Clini
 p1 = ['1', 'Early Phase 1', 'I']
 p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
-p2 = ['2', 'II', 'Phase II', 
+p2 = ['2', 'II', 'Phase II', 'IIb', 
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
 p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
@@ -512,14 +520,14 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
            'last_refreshed_on', 'first_seen', 'cross_registrations']
 
-df_final = df_results[reorder].drop_duplicates().reset_index(drop=True).reset_index()
+df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_index()
 # -
 
 #Checking for any null values
 df_final[df_final.isna().any(axis=1)]
 
 #Quick look at the data
-df_final.head()
+df_final.tail(10)
 
 # +
 #Export final dataset
@@ -591,7 +599,7 @@ gr = grouped['trialid'].to_list()
 cs = cumsum['trialid'].to_list()
 
 plt.xticks(x_pos, labels, rotation=45, fontsize=8)
-plt.ylim(-50,1200)
+plt.ylim(-50, 2500)
 plt.xlabel('Week Ending Date')
 plt.ylabel('Registered Trials')
 plt.title('Registered COVID-19 Trials by Week on the ICTRP')
@@ -632,8 +640,8 @@ treatment_dict = dict(drugs = int_types['Drug'] + int_types['Drug (Chemoprophyla
                       atmp = int_types['ATMP'], 
                       clinical_char = (int_types['Clinical Presentation'] + int_types['Diagnostics'] + 
                                        int_types['Prognosis'] + int_types['Clinical Presentation (Epidemiology)']),
-                      drug_other_combo = (int_types['Drug (+ATMP +Other (renal))'] + int_types['Drug (+ATMP)'] + 
-                                          int_types['ATMP (+ Drug)']),
+                      drug_other_combo = (int_types['Drug (+ ATMP + Other (renal))'] + int_types['Drug (+ ATMP)'] + 
+                                          int_types['ATMP (+ Drug)'] + int_types['Drug (+ chemoprophylaxis)']),
                       supp = int_types['Supplement'],
                       geno = int_types['Genomics'],
                       th = int_types['Telehealth'],
@@ -645,7 +653,7 @@ treatment_dict = dict(drugs = int_types['Drug'] + int_types['Drug (Chemoprophyla
 
 fig = go.Figure(go.Bar(
             x=list(treatment_dict.values()),
-            y=['Drugs', 'ATMP', 'Clinical Characteristics', 'Drug + Other Therapy', 'Supplement', 'Genomics', 
+            y=['Drugs', 'ATMP', 'Clinical Characteristics', 'Multiple Therapies', 'Supplement', 'Genomics', 
                'Telehealth', 'Procedure', 'Traditional Medicine', 'Other'],
             orientation='h'))
 
