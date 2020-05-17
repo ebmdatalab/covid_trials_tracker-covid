@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-2119-trials_6May2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-12May2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,4,29)
-this_extract_date = date(2020,5,5)
+prior_extract_date = date(2020,5,5)
+this_extract_date = date(2020,5,12)
 
 def fix_dates(x):
     try:
@@ -49,6 +49,9 @@ def fix_dates(x):
             return x.date()
     except AttributeError:
         return x
+    
+def d_c(x):
+    return x[x.TrialID.duplicated()]
 
 
 # -
@@ -100,7 +103,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-04-29.csv')
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-05.csv').drop_duplicates()
 
 # +
 #Joining in the 'first_seen' field
@@ -153,9 +156,10 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #NCT04331860 This trial registration doesn't exist anymore
 #NCT04337216 This trial registration doesn't exist anymore
 #NCT04343677 This trial registration doesn't exist anymore
+#EUCTR2020-001370-30-DE is a duplicate
 
 exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
-           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677']
+           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -270,7 +274,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Recruitment_Status')
+#check_fields('Phase')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -305,7 +309,7 @@ p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2',
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
 p2 = ['2', 'II', 'Phase II', 'IIb', 
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
-p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 
+p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3',
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p3 = ['3', 'Phase III', 'Phase-3', 
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
@@ -360,7 +364,7 @@ for c in country_values:
         country_list.append('Vietnam')
     elif c in ['Korea, Republic of', 'Korea, Republic Of', 'KOREA'] :
         country_list.append('South Korea')
-    elif c in ['USA', 'United States of America']:
+    elif c in ['USA', 'United States of America', 'U.S.']:
         country_list.append('United States')
     elif c == 'Japan,Asia(except Japan),Australia,Europe':
         country_list = ['Japan', 'Australia', 'Asia', 'Europe']
@@ -370,6 +374,8 @@ for c in country_values:
         country_list.append('United Kingdom')
     elif c == 'Japan,North America':
         country_list = ['Japan', 'North America']
+    elif c == 'Czechia':
+        country_list.append('Czech Republic')
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -388,6 +394,8 @@ for c in country_values:
                 country_list.append('Netherlands')
             elif v == 'England':
                 country_list.append('United Kingdom')
+            elif v == 'Czechia':
+                country_list.append('Czech Republic')
             else:
                 country_list.append(v)
     else:
@@ -527,7 +535,7 @@ df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_in
 df_final[df_final.isna().any(axis=1)]
 
 #Quick look at the data
-df_final.tail(10)
+df_final.head(10)
 
 # +
 #Export final dataset
@@ -550,11 +558,7 @@ with open("website_data/trials_latest.json", "w") as f:
 
 with open("website_data/results_latest.json", "w") as f:
     json.dump({"data": just_results.astype(str).values.tolist()}, f, indent=2)    
-# +
-
 # -
-
-
 # # Overall Trend in Registered Trials Graph
 
 # +
