@@ -114,7 +114,9 @@
             ajax:
               "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/website_data/trials_latest.json",
             dom: 'lfBrtip',
-            buttons: [{extend:'searchPanes', text: 'Filter'}, 
+            buttons: [{extend:'searchPanes', text: 'Filter', config: {
+                    cascadePanes: true
+                }}, 
                       {extend: 'colvis', text: 'Columns'}, 
                       {extend: 'colvisRestore', text:'Restore Columns'}],
             "scrollY": 500,
