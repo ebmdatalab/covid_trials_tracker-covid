@@ -528,7 +528,7 @@ df_results.columns = col_names
 
 reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
-           'study_category', 'intervention', 'target_enrollment', 'primary_completion_date', 
+           'study_category', 'intervention', 'intervention_list', 'target_enrollment', 'primary_completion_date', 
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
            'last_refreshed_on', 'first_seen', 'cross_registrations']
 
@@ -670,7 +670,52 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
 
 fig.show()
 fig.write_html('html_figures/int_bar.html')
-# -
+# +
+fig = go.Figure(go.Bar(
+            x=df_final.source_register.value_counts().values,
+            y=df_final.source_register.value_counts().index,
+            orientation='h'))
 
+fig.update_layout(title={'text': 'Registered Studies by Trial Registry', 'xanchor': 'center', 'x': 0.55}, 
+                  xaxis_title='Number of Studies Registered',
+                  yaxis=dict(autorange="reversed"))
+
+fig.show()
+fig.write_html('html_figures/registries_bar.html')
+
+# +
+treatments = df_final[((df_final.study_category.str.contains('Drug')) | (df_final.study_category.str.contains('ATMP'))) & ~(df_final.study_category.str.contains('Traditional Medicine'))]['intervention_list'].tolist()
+common_treatments = pd.DataFrame(var_counts(treatments, ';', lower=True).most_common())
+common_treatments.columns = ['treatment', 'trial_count']
+
+fig = go.Figure(go.Bar(
+            x=common_treatments[common_treatments.trial_count >= 15]['trial_count'],
+            y=common_treatments[common_treatments.trial_count >= 15]['treatment'],
+            orientation='h'))
+
+fig.update_layout(title={'text': 'Most Commonly Studied Drugs & ATMPs (n>=15)', 'xanchor': 'center', 'x': 0.5}, 
+                  xaxis_title='Number of Studies Registered',
+                  yaxis=dict(autorange="reversed", dtick=1))
+
+fig.show()
+fig.write_html('html_figures/treatment_bar.html')
+
+# +
+countries = df_final.countries.to_list()
+c = pd.DataFrame(var_counts(countries, ',', lower=False).most_common())
+most_studies.columns = ['country', 'trial_count']
+
+fig = go.Figure(go.Bar(
+            x=most_studies[(most_studies.trial_count >= 50) & (most_studies.country != 'No Country Given')]['trial_count'],
+            y=most_studies[(most_studies.trial_count >= 50) & (most_studies.country != 'No Country Given')]['country'],
+            orientation='h'))
+
+fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor': 'center', 'x': 0.5}, 
+                  xaxis_title='Number of Studies Registered',
+                  yaxis=dict(autorange="reversed", dtick=1))
+
+fig.show()
+fig.write_html('html_figures/location_bar.html')
+# -
 
 
