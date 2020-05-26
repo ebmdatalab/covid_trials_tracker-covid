@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-12May2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-19May2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,5,5)
-this_extract_date = date(2020,5,12)
+prior_extract_date = date(2020,5,12)
+this_extract_date = date(2020,5,19)
 
 def fix_dates(x):
     try:
@@ -103,7 +103,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-05.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-12.csv').drop_duplicates()
 
 # +
 #Joining in the 'first_seen' field
@@ -157,9 +157,10 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #NCT04337216 This trial registration doesn't exist anymore
 #NCT04343677 This trial registration doesn't exist anymore
 #EUCTR2020-001370-30-DE is a duplicate
+#NCT04386980 is not a COVID-19 study
 
 exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
-           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE']
+           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 'NCT04386980']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -171,7 +172,7 @@ df_cond_nc = df_cond_rec[~((df_cond_rec['Public_title'].str.contains('Cancelled'
 print(f'{len(df_cond_nc)} trials remain')
 # -
 
-# As a general rule, simply for quality and ease of use, we will usually default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is another entry. The first step is to remove the duplicate or replaced entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
+# As a general rule, simply for quality and ease of use, we will usually default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is another registry. The first step is to remove the duplicate or replaced entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
 
 # +
 c_reg = pd.read_excel('manual_data.xlsx', sheet_name = 'cross registrations')
@@ -274,7 +275,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Phase')
+#check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -291,7 +292,7 @@ df_cond_all['Intervention'] = df_cond_all['Intervention'].str.replace(';', '')
 #Study Type
 obv_replace = ['Observational [Patient Registry]', 'observational']
 int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment', 
-               'INTERVENTIONAL', 'Intervention']
+               'INTERVENTIONAL', 'Intervention', 'Interventional Study']
 hs_replace = ['Health services reaserch', 'Health Services reaserch', 'Health Services Research']
 
 df_cond_all['Study_type'] = (df_cond_all['Study_type'].str.replace(' study', '')
@@ -303,17 +304,18 @@ df_cond_all['Study_type'] = (df_cond_all['Study_type'].str.replace(' study', '')
 #phase
 df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
 na = ['0', 'Retrospective study', 'Not applicable', 'New Treatment Measure Clinical Study', 'Not selected', 
-      'Phase 0', 'Diagnostic New Technique Clincal Study']
-p1 = ['1', 'Early Phase 1', 'I']
-p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 
+      'Phase 0', 'Diagnostic New Technique Clincal Study', '0 (exploratory trials)']
+p1 = ['1', 'Early Phase 1', 'I', 'Phase-1']
+p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 'Phase 1/ Phase 2',
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
-p2 = ['2', 'II', 'Phase II', 'IIb', 
+p2 = ['2', 'II', 'Phase II', 'IIb', 'Phase-2', 'Phase2',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
-p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3',
+p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3', 'Phase 2/ Phase 3',
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p3 = ['3', 'Phase III', 'Phase-3', 
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
-p34 = ['Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
+p34 = ['Phase 3/ Phase 4', 
+       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
 p4 = ['4', 'IV', 
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
 
@@ -368,6 +370,8 @@ for c in country_values:
         country_list.append('United States')
     elif c == 'Japan,Asia(except Japan),Australia,Europe':
         country_list = ['Japan', 'Australia', 'Asia', 'Europe']
+    elif c == 'Japan,Asia(except Japan),North America,South America,Australia,Europe,Africa':
+        country_list = ['Japan, Asia(except Japan), North America, South America, Australia, Europe, Africa']
     elif c == 'The Netherlands':
         country_list.append('Netherlands')
     elif c == 'England':
@@ -399,7 +403,7 @@ for c in country_values:
             else:
                 country_list.append(v)
     else:
-        country_list.append(c)
+        country_list.append(c.strip())
     new_list.append(', '.join(country_list))
 
 df_cond_all['Countries'] = new_list
@@ -524,7 +528,7 @@ df_results.columns = col_names
 
 reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
-           'study_category', 'intervention', 'target_enrollment', 'primary_completion_date', 
+           'study_category', 'intervention', 'intervention_list', 'target_enrollment', 'primary_completion_date', 
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
            'last_refreshed_on', 'first_seen', 'cross_registrations']
 
@@ -666,7 +670,52 @@ fig.update_layout(title={'text': 'Intervention Type of Registered Trials', 'xanc
 
 fig.show()
 fig.write_html('html_figures/int_bar.html')
-# -
+# +
+fig = go.Figure(go.Bar(
+            x=df_final.source_register.value_counts().values,
+            y=df_final.source_register.value_counts().index,
+            orientation='h'))
 
+fig.update_layout(title={'text': 'Registered Studies by Trial Registry', 'xanchor': 'center', 'x': 0.55}, 
+                  xaxis_title='Number of Studies Registered',
+                  yaxis=dict(autorange="reversed"))
+
+fig.show()
+fig.write_html('html_figures/registries_bar.html')
+
+# +
+treatments = df_final[((df_final.study_category.str.contains('Drug')) | (df_final.study_category.str.contains('ATMP'))) & ~(df_final.study_category.str.contains('Traditional Medicine'))]['intervention_list'].tolist()
+common_treatments = pd.DataFrame(var_counts(treatments, ';', lower=True).most_common())
+common_treatments.columns = ['treatment', 'trial_count']
+
+fig = go.Figure(go.Bar(
+            x=common_treatments[common_treatments.trial_count >= 15]['trial_count'],
+            y=common_treatments[common_treatments.trial_count >= 15]['treatment'],
+            orientation='h'))
+
+fig.update_layout(title={'text': 'Most Commonly Studied Drugs & ATMPs (n>=15)', 'xanchor': 'center', 'x': 0.5}, 
+                  xaxis_title='Number of Studies Registered',
+                  yaxis=dict(autorange="reversed", dtick=1))
+
+fig.show()
+fig.write_html('html_figures/treatment_bar.html')
+
+# +
+countries = df_final.countries.to_list()
+most_studies = pd.DataFrame(var_counts(countries, ',', lower=False).most_common())
+most_studies.columns = ['country', 'trial_count']
+
+fig = go.Figure(go.Bar(
+            x=most_studies[(most_studies.trial_count >= 50) & (most_studies.country != 'No Country Given')]['trial_count'],
+            y=most_studies[(most_studies.trial_count >= 50) & (most_studies.country != 'No Country Given')]['country'],
+            orientation='h'))
+
+fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor': 'center', 'x': 0.5}, 
+                  xaxis_title='Number of Studies Registered',
+                  yaxis=dict(autorange="reversed", dtick=1))
+
+fig.show()
+fig.write_html('html_figures/location_bar.html')
+# +
 
 
