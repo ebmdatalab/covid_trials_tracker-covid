@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-19May2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-26may2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,5,12)
-this_extract_date = date(2020,5,19)
+prior_extract_date = date(2020,5,19)
+this_extract_date = date(2020,5,26)
 
 def fix_dates(x):
     try:
@@ -103,7 +103,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-12.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-19.csv').drop_duplicates()
 
 # +
 #Joining in the 'first_seen' field
@@ -275,12 +275,11 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Recruitment_Status')
+#check_fields('Phase')
 
 #Check fields for new unique values that require normalisation
-#for x in check_fields('Countries'):
-#    print(x)
-
+for x in check_fields('Countries'):
+    print(x)
 
 # +
 #Data cleaning various fields. 
@@ -716,6 +715,6 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 
 fig.show()
 fig.write_html('html_figures/location_bar.html')
-# +
+# -
 
 
