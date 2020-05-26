@@ -702,7 +702,7 @@ fig.write_html('html_figures/treatment_bar.html')
 
 # +
 countries = df_final.countries.to_list()
-c = pd.DataFrame(var_counts(countries, ',', lower=False).most_common())
+most_studies = pd.DataFrame(var_counts(countries, ',', lower=False).most_common())
 most_studies.columns = ['country', 'trial_count']
 
 fig = go.Figure(go.Bar(
@@ -716,6 +716,6 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 
 fig.show()
 fig.write_html('html_figures/location_bar.html')
-# -
+# +
 
 
