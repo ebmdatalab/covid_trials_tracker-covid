@@ -158,9 +158,11 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #NCT04343677 This trial registration doesn't exist anymore
 #EUCTR2020-001370-30-DE is a duplicate
 #NCT04386980 is not a COVID-19 study
+#NCT04395508 has nothing to do with COVID other than taking place during it
 
 exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
-           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 'NCT04386980']
+           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 
+           'NCT04386980', 'NCT04395508']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -275,11 +277,11 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Phase')
+check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
-for x in check_fields('Countries'):
-    print(x)
+#for x in check_fields('Countries'):
+#    print(x)
 
 # +
 #Data cleaning various fields. 
@@ -289,7 +291,7 @@ for x in check_fields('Countries'):
 df_cond_all['Intervention'] = df_cond_all['Intervention'].str.replace(';', '')
 
 #Study Type
-obv_replace = ['Observational [Patient Registry]', 'observational']
+obv_replace = ['Observational [Patient Registry]', 'observational', 'Observational Study']
 int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment', 
                'INTERVENTIONAL', 'Intervention', 'Interventional Study']
 hs_replace = ['Health services reaserch', 'Health Services reaserch', 'Health Services Research']
@@ -315,7 +317,7 @@ p3 = ['3', 'Phase III', 'Phase-3',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p34 = ['Phase 3/ Phase 4', 
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
-p4 = ['4', 'IV', 
+p4 = ['4', 'IV', 'Post Marketing Surveillance',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
 
 df_cond_all['Phase'] = (df_cond_all['Phase'].replace(na, 'Not Applicable').replace(p1, 'Phase 1')
@@ -715,6 +717,6 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 
 fig.show()
 fig.write_html('html_figures/location_bar.html')
-# -
+# +
 
 
