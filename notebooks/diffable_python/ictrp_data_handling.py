@@ -35,11 +35,11 @@ from collections import Counter
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
 
-df = pd.read_excel('this_weeks_data/COVID19-26may2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-2june2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,5,19)
-this_extract_date = date(2020,5,26)
+prior_extract_date = date(2020,5,26)
+this_extract_date = date(2020,6,2)
 
 def fix_dates(x):
     try:
@@ -103,7 +103,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-19.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-26.csv').drop_duplicates()
 
 # +
 #Joining in the 'first_seen' field
@@ -277,11 +277,12 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-check_fields('Recruitment_Status')
+#check_fields('Phase')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
 #    print(x)
+
 
 # +
 #Data cleaning various fields. 
@@ -317,7 +318,7 @@ p3 = ['3', 'Phase III', 'Phase-3',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p34 = ['Phase 3/ Phase 4', 
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
-p4 = ['4', 'IV', 'Post Marketing Surveillance',
+p4 = ['4', 'IV', 'Post Marketing Surveillance', 'Phase IV',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
 
 df_cond_all['Phase'] = (df_cond_all['Phase'].replace(na, 'Not Applicable').replace(p1, 'Phase 1')
@@ -717,6 +718,6 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 
 fig.show()
 fig.write_html('html_figures/location_bar.html')
-# +
+# -
 
 
