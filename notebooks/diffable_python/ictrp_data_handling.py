@@ -34,12 +34,15 @@ from collections import Counter
 #df = pd.DataFrame(xml['Trials_downloaded_from_ICTRP']['Trial'])
 
 #This now takes the CSV posted by the ICTRP as an input from here: https://www.who.int/ictrp/en/
+#One bit of pre-data management to do before loading: I take the "Date enrollment" field and in
+#Excel I format it as a date, otherwise they are a pain to import due to differeing formats
+#I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-2june2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web-11june2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,5,26)
-this_extract_date = date(2020,6,2)
+prior_extract_date = date(2020,6,2)
+this_extract_date = date(2020,6,11)
 
 def fix_dates(x):
     try:
@@ -103,7 +106,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-05-26.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-02.csv').drop_duplicates()
 
 # +
 #Joining in the 'first_seen' field
@@ -277,7 +280,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Phase')
+#check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -307,7 +310,7 @@ df_cond_all['Study_type'] = (df_cond_all['Study_type'].str.replace(' study', '')
 df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
 na = ['0', 'Retrospective study', 'Not applicable', 'New Treatment Measure Clinical Study', 'Not selected', 
       'Phase 0', 'Diagnostic New Technique Clincal Study', '0 (exploratory trials)']
-p1 = ['1', 'Early Phase 1', 'I', 'Phase-1']
+p1 = ['1', 'Early Phase 1', 'I', 'Phase-1', 'Phase I']
 p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 'Phase 1/ Phase 2',
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
 p2 = ['2', 'II', 'Phase II', 'IIb', 'Phase-2', 'Phase2',
@@ -494,10 +497,13 @@ df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_comp
 
 # +
 #check for any results on ICTRP
+
+results_known = ['NCT04323592']
+
 ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
 
 if len(ictrp_results) > 0:
-    print(f'There are {len(ictrp_results)} results to check')
+    print(f'There are {len(ictrp_results) - len(results_known)} results to check for: {list(set(ictrp_results.TrialID.tolist()) - set(results_known))}')
 else:
     print('There are no results to check')
 
