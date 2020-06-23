@@ -38,11 +38,11 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web-11june2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web_19Jun.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,6,2)
-this_extract_date = date(2020,6,11)
+prior_extract_date = date(2020,6,11)
+this_extract_date = date(2020,6,19)
 
 def fix_dates(x):
     try:
@@ -105,17 +105,8 @@ df_cond.columns = ['TrialID', 'Source_Register', 'Date_registration', 'Date_enro
 print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
-#POINT THIS TO LAST WEEK'S PROCESSED DATA
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-02.csv').drop_duplicates()
-
-# +
-#Joining in the 'first_seen' field
-df_cond = df_cond.merge(last_weeks_trials[['trialid', 'first_seen']], left_on = 'TrialID', right_on = 'trialid', 
-                        how='left').drop('trialid', axis=1)
-
-#Adding the `first_seen` field to new trials
-df_cond['first_seen'] = pd.to_datetime(df_cond['first_seen'].fillna(this_extract_date))
-# -
+#POINT THIS TO LAST WEEK'S PROCESSED DATA 
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-11.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -280,7 +271,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Recruitment_Status')
+#check_fields('Study_type')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -385,6 +376,12 @@ for c in country_values:
         country_list = ['Japan', 'North America']
     elif c == 'Czechia':
         country_list.append('Czech Republic')
+    elif c == 'ASIA':
+        country_list.append('Asia')
+    elif c == 'EUROPE':
+        country_list.append('Europe')
+    elif c == 'MALAYSIA':
+        country_list.append('Malaysia')
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -405,6 +402,12 @@ for c in country_values:
                 country_list.append('United Kingdom')
             elif v == 'Czechia':
                 country_list.append('Czech Republic')
+            elif v == 'ASIA':
+                country_list.append('Asia')
+            elif v == 'EUROPE':
+                country_list.append('Europe')
+            elif v == 'MALAYSIA':
+                country_list.append('Malaysia')
             else:
                 country_list.append(v)
     else:
@@ -498,7 +501,7 @@ df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_comp
 # +
 #check for any results on ICTRP
 
-results_known = ['NCT04323592']
+results_known = ['NCT04323592', 'JPRN-UMIN000040520']
 
 ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
 
@@ -538,7 +541,7 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
            'study_category', 'intervention', 'intervention_list', 'target_enrollment', 'primary_completion_date', 
            'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
-           'last_refreshed_on', 'first_seen', 'cross_registrations']
+           'last_refreshed_on', 'cross_registrations']
 
 df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_index()
 # -
@@ -724,6 +727,9 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 
 fig.show()
 fig.write_html('html_figures/location_bar.html')
+# +
+
 # -
+
 
 
