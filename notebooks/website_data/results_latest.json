@@ -902,7 +902,7 @@
       "No Intervention",
       "201",
       "2020-03-13",
-      "Not Available",
+      "2020-03-13",
       "https://clinicaltrials.gov/show/NCT04292964",
       "Journal Article",
       "2020-04-15",
@@ -963,7 +963,7 @@
       "None"
     ],
     [
-      "583",
+      "582",
       "ChiCTR2000031630",
       "ChiCTR",
       "2020-04-05",
@@ -989,33 +989,7 @@
       "None"
     ],
     [
-      "616",
-      "NCT04318366",
-      "ClinicalTrials.gov",
-      "2020-03-19",
-      "2020-03-19",
-      "False",
-      "Universita Vita-Salute San Raffaele",
-      "Recruiting",
-      "Not Applicable",
-      "Observational",
-      "Italy",
-      "COVID-19 Patients Characterization, Biobank, Treatment Response and Outcome Predictor",
-      "Prognosis",
-      "No Intervention",
-      "No Intervention",
-      "1000",
-      "2022-03-19",
-      "2022-03-19",
-      "https://clinicaltrials.gov/show/NCT04318366",
-      "Journal Article",
-      "2020-05-07",
-      "https://doi.org/10.1016/S2665-9913(20)30127-2",
-      "2020-04-14",
-      "None"
-    ],
-    [
-      "617",
+      "614",
       "NCT04320238",
       "ClinicalTrials.gov",
       "2020-03-21",
@@ -1031,8 +1005,8 @@
       "Interferon Alpha vs. Interferon Alpha + Thymosin Alpha",
       "Interferon alpha; Thymosin alpha",
       "2944",
-      "2020-05-20",
-      "2020-06-20",
+      "2020-05-01",
+      "2020-06-01",
       "https://clinicaltrials.gov/show/NCT04320238",
       "Pre-Print Article",
       "2020-04-17",
@@ -1041,7 +1015,7 @@
       "None"
     ],
     [
-      "695",
+      "691",
       "NCT04261517",
       "ClinicalTrials.gov",
       "2020-02-06",
@@ -1067,7 +1041,7 @@
       "None"
     ],
     [
-      "698",
+      "693",
       "NCT04290780",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -1084,7 +1058,7 @@
       "No Intervention",
       "300",
       "2020-10-10",
-      "Not Available",
+      "2020-10-30",
       "https://clinicaltrials.gov/show/NCT04290780",
       "Pre-Print Article",
       "2020-06-12",
@@ -1093,7 +1067,7 @@
       "None"
     ],
     [
-      "699",
+      "694",
       "NCT04291729",
       "ClinicalTrials.gov",
       "2020-02-27",
@@ -1110,7 +1084,7 @@
       "Danoprevir; Ritonavir; Interferon",
       "11",
       "2020-03-19",
-      "Not Available",
+      "2020-03-19",
       "https://clinicaltrials.gov/show/NCT04291729",
       "Pre-Print Article",
       "2020-03-24",
@@ -1119,7 +1093,7 @@
       "None"
     ],
     [
-      "704",
+      "699",
       "NCT04317092",
       "ClinicalTrials.gov",
       "2020-03-19",
@@ -1145,7 +1119,7 @@
       "EUCTR2020-001110-38"
     ],
     [
-      "705",
+      "700",
       "NCT04319315",
       "ClinicalTrials.gov",
       "2020-03-16",
@@ -1171,7 +1145,7 @@
       "None"
     ],
     [
-      "707",
+      "702",
       "NCT04321369",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -1197,7 +1171,7 @@
       "None"
     ],
     [
-      "718",
+      "713",
       "NCT04331509",
       "ClinicalTrials.gov",
       "2020-03-31",
@@ -1223,7 +1197,7 @@
       "None"
     ],
     [
-      "743",
+      "738",
       "NCT04338360",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -1249,7 +1223,7 @@
       "None"
     ],
     [
-      "814",
+      "809",
       "IRCT20100228003449N28",
       "IRCT",
       "2020-03-19",
@@ -1275,7 +1249,7 @@
       "None"
     ],
     [
-      "855",
+      "849",
       "NCT04257656",
       "ClinicalTrials.gov",
       "2020-01-31",
@@ -1301,7 +1275,7 @@
       "None"
     ],
     [
-      "857",
+      "851",
       "NCT04276688",
       "ClinicalTrials.gov",
       "2020-02-11",
@@ -1327,7 +1301,7 @@
       "None"
     ],
     [
-      "887",
+      "879",
       "NCT04336215",
       "ClinicalTrials.gov",
       "2020-04-02",
@@ -1353,7 +1327,7 @@
       "None"
     ],
     [
-      "947",
+      "937",
       "NCT04347850",
       "ClinicalTrials.gov",
       "2020-04-09",
@@ -1379,7 +1353,7 @@
       "None"
     ],
     [
-      "979",
+      "967",
       "NCT04351646",
       "ClinicalTrials.gov",
       "2020-04-07",
@@ -1405,7 +1379,7 @@
       "None"
     ],
     [
-      "980",
+      "968",
       "NCT04351659",
       "ClinicalTrials.gov",
       "2020-04-16",
@@ -1421,8 +1395,8 @@
       "Plasma",
       "Plasma",
       "8",
-      "2020-08-20",
-      "2020-08-20",
+      "2020-08-01",
+      "2020-08-01",
       "https://clinicaltrials.gov/show/NCT04351659",
       "Pre-Print Article",
       "2020-04-30",
@@ -1431,7 +1405,7 @@
       "None"
     ],
     [
-      "1058",
+      "1045",
       "NCT04320017",
       "ClinicalTrials.gov",
       "2020-03-20",
@@ -1457,7 +1431,7 @@
       "None"
     ],
     [
-      "1091",
+      "1075",
       "NCT04347993",
       "ClinicalTrials.gov",
       "2020-04-13",
@@ -1473,8 +1447,8 @@
       "No Intervention",
       "No Intervention",
       "5000",
-      "2020-04-21",
-      "2020-04-21",
+      "2021-04-01",
+      "2021-04-01",
       "https://clinicaltrials.gov/show/NCT04347993",
       "Pre-Print Article",
       "No Results",
@@ -1483,7 +1457,7 @@
       "None"
     ],
     [
-      "1235",
+      "1213",
       "ChiCTR2000032458",
       "ChiCTR",
       "2020-04-29",
@@ -1509,7 +1483,7 @@
       "None"
     ],
     [
-      "1257",
+      "1235",
       "NCT04308668",
       "ClinicalTrials.gov",
       "2020-03-11",
@@ -1519,14 +1493,14 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "United States, Canada",
+      "Canada, United States",
       "Post-exposure Prophylaxis / Preemptive Therapy for SARS-Coronavirus-2",
       "Drug (Chemoprophylaxis)",
       "Hydroxychloroquine",
       "Hydroxychloroquine",
       "3000",
-      "2020-05-01",
-      "2020-05-14",
+      "2020-05-20",
+      "2020-05-20",
       "https://clinicaltrials.gov/show/NCT04308668",
       "Journal Article",
       "2020-06-03",
@@ -1535,33 +1509,7 @@
       "None"
     ],
     [
-      "1260",
-      "NCT04325646",
-      "ClinicalTrials.gov",
-      "2020-03-26",
-      "2020-03-13",
-      "True",
-      "Institut Pasteur",
-      "Recruiting",
-      "Not Applicable",
-      "Observational",
-      "France",
-      "Sero-epidemiological Study of the SARS-CoV-2 Virus Responsible for COVID-19 in France",
-      "Clinical Presentation (Epidemiology)",
-      "No Intervention",
-      "No Intervention",
-      "1000",
-      "2021-02-28",
-      "2023-02-28",
-      "https://clinicaltrials.gov/show/NCT04325646",
-      "Pre-Print Article",
-      "2020-04-23",
-      "https://doi.org/10.1101/2020.04.18.20071134",
-      "2020-05-11",
-      "None"
-    ],
-    [
-      "1313",
+      "1285",
       "NCT04366206",
       "ClinicalTrials.gov",
       "2020-04-19",
@@ -1587,7 +1535,7 @@
       "None"
     ],
     [
-      "1378",
+      "1346",
       "ChiCTR2000032770",
       "ChiCTR",
       "2020-05-10",
@@ -1613,7 +1561,7 @@
       "None"
     ],
     [
-      "1424",
+      "1391",
       "NCT04337047",
       "ClinicalTrials.gov",
       "2020-04-03",
@@ -1639,7 +1587,7 @@
       "None"
     ],
     [
-      "1475",
+      "1442",
       "NCT04374071",
       "ClinicalTrials.gov",
       "2020-04-30",
@@ -1665,7 +1613,7 @@
       "None"
     ],
     [
-      "1488",
+      "1455",
       "NCT04280705",
       "ClinicalTrials.gov",
       "2020-02-20",
@@ -1675,7 +1623,7 @@
       "Recruiting",
       "Phase 3",
       "Interventional",
-      "Denmark, Mexico, Greece, United Kingdom, Japan, South Korea, United States, Singapore, Spain, Germany",
+      "Mexico, United Kingdom, Germany, Spain, Singapore, United States, Japan, Denmark, South Korea, Greece",
       "Adaptive COVID-19 Treatment Trial (ACTT)",
       "Drug",
       "Remdesivir",
@@ -1691,7 +1639,33 @@
       "EUCTR2020-001052-18; JPRN-jRCT2031190264"
     ],
     [
-      "1547",
+      "1457",
+      "NCT04326790",
+      "ClinicalTrials.gov",
+      "2020-03-26",
+      "2020-04-03",
+      "True",
+      "National and Kapodistrian University of Athens",
+      "Recruiting",
+      "Phase 2",
+      "Interventional",
+      "Gibraltar",
+      "The GReek Study in the Effects of Colchicine in Covid-19 cOmplications Prevention",
+      "Drug",
+      "Colchicine",
+      "Colchicine",
+      "180",
+      "2020-08-31",
+      "2020-09-30",
+      "https://clinicaltrials.gov/show/NCT04326790",
+      "Journal Article",
+      "2020-06-24",
+      "https://doi.org/10.1001/jamanetworkopen.2020.13136",
+      "2020-05-18",
+      "EUCTR2020-001455-40"
+    ],
+    [
+      "1513",
       "NCT04375774",
       "ClinicalTrials.gov",
       "2020-04-17",
@@ -1707,8 +1681,8 @@
       "Masks",
       "Masks",
       "10",
-      "2020-05-20",
-      "2020-05-20",
+      "2020-05-01",
+      "2020-05-01",
       "https://clinicaltrials.gov/show/NCT04375774",
       "Pre-Print Article",
       "2020-05-26",
@@ -1717,7 +1691,7 @@
       "None"
     ],
     [
-      "1586",
+      "1550",
       "NCT04379297",
       "ClinicalTrials.gov",
       "2020-05-06",
@@ -1743,7 +1717,7 @@
       "None"
     ],
     [
-      "1923",
+      "1885",
       "NCT04364698",
       "ClinicalTrials.gov",
       "2020-04-24",
@@ -1759,8 +1733,8 @@
       "No Intervention",
       "No Intervention",
       "500",
-      "2020-06-20",
-      "2020-06-20",
+      "2020-06-01",
+      "2020-06-01",
       "https://clinicaltrials.gov/show/NCT04364698",
       "Pre-Print Article",
       "2020-05-11",
@@ -1769,7 +1743,7 @@
       "None"
     ],
     [
-      "2019",
+      "1976",
       "ChiCTR2000033056",
       "ChiCTR",
       "2020-05-19",
@@ -1795,7 +1769,7 @@
       "None"
     ],
     [
-      "2074",
+      "2031",
       "NCT04313127",
       "ClinicalTrials.gov",
       "2020-03-15",
@@ -1821,7 +1795,7 @@
       "None"
     ],
     [
-      "2079",
+      "2035",
       "NCT04326387",
       "ClinicalTrials.gov",
       "2020-03-26",
@@ -1847,7 +1821,7 @@
       "None"
     ],
     [
-      "2089",
+      "2044",
       "NCT04352842",
       "ClinicalTrials.gov",
       "2020-04-16",
@@ -1873,7 +1847,7 @@
       "None"
     ],
     [
-      "2273",
+      "2221",
       "ChiCTR2000033372",
       "ChiCTR",
       "2020-05-29",
@@ -1899,7 +1873,7 @@
       "None"
     ],
     [
-      "2409",
+      "2356",
       "NCT04321421",
       "ClinicalTrials.gov",
       "2020-03-23",
@@ -1925,7 +1899,7 @@
       "None"
     ],
     [
-      "2549",
+      "2487",
       "NCT04292899",
       "ClinicalTrials.gov",
       "2020-02-28",
@@ -1935,13 +1909,13 @@
       "Not Recruiting",
       "Phase 3",
       "Interventional",
-      "Switzerland, China, Netherlands, Taiwan, Italy, Hong Kong, United Kingdom, Japan, South Korea, Sweden, France, United States, Singapore, Spain, Germany",
+      "Hong Kong, Switzerland, Sweden, United Kingdom, Germany, China, Spain, Singapore, Italy, Taiwan, United States, Netherlands, Japan, France, South Korea",
       "Study to Evaluate the Safety and Antiviral Activity of Remdesivir (GS-5734\u201a\u00d1\u00a2) in Participants With Severe Coronavirus Disease (COVID-19)",
       "Drug",
       "Remdesivir",
       "Remdesivir",
       "6000",
-      "2020-06-20",
+      "2020-06-01",
       "2020-06-01",
       "https://clinicaltrials.gov/show/NCT04292899",
       "Journal Article",
@@ -1951,7 +1925,7 @@
       "EUCTR2020-000841-15"
     ],
     [
-      "2552",
+      "2490",
       "NCT04322188",
       "ClinicalTrials.gov",
       "2020-03-24",
@@ -1977,7 +1951,7 @@
       "None"
     ],
     [
-      "2842",
+      "2743",
       "DRKS00021578",
       "German Clinical Trials Register",
       "2020-04-28",
@@ -2003,7 +1977,7 @@
       "None"
     ],
     [
-      "2862",
+      "2763",
       "DRKS00021152",
       "German Clinical Trials Register",
       "2020-04-07",
@@ -2029,7 +2003,7 @@
       "None"
     ],
     [
-      "2867",
+      "2768",
       "DRKS00021306",
       "German Clinical Trials Register",
       "2020-04-14",
@@ -2055,7 +2029,7 @@
       "None"
     ],
     [
-      "3058",
+      "2959",
       "RPCEC00000313",
       "RPCEC",
       "2020-05-14",
@@ -2081,7 +2055,7 @@
       "None"
     ],
     [
-      "3063",
+      "2964",
       "RPCEC00000318",
       "RPCEC",
       "2020-05-29",
@@ -2107,59 +2081,7 @@
       "None"
     ],
     [
-      "3091",
-      "NCT04323592",
-      "ClinicalTrials.gov",
-      "2020-03-19",
-      "2020-03-23",
-      "False",
-      "University of Trieste",
-      "Not Recruiting",
-      "Not Applicable",
-      "Observational",
-      "Italy",
-      "Methylprednisolone for Patients With COVID-19 Severe Acute Respiratory Syndrome",
-      "Drug",
-      "Corticosteroids",
-      "Methylprednisolone",
-      "173",
-      "2020-05-10",
-      "2020-05-10",
-      "https://clinicaltrials.gov/show/NCT04323592",
-      "Registry Results",
-      "2020-06-04",
-      "https://clinicaltrials.gov/ct2/show/results/NCT04323592",
-      "2020-06-18",
-      "None"
-    ],
-    [
-      "3184",
-      "NCT04366791",
-      "ClinicalTrials.gov",
-      "2020-04-24",
-      "2020-04-23",
-      "True",
-      "Emory University",
-      "Recruiting",
-      "Phase 1/Phase 2",
-      "Interventional",
-      "United States",
-      "Radiation Eliminates Storming Cytokines and Unchecked Edema as a 1-Day Treatment for COVID-19",
-      "Other",
-      "Radiation",
-      "Radiation",
-      "10",
-      "2020-10-23",
-      "2020-10-23",
-      "https://clinicaltrials.gov/show/NCT04366791",
-      "Pre-Print Article",
-      "2020-06-09",
-      "https://doi.org/10.1101/2020.06.03.20116988",
-      "2020-06-18",
-      "None"
-    ],
-    [
-      "3192",
+      "3002",
       "NCT04370223",
       "ClinicalTrials.gov",
       "2020-04-27",
@@ -2185,7 +2107,111 @@
       "None"
     ],
     [
-      "3535",
+      "3269",
+      "NCT04318366",
+      "ClinicalTrials.gov",
+      "2020-03-19",
+      "2020-03-19",
+      "False",
+      "Universita Vita-Salute San Raffaele",
+      "Recruiting",
+      "Not Applicable",
+      "Observational",
+      "Italy",
+      "COVID-19 Patients Characterization, Biobank, Treatment Response and Outcome Predictor",
+      "Prognosis",
+      "No Intervention",
+      "No Intervention",
+      "1000",
+      "2022-03-19",
+      "2022-03-19",
+      "https://clinicaltrials.gov/show/NCT04318366",
+      "Journal Article",
+      "2020-05-07",
+      "https://doi.org/10.1016/S2665-9913(20)30127-2",
+      "2020-06-25",
+      "None"
+    ],
+    [
+      "3271",
+      "NCT04323592",
+      "ClinicalTrials.gov",
+      "2020-03-19",
+      "2020-03-23",
+      "False",
+      "University of Trieste",
+      "Not Recruiting",
+      "Not Applicable",
+      "Observational",
+      "Italy",
+      "Methylprednisolone for Patients With COVID-19 Severe Acute Respiratory Syndrome",
+      "Drug",
+      "Corticosteroids",
+      "Methylprednisolone",
+      "173",
+      "2020-05-10",
+      "2020-05-10",
+      "https://clinicaltrials.gov/show/NCT04323592",
+      "Registry Results",
+      "2020-06-04",
+      "https://clinicaltrials.gov/ct2/show/results/NCT04323592",
+      "2020-06-25",
+      "None"
+    ],
+    [
+      "3275",
+      "NCT04325646",
+      "ClinicalTrials.gov",
+      "2020-03-26",
+      "2020-03-13",
+      "True",
+      "Institut Pasteur",
+      "Recruiting",
+      "Not Applicable",
+      "Observational",
+      "France",
+      "Sero-epidemiological Study of the SARS-CoV-2 Virus Responsible for COVID-19 in France",
+      "Clinical Presentation (Epidemiology)",
+      "No Intervention",
+      "No Intervention",
+      "1000",
+      "2021-02-28",
+      "2023-02-28",
+      "https://clinicaltrials.gov/show/NCT04325646",
+      "Pre-Print Article",
+      "2020-04-23",
+      "https://doi.org/10.1101/2020.04.18.20071134",
+      "2020-06-25",
+      "None"
+    ],
+    [
+      "3342",
+      "NCT04366791",
+      "ClinicalTrials.gov",
+      "2020-04-24",
+      "2020-04-23",
+      "True",
+      "Emory University",
+      "Recruiting",
+      "Phase 1/Phase 2",
+      "Interventional",
+      "United States",
+      "Radiation Eliminates Storming Cytokines and Unchecked Edema as a 1-Day Treatment for COVID-19",
+      "Other",
+      "Radiation",
+      "Radiation",
+      "10",
+      "2020-10-23",
+      "2020-10-23",
+      "https://clinicaltrials.gov/show/NCT04366791",
+      "Pre-Print Article",
+      "2020-06-09",
+      "https://doi.org/10.1101/2020.06.03.20116988",
+      "2020-06-25",
+      "None"
+    ],
+    [
+      "3668",
       "NCT04323527",
       "ClinicalTrials.gov",
       "2020-03-13",
@@ -2211,7 +2237,7 @@
       "None"
     ],
     [
-      "3542",
+      "3675",
       "NCT04337424",
       "ClinicalTrials.gov",
       "2020-04-05",
@@ -2235,6 +2261,32 @@
       "https://doi.org/10.1101/2020.05.30.20117291",
       "2020-04-30",
       "None"
+    ],
+    [
+      "3676",
+      "NCT04381936",
+      "ClinicalTrials.gov",
+      "2020-05-07",
+      "2020-03-19",
+      "True",
+      "University of Oxford",
+      "Recruiting",
+      "Phase 2/Phase 3",
+      "Interventional",
+      "United Kingdom",
+      "Randomized Evaluation of COVID-19 Therapy",
+      "Drug",
+      "Lopinavir/ritonavir vs. corticosteroids vs. hydroxychloroquine vs. azithromycin vs. tocilizumab",
+      "Lopinavir/ritonavir; dexamethasone; hydrocortisone;  hydroxychloroquine; azithromycin; tocilizumab",
+      "12000",
+      "2020-12-01",
+      "2021-06-01",
+      "https://clinicaltrials.gov/ct2/show/NCT04381936",
+      "Pre-Print Article",
+      "2020-06-22",
+      "https://doi.org/10.1101/2020.06.22.20137273",
+      "2020-06-05",
+      "EUCTR2020-001113-21, ISRCTN50189673"
     ]
   ]
 }
