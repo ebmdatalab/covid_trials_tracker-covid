@@ -38,11 +38,11 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web_19Jun.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web_26june2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,6,11)
-this_extract_date = date(2020,6,19)
+prior_extract_date = date(2020,6,19)
+this_extract_date = date(2020,6,26)
 
 def fix_dates(x):
     try:
@@ -106,7 +106,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-11.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-19.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -271,7 +271,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Study_type')
+#check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -382,6 +382,8 @@ for c in country_values:
         country_list.append('Europe')
     elif c == 'MALAYSIA':
         country_list.append('Malaysia')
+    elif c in ['Congo', 'Congo, Democratic Republic', 'Congo, The Democratic Republic of the']:
+        country_list.append('Democratic Republic of Congo')
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -408,6 +410,8 @@ for c in country_values:
                 country_list.append('Europe')
             elif v == 'MALAYSIA':
                 country_list.append('Malaysia')
+            elif v in ['Congo', 'Congo, Democratic Republic', 'Congo, The Democratic Republic of the']:
+                country_list.append('Democratic Republic of Congo')
             else:
                 country_list.append(v)
     else:
@@ -728,8 +732,3 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 fig.show()
 fig.write_html('html_figures/location_bar.html')
 # +
-
-# -
-
-
-
