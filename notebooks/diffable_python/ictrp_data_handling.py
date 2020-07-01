@@ -38,11 +38,11 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web_26june2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web_29June2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,6,19)
-this_extract_date = date(2020,6,26)
+prior_extract_date = date(2020,6,26)
+this_extract_date = date(2020,6,29)
 
 def fix_dates(x):
     try:
@@ -106,7 +106,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-19.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-26.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -271,7 +271,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Recruitment_Status')
+#check_fields('Phase')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -664,7 +664,7 @@ treatment_dict = dict(drugs = int_types['Drug'] + int_types['Drug (Chemoprophyla
                       clinical_char = (int_types['Clinical Presentation'] + int_types['Diagnostics'] + 
                                        int_types['Prognosis'] + int_types['Clinical Presentation (Epidemiology)']),
                       drug_other_combo = (int_types['Drug (+ ATMP + Other (renal))'] + int_types['Drug (+ ATMP)'] + 
-                                          int_types['ATMP (+ Drug)'] + int_types['Drug (+ chemoprophylaxis)']),
+                                          int_types['ATMP (+ Drug)'] + int_types['Drug (+ Chemoprophylaxis)']),
                       supp = int_types['Supplement'],
                       geno = int_types['Genomics'],
                       th = int_types['Telehealth'],
@@ -731,4 +731,5 @@ fig.update_layout(title={'text': 'Most Common Study Locations (n>=50)', 'xanchor
 
 fig.show()
 fig.write_html('html_figures/location_bar.html')
-# +
+# -
+
