@@ -38,11 +38,11 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web_29June2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web_7Jul2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,6,26)
-this_extract_date = date(2020,6,29)
+prior_extract_date = date(2020,6,29)
+this_extract_date = date(2020,7,7)
 
 def fix_dates(x):
     try:
@@ -106,7 +106,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-26.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-29.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -168,7 +168,7 @@ df_cond_nc = df_cond_rec[~((df_cond_rec['Public_title'].str.contains('Cancelled'
 print(f'{len(df_cond_nc)} trials remain')
 # -
 
-# As a general rule, simply for quality and ease of use, we will usually default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is another registry. The first step is to remove the duplicate or replaced entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
+# As a general rule, simply for quality and ease of use, we will usually default to a ClinicalTrials.gov record over another type of registration in instances of cross-registration. The ICTRP alerts users to trials with known cross-registrations in the "Bridge" field of their dataset and only lists 1 registration per trial (but does not tell you the cross-registered trial IDs). These aren't comprehensive but are a good start. We can manually check and catalogue these. However we will want to replace some of these when the "Parent" registry is another registry. The first step is to remove the duplicate or replaced entries, then we will add the ClinicalTrials.gov (or another) version of the registry entry  back into the dataset when we append known trials. We will then join in a new column listing the known cross-registered trial ids.
 
 # +
 c_reg = pd.read_excel('manual_data.xlsx', sheet_name = 'cross registrations')
@@ -271,12 +271,11 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Phase')
+#check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
-#for x in check_fields('Countries'):
-#    print(x)
-
+for x in check_fields('Countries'):
+    print(x)
 
 # +
 #Data cleaning various fields. 
@@ -312,7 +311,7 @@ p3 = ['3', 'Phase III', 'Phase-3',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p34 = ['Phase 3/ Phase 4', 
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
-p4 = ['4', 'IV', 'Post Marketing Surveillance', 'Phase IV',
+p4 = ['4', 'IV', 'Post Marketing Surveillance', 'Phase IV', 'PMS'
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
 
 df_cond_all['Phase'] = (df_cond_all['Phase'].replace(na, 'Not Applicable').replace(p1, 'Phase 1')
