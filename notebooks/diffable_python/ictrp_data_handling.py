@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
@@ -38,11 +39,11 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web_7Jul2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web_16Jul2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,6,29)
-this_extract_date = date(2020,7,7)
+prior_extract_date = date(2020,7,7)
+this_extract_date = date(2020,7,16)
 
 def fix_dates(x):
     try:
@@ -106,7 +107,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-06-29.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-07-07.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -271,11 +272,11 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Recruitment_Status')
+check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
-for x in check_fields('Countries'):
-    print(x)
+#for x in check_fields('Countries'):
+#    print(x)
 
 # +
 #Data cleaning various fields. 
@@ -287,7 +288,7 @@ df_cond_all['Intervention'] = df_cond_all['Intervention'].str.replace(';', '')
 #Study Type
 obv_replace = ['Observational [Patient Registry]', 'observational', 'Observational Study']
 int_replace = ['interventional', 'Interventional clinical trial of medicinal product', 'Treatment', 
-               'INTERVENTIONAL', 'Intervention', 'Interventional Study']
+               'INTERVENTIONAL', 'Intervention', 'Interventional Study', 'PMS']
 hs_replace = ['Health services reaserch', 'Health Services reaserch', 'Health Services Research']
 
 df_cond_all['Study_type'] = (df_cond_all['Study_type'].str.replace(' study', '')
@@ -299,7 +300,7 @@ df_cond_all['Study_type'] = (df_cond_all['Study_type'].str.replace(' study', '')
 #phase
 df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
 na = ['0', 'Retrospective study', 'Not applicable', 'New Treatment Measure Clinical Study', 'Not selected', 
-      'Phase 0', 'Diagnostic New Technique Clincal Study', '0 (exploratory trials)']
+      'Phase 0', 'Diagnostic New Technique Clincal Study', '0 (exploratory trials)', 'Not Specified']
 p1 = ['1', 'Early Phase 1', 'I', 'Phase-1', 'Phase I']
 p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 'Phase 1/ Phase 2',
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
@@ -307,11 +308,11 @@ p2 = ['2', 'II', 'Phase II', 'IIb', 'Phase-2', 'Phase2',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
 p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3', 'Phase 2/ Phase 3',
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
-p3 = ['3', 'Phase III', 'Phase-3', 
+p3 = ['3', 'Phase III', 'Phase-3', 'III',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p34 = ['Phase 3/ Phase 4', 
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
-p4 = ['4', 'IV', 'Post Marketing Surveillance', 'Phase IV', 'PMS'
+p4 = ['4', 'IV', 'Post Marketing Surveillance', 'Phase IV', 'PMS',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
 
 df_cond_all['Phase'] = (df_cond_all['Phase'].replace(na, 'Not Applicable').replace(p1, 'Phase 1')
@@ -383,6 +384,8 @@ for c in country_values:
         country_list.append('Malaysia')
     elif c in ['Congo', 'Congo, Democratic Republic', 'Congo, The Democratic Republic of the']:
         country_list.append('Democratic Republic of Congo')
+    elif c in ["C√¥te D'Ivoire", 'Cote Divoire']:
+        country_list.append("Cote d'Ivoire")
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -411,6 +414,8 @@ for c in country_values:
                 country_list.append('Malaysia')
             elif v in ['Congo', 'Congo, Democratic Republic', 'Congo, The Democratic Republic of the']:
                 country_list.append('Democratic Republic of Congo')
+            elif v in ["C√¥te D'Ivoire", 'Cote Divoire']:
+                country_list.append("Cote d'Ivoire")
             else:
                 country_list.append(v)
     else:
