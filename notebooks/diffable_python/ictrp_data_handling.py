@@ -39,11 +39,11 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web_16Jul2020.xlsx', dtype={'Phase': str})
+df = pd.read_excel('this_weeks_data/COVID19-web_28july2020.xlsx', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,7,7)
-this_extract_date = date(2020,7,16)
+prior_extract_date = date(2020,7,16)
+this_extract_date = date(2020,7,28)
 
 def fix_dates(x):
     try:
@@ -107,7 +107,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-07-07.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-07-16.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -272,11 +272,12 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-check_fields('Recruitment_Status')
+#check_fields('Study_type')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
 #    print(x)
+
 
 # +
 #Data cleaning various fields. 
