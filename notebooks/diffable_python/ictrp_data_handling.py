@@ -493,6 +493,7 @@ df_comp_dates = df_cond_int.merge(comp_dates,
                                   left_on='TrialID', right_on='trialid', 
                                   how='left', indicator=True).drop('trialid', axis=1)
 
+print('These trials are missing completion date data:')
 print(df_comp_dates[df_comp_dates['_merge'] == 'left_only'].TrialID.to_list())
 
 df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
@@ -510,7 +511,7 @@ df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_comp
 # +
 #check for any results on ICTRP
 
-results_known = ['NCT04323592', 'JPRN-UMIN000040520']
+results_known = ['NCT04323592', 'JPRN-UMIN000040520', 'NCT04410159']
 
 ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
 
