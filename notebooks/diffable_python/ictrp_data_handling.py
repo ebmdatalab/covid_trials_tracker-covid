@@ -25,6 +25,7 @@ import numpy as np
 from datetime import date
 import re
 import unicodedata
+import text_unidecode as unidecode
 from collections import Counter
 
 #POINT THIS TO THE UPDATED XML - deprecated as ICTRP is down.
@@ -39,20 +40,45 @@ from collections import Counter
 #Excel I format it as a date, otherwise they are a pain to import due to differeing formats
 #I then save it as an excel spreadsheet from the original CSV.
 
-df = pd.read_excel('this_weeks_data/COVID19-web_28july2020.xlsx', dtype={'Phase': str})
+#df = pd.read_excel('this_weeks_data/COVID19-web_12aug2020.xlsx', dtype={'Phase': str})
+df = pd.read_csv('this_weeks_data/COVID19-web_12aug2020.csv', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,7,16)
-this_extract_date = date(2020,7,28)
+prior_extract_date = date(2020,7,28)
+this_extract_date = date(2020,8,12)
 
-def fix_dates(x):
-    try:
-        if isinstance(x, str):
-            return x
+def enrollment_dates(x):
+    format_1 = re.compile(r"\d{4}/\d{2}/\d{2}")
+    format_2 = re.compile(r"\d{2}/\d{2}/\d{4}")
+    format_3 = re.compile(r"\d{4}-\d{2}-\d{2}")
+    format_4 = re.compile(r"\d{2}-\d{2}-\d{4}")
+    if isinstance(x, str) and x[0].isalpha():
+        return pd.to_datetime(x)
+    elif isinstance(x, str) and bool(re.match(format_2, x)):
+        return pd.to_datetime(x, format='%d/%m/%Y')
+    elif isinstance(x, str) and bool(re.match(format_2, x)):
+        return pd.to_datetime(x, format='%Y/%m/%d')
+    elif isinstance(x, str) and bool(re.match(format_3, x)):
+        return pd.to_datetime(x, format='%Y-%m-%d')
+    elif isinstance(x, str) and bool(re.match(format_4, x)):
+        return pd.to_datetime(x, format='%d-%m-%Y')
+    else:
+        return pd.to_datetime(x, errors='coerce')
+
+#This is fixes for enrollement dates    
+known_errors= {
+    'IRCT20200310046736N1': ['2641-06-14', '2020-04-01'],
+    'EUCTR2020-001909-22-FR': ['nan', '2020-04-29']
+}
+
+def fix_errors(fix_dict, df):
+    for a, b in fix_dict.items():
+        ind = df[df.TrialID == a].index.values[0]
+        if str(df.at[ind, 'Date enrollement']) == str(b[0]):
+            df.at[ind, 'Date enrollement'] = b[1]
         else:
-            return x.date()
-    except AttributeError:
-        return x
+            print(f'Original Value Did not Match for {a}')
+    return df
     
 def d_c(x):
     return x[x.TrialID.duplicated()]
@@ -60,7 +86,11 @@ def d_c(x):
 
 # -
 
-df['Date enrollement'] = pd.to_datetime(df['Date enrollement'], errors='coerce')
+df = fix_errors(known_errors, df)
+
+df['Date enrollement'] = df['Date enrollement'].apply(enrollment_dates)
+df['Date registration'] = pd.to_datetime(df['Date registration'])
+#df['Date enrollement'] = pd.to_datetime(df['Date enrollement'], errors='coerce')
 
 # +
 #Extracting target enrollment
@@ -85,13 +115,12 @@ df['target_enrollment'] = extracted_size
 
 #Creating retrospective registration
 df['retrospective_registration'] = np.where(df['Date registration'] > df['Date enrollement'], True, False)
-df['Date enrollement'] = df['Date enrollement'].fillna('No Date Available').apply(fix_dates)
 
 # +
 #Taking only what we need right now
 
 cols = ['TrialID', 'Source Register', 'Date registration', 'Date enrollement', 'retrospective_registration', 
-        'Primary sponsor', 'Recruitment Status', 'Phase', 'Study type', 'Countries', 'Public title', 
+        'Primary sponsor', 'Recruitment Status', 'Phase', 'Study type', 'Countries', 'Public title', 'Acronym',
         'Intervention', 'target_enrollment', 'web address', 'results yes no', 'results url link', 
         'Last Refreshed on']
 
@@ -100,14 +129,14 @@ df_cond = df[cols].reset_index(drop=True)
 #renaming columns to match old format so I don't have to change them throughout
 df_cond.columns = ['TrialID', 'Source_Register', 'Date_registration', 'Date_enrollement', 
                    'retrospective_registration', 'Primary_sponsor', 'Recruitment_Status', 'Phase', 'Study_type', 
-                   'Countries', 'Public_title', 'Intervention', 'target_enrollment', 'web_address', 
+                   'Countries', 'Public_title', 'Acronym', 'Intervention', 'target_enrollment', 'web_address', 
                    'has_results', 'results_url_link', 'Last_Refreshed_on']
 
 print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-07-16.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-07-28.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -154,10 +183,13 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #EUCTR2020-001370-30-DE is a duplicate
 #NCT04386980 is not a COVID-19 study
 #NCT04395508 has nothing to do with COVID other than taking place during it
+#NCT04280913 Withdrawn
+#NCT04290858 Withdrawn
+#NCT04477642 Withdrawn
 
 exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
            'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 
-           'NCT04386980', 'NCT04395508']
+           'NCT04386980', 'NCT04395508', 'NCT04280913', 'NCT04290858', 'NCT04477642']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -226,7 +258,7 @@ print(f'An additional {len(additions)} known trials, or preferred cross registra
 print(added)
 
 df_cond_all = df_cond_nc.append(additions)
-df_cond_all['Date_enrollement'] = df_cond_all['Date_enrollement'].apply(fix_dates)
+df_cond_all['Date_enrollement'] = df_cond_all['Date_enrollement'].apply(enrollment_dates)
 
 print(f'The final dataset is {len(df_cond_all)} trials')
 
@@ -331,9 +363,13 @@ df_cond_all['Recruitment_Status'] = df_cond_all['Recruitment_Status'].fillna('No
 
 #Get rid of messy accents
 def norm_names(x):
-    normed = unicodedata.normalize('NFKD', str(x)).encode('ASCII', 'ignore').decode()
-    return normed 
-
+    if isinstance(x,float):
+        return x
+    else:
+        text = unidecode.unidecode(x)
+        normed = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode()
+        return normed 
+    
 df_cond_all['Primary_sponsor'] = df_cond_all.Primary_sponsor.apply(norm_names)
 df_cond_all['Primary_sponsor'] = df_cond_all['Primary_sponsor'].replace('NA', 'No Sponsor Name Given')
 df_cond_all['Primary_sponsor'] = df_cond_all['Primary_sponsor'].replace('nan', 'No Sponsor Name Given')
@@ -501,12 +537,12 @@ df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
 df_comp_dates['primary_completion_date'] = (pd.to_datetime(df_comp_dates['primary_completion_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('Not Available').apply(fix_dates))
+                                            .fillna('Not Available'))
 
 df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_completion_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('Not Available').apply(fix_dates))
+                                            .fillna('Not Available'))
 
 # +
 #check for any results on ICTRP
@@ -535,7 +571,7 @@ df_results['results_type'] = df_results['results_type'].fillna('No Results')
 df_results['results_publication_date'] = (pd.to_datetime(df_results['results_publication_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('No Results').apply(fix_dates))
+                                            .fillna('No Results'))
 
 # +
 #Final organising
@@ -549,9 +585,9 @@ df_results.columns = col_names
 
 reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
            'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
-           'study_category', 'intervention', 'intervention_list', 'target_enrollment', 'primary_completion_date', 
-           'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
-           'last_refreshed_on', 'cross_registrations']
+           'acronym', 'study_category', 'intervention', 'intervention_list', 'target_enrollment', 
+           'primary_completion_date', 'full_completion_date', 'web_address', 'results_type', 
+           'results_publication_date', 'results_link', 'last_refreshed_on', 'cross_registrations']
 
 df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_index()
 # -

@@ -8,10 +8,8 @@ bash_kernel
 nbval
 
 # Commonly-used packages provided in base docker image
-pandas-gbq
 pandas
 numpy
-ebmdatalab
 matplotlib
 tqdm
 
@@ -22,3 +20,4 @@ ipywidgets
 # Add extra per-notebook packages here
 xmltodict
 xlrd
+text-unidecode
