@@ -65,6 +65,13 @@ def enrollment_dates(x):
     else:
         return pd.to_datetime(x, errors='coerce')
 
+def fix_date(x):
+    if isinstance(x,str):
+        return x
+    else:
+        x = pd.to_datetime(x).date()
+        return x
+
 #This is fixes for enrollement dates    
 known_errors= {
     'IRCT20200310046736N1': ['2641-06-14', '2020-04-01'],
@@ -537,12 +544,12 @@ df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
 df_comp_dates['primary_completion_date'] = (pd.to_datetime(df_comp_dates['primary_completion_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('Not Available'))
+                                            .fillna('Not Available').apply(fix_date))
 
 df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_completion_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('Not Available'))
+                                            .fillna('Not Available').apply(fix_date))
 
 # +
 #check for any results on ICTRP
@@ -571,7 +578,7 @@ df_results['results_type'] = df_results['results_type'].fillna('No Results')
 df_results['results_publication_date'] = (pd.to_datetime(df_results['results_publication_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('No Results'))
+                                            .fillna('No Results').apply(fix_date))
 
 # +
 #Final organising
@@ -590,6 +597,8 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
            'results_publication_date', 'results_link', 'last_refreshed_on', 'cross_registrations']
 
 df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_index()
+df_final['acronym'] = df_final.acronym.fillna('')
+df_final['last_refreshed_on'] = df_final
 # -
 
 #Checking for any null values
