@@ -183,10 +183,13 @@ print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 #EUCTR2020-001370-30-DE is a duplicate
 #NCT04386980 is not a COVID-19 study
 #NCT04395508 has nothing to do with COVID other than taking place during it
+#NCT04280913 Withdrawn
+#NCT04290858 Withdrawn
+#NCT04477642 Withdrawn
 
 exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
            'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 
-           'NCT04386980', 'NCT04395508']
+           'NCT04386980', 'NCT04395508', 'NCT04280913', 'NCT04290858', 'NCT04477642']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -534,12 +537,12 @@ df_comp_dates = df_comp_dates.drop('_merge', axis=1).reset_index(drop=True)
 df_comp_dates['primary_completion_date'] = (pd.to_datetime(df_comp_dates['primary_completion_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('Not Available').apply(fix_dates))
+                                            .fillna('Not Available'))
 
 df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_completion_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('Not Available').apply(fix_dates))
+                                            .fillna('Not Available'))
 
 # +
 #check for any results on ICTRP
@@ -568,7 +571,7 @@ df_results['results_type'] = df_results['results_type'].fillna('No Results')
 df_results['results_publication_date'] = (pd.to_datetime(df_results['results_publication_date'], 
                                                           errors='coerce', 
                                                           format='%Y-%m-%d')
-                                            .fillna('No Results').apply(fix_dates))
+                                            .fillna('No Results'))
 
 # +
 #Final organising
@@ -581,10 +584,10 @@ for col in list(df_results.columns):
 df_results.columns = col_names
 
 reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement', 'retrospective_registration', 
-           'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 'acronym'
-           'study_category', 'intervention', 'intervention_list', 'target_enrollment', 'primary_completion_date', 
-           'full_completion_date', 'web_address', 'results_type', 'results_publication_date', 'results_link', 
-           'last_refreshed_on', 'cross_registrations']
+           'normed_spon_names', 'recruitment_status', 'phase', 'study_type', 'countries', 'public_title', 
+           'acronym', 'study_category', 'intervention', 'intervention_list', 'target_enrollment', 
+           'primary_completion_date', 'full_completion_date', 'web_address', 'results_type', 
+           'results_publication_date', 'results_link', 'last_refreshed_on', 'cross_registrations']
 
 df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_index()
 # -
