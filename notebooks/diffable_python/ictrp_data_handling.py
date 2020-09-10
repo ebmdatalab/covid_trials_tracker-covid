@@ -41,11 +41,11 @@ from collections import Counter
 #I then save it as an excel spreadsheet from the original CSV.
 
 #df = pd.read_excel('this_weeks_data/COVID19-web_12aug2020.xlsx', dtype={'Phase': str})
-df = pd.read_csv('this_weeks_data/COVID19-web_12aug2020.csv', dtype={'Phase': str})
+df = pd.read_csv('this_weeks_data/COVID19-web_4Sept2020.csv', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,7,28)
-this_extract_date = date(2020,8,12)
+prior_extract_date = date(2020,8,12)
+this_extract_date = date(2020,9,4)
 
 def enrollment_dates(x):
     format_1 = re.compile(r"\d{4}/\d{2}/\d{2}")
@@ -72,7 +72,7 @@ def fix_date(x):
         x = pd.to_datetime(x).date()
         return x
 
-#This is fixes for enrollement dates    
+#This is fixes for known broken enrollement dates    
 known_errors= {
     'IRCT20200310046736N1': ['2641-06-14', '2020-04-01'],
     'EUCTR2020-001909-22-FR': ['nan', '2020-04-29']
@@ -143,7 +143,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-07-28.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-08-12.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -175,28 +175,16 @@ cancelled_trials = len(df_cond_rec[(df_cond_rec['Public_title'].str.contains('Ca
 
 print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
 
-#Now lets get rid of trials we know don't belong from manual review, reason catalogued below
-#NCT04226157 Non-COVID trial delayed because of COVID and put this in the title
-#NCT04246242 This trial registration doesn't exist anymore
-#NCT04337320 is monitoring of complications from a device in the context of COVID but has nothing
-#to do with COVID monitoring or treatment.
-#NCT03680274 simply allows inclusion of COVID pts but has nothing to do with COVID
-#JPRN-UMIN000040188 is a systematic review, not an individual study
-#NCT04278404 is not really a study of COVID-19. Patients with COVID-19 can be included.
-#NCT04372069 This trial registration doesn't exist anymore
-#NCT04331860 This trial registration doesn't exist anymore
-#NCT04337216 This trial registration doesn't exist anymore
-#NCT04343677 This trial registration doesn't exist anymore
-#EUCTR2020-001370-30-DE is a duplicate
-#NCT04386980 is not a COVID-19 study
-#NCT04395508 has nothing to do with COVID other than taking place during it
-#NCT04280913 Withdrawn
-#NCT04290858 Withdrawn
-#NCT04477642 Withdrawn
+#Now lets get rid of trials we know don't belong from manual review and cross-referenced with 
+#ClinicalTrials.gov list of "Withdrawn" trials. See 'manual_data' excel sheet for reasons for exclusion
 
-exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
-           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 
-           'NCT04386980', 'NCT04395508', 'NCT04280913', 'NCT04290858', 'NCT04477642']
+exclusions = pd.read_excel('manual_data.xlsx', sheet_name = 'manual removals')
+
+exclude = exclusions.trial_id.to_list()
+
+#exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
+#           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 
+#           'NCT04386980', 'NCT04395508', 'NCT04280913', 'NCT04290858', 'NCT04477642', 'NCT04528927']
 
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
@@ -311,7 +299,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Study_type')
+#check_fields('Recruitment_Status')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -346,11 +334,11 @@ p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 'Phase 1
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
 p2 = ['2', 'II', 'Phase II', 'IIb', 'Phase-2', 'Phase2',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
-p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3', 'Phase 2/ Phase 3',
+p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3', 'Phase 2/ Phase 3', '2-3',
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p3 = ['3', 'Phase III', 'Phase-3', 'III',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
-p34 = ['Phase 3/ Phase 4', 
+p34 = ['Phase 3/ Phase 4', 'Phase III/IV',
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): yes\n']
 p4 = ['4', 'IV', 'Post Marketing Surveillance', 'Phase IV', 'PMS',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): yes\n']
@@ -554,12 +542,13 @@ df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_comp
 # +
 #check for any results on ICTRP
 
-results_known = ['NCT04323592', 'JPRN-UMIN000040520', 'NCT04410159']
+results_checked = ['NCT04323592', 'JPRN-UMIN000040520', 'NCT04410159', 'NCT04422561', 'NCT04491994', 
+                   'ACTRN12620000869976', 'KCT0005226']
 
 ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
 
 if len(ictrp_results) > 0:
-    print(f'There are {len(ictrp_results) - len(results_known)} results to check for: {list(set(ictrp_results.TrialID.tolist()) - set(results_known))}')
+    print(f'There are {len(ictrp_results) - len(results_checked)} results to check for: {list(set(ictrp_results.TrialID.tolist()) - set(results_checked))}')
 else:
     print('There are no results to check')
 
