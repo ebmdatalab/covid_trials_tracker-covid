@@ -95,8 +95,12 @@ def d_c(x):
 
 df = fix_errors(known_errors, df)
 
+# +
 df['Date enrollement'] = df['Date enrollement'].apply(enrollment_dates)
-df['Date registration'] = pd.to_datetime(df['Date registration'])
+
+df['Date registration'] = pd.to_datetime(df['Date registration3'], format='%Y%m%d')
+
+#df['Date registration'] = pd.to_datetime(df['Date registration'], format='%d/%m/%Y')
 #df['Date enrollement'] = pd.to_datetime(df['Date enrollement'], errors='coerce')
 
 # +
