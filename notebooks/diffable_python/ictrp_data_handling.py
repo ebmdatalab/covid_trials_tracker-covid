@@ -109,18 +109,20 @@ size = df['Target size'].tolist()
 
 extracted_size = []
 for s in size:
-    if not s or isinstance(s,float):
-        extracted_size.append('Not Available')
-    elif isinstance(s,int):
+    try:
+        s = int(s)
         extracted_size.append(s)
-    elif isinstance(s,str):
-        digits = []
-        nums = re.findall(r':\d{1,10};',s)
-        for n in nums:
-            digits.append(int(n.replace(':','').replace(';','')))
-        extracted_size.append(sum(digits))
-    else:
-        print(type(s))
+    except (ValueError, TypeError):
+        if not s or pd.isnull(s):
+            extracted_size.append('Not Available')
+        elif isinstance(s,str):
+            digits = []
+            nums = re.findall(r':\d{1,10};',s)
+            for n in nums:
+                digits.append(int(n.replace(':','').replace(';','')))
+            extracted_size.append(sum(digits))
+        else:
+            print(type(s))
 
 df['target_enrollment'] = extracted_size
 
@@ -591,7 +593,7 @@ reorder = ['trialid', 'source_register', 'date_registration', 'date_enrollement'
 
 df_final = df_results[reorder].reset_index(drop=True).drop_duplicates().reset_index()
 df_final['acronym'] = df_final.acronym.fillna('')
-df_final['last_refreshed_on'] = df_final
+df_final['last_refreshed_on'] = pd.to_datetime(df_final['last_refreshed_on'])
 # -
 
 #Checking for any null values
