@@ -41,11 +41,11 @@ from collections import Counter
 #I then save it as an excel spreadsheet from the original CSV.
 
 #df = pd.read_excel('this_weeks_data/COVID19-web_12aug2020.xlsx', dtype={'Phase': str})
-df = pd.read_csv('this_weeks_data/COVID19-web_4Sept2020.csv', dtype={'Phase': str})
+df = pd.read_csv('this_weeks_data/COVID19-web_11nov2020.csv', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,8,12)
-this_extract_date = date(2020,9,4)
+prior_extract_date = date(2020,9,4)
+this_extract_date = date(2020,11,11)
 
 def enrollment_dates(x):
     format_1 = re.compile(r"\d{4}/\d{2}/\d{2}")
@@ -149,7 +149,7 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-08-12.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-09-04.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
@@ -176,22 +176,29 @@ print(f'{len(df_cond_rec)} trials remain')
 #Removing cancelled/withdrawn trials for what registries we have to date
 
 cancelled_trials = len(df_cond_rec[(df_cond_rec['Public_title'].str.contains('Cancelled')) | 
-                                   (df_cond_rec['Public_title'].str.contains('Retracted due to')) | 
-                                   (df_cond_rec['Recruitment_Status'] == "Withdrawn")])
+                                   (df_cond_rec['Public_title'].str.contains('Retracted due to'))])
 
-print(f'Excluded {cancelled_trials} cancelled trials with no enrollment')
+print(f'Excluded {cancelled_trials} cancelled trials with no enrollment via Title')
 
-#Now lets get rid of trials we know don't belong from manual review and cross-referenced with 
-#ClinicalTrials.gov list of "Withdrawn" trials. See 'manual_data' excel sheet for reasons for exclusion
+#Now lets get rid of registrations we know don't belong from manual review, cross-referenced with 
+#ClinicalTrials.gov list of "Withdrawn" trials. See 'manual_data.xlsx' for reasons for exclusion
 
 exclusions = pd.read_excel('manual_data.xlsx', sheet_name = 'manual removals')
 
 exclude = exclusions.trial_id.to_list()
 
-#exclude = ['NCT04226157', 'NCT04246242', 'NCT04337320', 'NCT03680274', 'JPRN-UMIN000040188', 'NCT04278404', 
-#           'NCT04372069', 'NCT04331860', 'NCT04337216', 'NCT04343677', 'EUCTR2020-001370-30-DE', 
-#           'NCT04386980', 'NCT04395508', 'NCT04280913', 'NCT04290858', 'NCT04477642', 'NCT04528927']
+#This gets all the COVID trials currently listed as "Withdrawn" on ClinicalTrials.gov
 
+ct_gov_withdrawn = pd.read_csv('https://clinicaltrials.gov/ct2/results/download_fields??cond=COVID-19&term=&type=&rslt=&recrs=i&age_v=&gndr=&intr=&titles=&outc=&spons=&lead=&id=&cntry=&state=&city=&dist=&locn=&rsub=&strd_s=&strd_e=&prcd_s=&prcd_e=&sfpd_s=&sfpd_e=&rfpd_s=&rfpd_e=&lupd_s=&lupd_e=&sort=&down_count=1000&down_flds=all&down_fmt=csv')
+
+ct_w = ct_gov_withdrawn['NCT Number'].to_list()
+
+if set(ct_w) - set(exclude):
+    print(f'Add new Withdrawn Trials from ClincialTrials.gov: {set(ct_w) - set(exclude)}')
+else:
+    print('All Withdrawn trials accounted for')
+
+# +
 print(f'Excluded {len(exclude)} non-COVID trials screened through manual review')
 
 df_cond_nc = df_cond_rec[~((df_cond_rec['Public_title'].str.contains('Cancelled')) | 
@@ -305,7 +312,7 @@ df_cond_all['cross_registrations'] = df_cond_all['cross_registrations'].fillna('
 def check_fields(field):
     return df_cond_all[field].unique()
 
-#check_fields('Recruitment_Status')
+#check_fields('Phase')
 
 #Check fields for new unique values that require normalisation
 #for x in check_fields('Countries'):
@@ -424,6 +431,12 @@ for c in country_values:
         country_list.append('Democratic Republic of Congo')
     elif c in ["C√¥te D'Ivoire", 'Cote Divoire']:
         country_list.append("Cote d'Ivoire")
+    elif c in ['Türkiye', 'TÃ¼rkiye']:
+        country_list.append('Turkey')
+    elif c == 'SOUTH AMERICA':
+        country_list.append('South America')
+    elif c == 'AFRICA':
+        country_list.append('Africa')
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -454,6 +467,12 @@ for c in country_values:
                 country_list.append('Democratic Republic of Congo')
             elif v in ["C√¥te D'Ivoire", 'Cote Divoire']:
                 country_list.append("Cote d'Ivoire")
+            elif v in ['Türkiye', 'TÃ¼rkiye']:
+                country_list.append('Turkey')
+            elif v == 'SOUTH AMERICA':
+                country_list.append('South America')
+            elif v == 'AFRICA':
+                country_list.append('Africa')
             else:
                 country_list.append(v)
     else:
@@ -549,7 +568,9 @@ df_comp_dates['full_completion_date'] = (pd.to_datetime(df_comp_dates['full_comp
 #check for any results on ICTRP
 
 results_checked = ['NCT04323592', 'JPRN-UMIN000040520', 'NCT04410159', 'NCT04422561', 'NCT04491994', 
-                   'ACTRN12620000869976', 'KCT0005226']
+                   'ACTRN12620000869976', 'KCT0005226', 'NCT04280705', 'NCT04343261', 'NCT04523831', 
+                   'NCT04491240', 'NCT04343092', 'NCT04425850', 'NCT04542694', 'JPRN-UMIN000040405', 
+                   'JPRN-jRCTs041190120']
 
 ictrp_results = df_comp_dates[(df_comp_dates.has_results.notnull()) | (df_comp_dates.has_results.notnull())]
 
@@ -652,29 +673,29 @@ for x in list(grouped.index):
 
 x_pos = [i for i, _ in enumerate(labels)]
 
-fig, ax = plt.subplots(figsize=(10,5), dpi = 300)
+#fig, ax = plt.subplots(figsize=(10,5), dpi = 300)
 
-l1 = plt.plot(x_pos, grouped['trialid'], marker = 'o')
-l2 = plt.plot(x_pos, cumsum['trialid'], marker = 'o')
+#l1 = plt.plot(x_pos, grouped['trialid'], marker = 'o')
+#l2 = plt.plot(x_pos, cumsum['trialid'], marker = 'o')
 
-for i, j in zip(x_pos[1:], grouped['trialid'].tolist()[1:]):
-    ax.annotate(str(j), (i,j), xytext = (i-.1, j-50))
+#for i, j in zip(x_pos[1:], grouped['trialid'].tolist()[1:]):
+#    ax.annotate(str(j), (i,j), xytext = (i-.1, j-50))
 
-for i, j in zip(x_pos, cumsum['trialid']):
-    ax.annotate(str(j), (i,j), xytext = (i-.2, j+25))
+#for i, j in zip(x_pos, cumsum['trialid']):
+#    ax.annotate(str(j), (i,j), xytext = (i-.2, j+25))
     
 
 gr = grouped['trialid'].to_list()
 cs = cumsum['trialid'].to_list()
 
-plt.xticks(x_pos, labels, rotation=45, fontsize=8)
-plt.ylim(-50, 2500)
-plt.xlabel('Week Ending Date')
-plt.ylabel('Registered Trials')
-plt.title('Registered COVID-19 Trials by Week on the ICTRP')
-plt.legend(('New Trials', 'Cumulative Trials'), loc=2)
+#plt.xticks(x_pos, labels, rotation=45, fontsize=8)
+#plt.ylim(-50, 2500)
+#plt.xlabel('Week Ending Date')
+#plt.ylabel('Registered Trials')
+#plt.title('Registered COVID-19 Trials by Week on the ICTRP')
+#plt.legend(('New Trials', 'Cumulative Trials'), loc=2)
 #plt.savefig(f'trial_count_{last_extract_date}.png')
-plt.show()
+#plt.show()
 # +
 import plotly.graph_objects as go
 
