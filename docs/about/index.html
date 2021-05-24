@@ -8,19 +8,12 @@
     />
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/fc-3.3.1/r-2.2.5/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css"/>
- 
+
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/fc-3.3.1/r-2.2.5/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96324817-10"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-96324817-10');
-    </script>
+    <script async defer data-domain="covid19.trialstracker.net" src="https://plausible.io/js/plausible.js"></script>
 
   </head>
 
@@ -62,28 +55,28 @@
 
         <p> This service is a work in progress. We hope to iterate, expand, and improve the Tracker in the coming days, weeks, and months as time and resources allow.
         </p>
-      
-      <h2>How does this all work?</h2>  
+
+      <h2>How does this all work?</h2>
         <p>Each week we download the ICTRP COVID-19 dataset and run it through some code to clean up and standardise the data. We then add additional information on the interventions involved in each study, assess for cross-registration, add information on any results we know about, make some basic data visualisations, and then post it all online as a free resource for anyone to view or use!</p>
 
-        <p>A few notes about the data: 
+        <p>A few notes about the data:
           <ul>
-            <li>We've limited the dataset to all newly registered studies since the start of 2020, so some older trials that have added a focus on COVID-19 may be excluded.</li> 
-            <li>In addition we've removed any trials that have identified as "Withdrawn" - that is the trial never happened and this is noted in the registry entry.</li> 
+            <li>We've limited the dataset to all newly registered studies since the start of 2020, so some older trials that have added a focus on COVID-19 may be excluded.</li>
+            <li>In addition we've removed any trials that have identified as "Withdrawn" - that is the trial never happened and this is noted in the registry entry.</li>
             <li>If we know about a trial that the ICTRP dataset has missed, we add it manually.</li>
             <li>Cross-registrations are collapsed into a single parent entry with the known cross registrations noted in the last column of the dataset (for instance, all registered versions of the WHO SOLIDARITY trial are collapsed to the ISRCTN entry). We usually default to the ClinicalTrials.gov registration where possible.</li>
-            <li>Most data on the tracker is automatically taken or derived from the ICTRP dataset. We try to catch the most blantant nonsense automatically but we can't manually verify every datafield so mistakes or conflicting information in registration data given to the ICTRP are inherited by our dataset.</li> 
+            <li>Most data on the tracker is automatically taken or derived from the ICTRP dataset. We try to catch the most blantant nonsense automatically but we can't manually verify every datafield so mistakes or conflicting information in registration data given to the ICTRP are inherited by our dataset.</li>
             <li>Normalisation of sponsor names, extracting information about the interventions in each study, accounting for cross-registration, and adding information on completion dates and results is done manually. If you spot mistakes, typos, or have any suggestions to improve this, please get in touch.</li>
           </ul>
         </p>
 
       <h2>Can I use your data for...?</h2>
         <p>Yes! No need to even ask. Our dataset, and everything else about this project, is fully open and available for anyone to grab and use for their own purposes. Attribution is of course appreciated. If you do find our data useful and do something amazing with it, please share it back! We are excited to see what people can do!</p>
-      
-      <h2>Who made this?</h2>
-        <p>The TrialsTracker project is run by <a href="https://ebmdatalab.net">The DataLab</a> at the University of Oxford. The COVID-19 TrialsTracker is maintained by a team of researchers, coders, and clinicians across The DataLab and <a href="https://www.cebm.net/covid-19/">The Centre for Evidence-Based Medicine (CEBM)</a> with additional input from external collaborators.</p> 
 
-        <h5>Contributors to Date</h5>  
+      <h2>Who made this?</h2>
+        <p>The TrialsTracker project is run by <a href="https://ebmdatalab.net">The DataLab</a> at the University of Oxford. The COVID-19 TrialsTracker is maintained by a team of researchers, coders, and clinicians across The DataLab and <a href="https://www.cebm.net/covid-19/">The Centre for Evidence-Based Medicine (CEBM)</a> with additional input from external collaborators.</p>
+
+        <h5>Contributors to Date</h5>
         <ul>
           <li><b>Project Lead</b></li>
             <ul>
