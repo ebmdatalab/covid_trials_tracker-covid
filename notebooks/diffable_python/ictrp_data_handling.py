@@ -41,18 +41,21 @@ from collections import Counter
 #I then save it as an excel spreadsheet from the original CSV.
 
 #df = pd.read_excel('this_weeks_data/COVID19-web_12aug2020.xlsx', dtype={'Phase': str})
-df = pd.read_csv('this_weeks_data/COVID19-web_11nov2020.csv', dtype={'Phase': str})
+df = pd.read_csv('this_weeks_data/COVID19-web_16dec2020.csv', dtype={'Phase': str})
 
 #UPDATE THESE WITH EACH RUN
-prior_extract_date = date(2020,9,4)
-this_extract_date = date(2020,11,11)
+prior_extract_date = date(2020,11,11)
+this_extract_date = date(2020,12,16)
 
 def enrollment_dates(x):
     format_1 = re.compile(r"\d{4}/\d{2}/\d{2}")
     format_2 = re.compile(r"\d{2}/\d{2}/\d{4}")
     format_3 = re.compile(r"\d{4}-\d{2}-\d{2}")
     format_4 = re.compile(r"\d{2}-\d{2}-\d{4}")
-    if isinstance(x, str) and x[0].isalpha():
+    format_5 = re.compile(r"\w{3}-\d{2}")
+    if isinstance(x, str) and bool(re.match(format_5, x)):
+        return(pd.to_datetime(x, format='%b-%y'))
+    elif isinstance(x, str) and x[0].isalpha():
         return pd.to_datetime(x)
     elif isinstance(x, str) and bool(re.match(format_1, x)):
         return pd.to_datetime(x, format='%Y/%m/%d')
@@ -73,16 +76,21 @@ def fix_date(x):
         return x
 
 #This is fixes for known broken enrollement dates    
-known_errors= {
-    'IRCT20200310046736N1': ['2641-06-14', '2020-04-01'],
+enrollment_errors= {
+    'IRCT20200310046736N1': ['14/06/2641', '2020-04-01'],
     'EUCTR2020-001909-22-FR': ['nan', '2020-04-29']
 }
 
-def fix_errors(fix_dict, df):
+reg_date_errors = {
+    'RBR-5p8nzk6': ['0', '20201125'],
+    'RBR-8tygcz7': ['0', '20201201']
+}
+
+def fix_errors(fix_dict, df, col):
     for a, b in fix_dict.items():
         ind = df[df.TrialID == a].index.values[0]
-        if str(df.at[ind, 'Date enrollement']) == str(b[0]):
-            df.at[ind, 'Date enrollement'] = b[1]
+        if str(df.at[ind, col]) == str(b[0]):
+            df.at[ind, col] = b[1]
         else:
             print(f'Original Value Did not Match for {a}')
     return df
@@ -91,9 +99,10 @@ def d_c(x):
     return x[x.TrialID.duplicated()]
 
 
-# -
+# +
+df = fix_errors(enrollment_errors, df, 'Date enrollement')
 
-df = fix_errors(known_errors, df)
+df = fix_errors(reg_date_errors, df, 'Date registration3')
 
 # +
 df['Date enrollement'] = df['Date enrollement'].apply(enrollment_dates)
@@ -149,12 +158,12 @@ print(f'The ICTRP shows {len(df_cond)} trials as of {this_extract_date}')
 # -
 
 #POINT THIS TO LAST WEEK'S PROCESSED DATA 
-last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-09-04.csv').drop_duplicates()
+last_weeks_trials = pd.read_csv('last_weeks_data/trial_list_2020-11-11.csv').drop_duplicates()
 
 #Check for which registries we are dealing with:
 df_cond.Source_Register.value_counts()
 
-# When working with data straight from XML we need to do some tedious tidying up of dates because of different formats. They do not parse correctly by default in Pandas. They are standardized, however, in the ICTRP spreadsheet so I have removed this code for now. It is archived in old commits to the GitHub repo for future refrence if needed.
+# When working with data straight from XML we need to do some tedious tidying up of dates because of different formats. They do not parse correctly by default in Pandas. Old code for this is in old commits. The code a few cells above handles this now.
 
 # +
 #lets get rid of trials from before 2020 for now
@@ -343,11 +352,11 @@ df_cond_all['Phase'] = df_cond_all['Phase'].fillna('Not Applicable')
 na = ['0', 'Retrospective study', 'Not applicable', 'New Treatment Measure Clinical Study', 'Not selected', 
       'Phase 0', 'Diagnostic New Technique Clincal Study', '0 (exploratory trials)', 'Not Specified']
 p1 = ['1', 'Early Phase 1', 'I', 'Phase-1', 'Phase I']
-p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 'Phase 1/ Phase 2',
+p12 = ['1-2', '2020-02-01 00:00:00', 'Phase I/II', 'Phase 1 / Phase 2', 'Phase 1/ Phase 2', '02-Jan',
        'Human pharmacology (Phase I): yes\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
 p2 = ['2', 'II', 'Phase II', 'IIb', 'Phase-2', 'Phase2',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): no\nTherapeutic use (Phase IV): no\n']
-p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3', 'Phase 2/ Phase 3', '2-3',
+p23 = ['Phase II/III', '2020-03-02 00:00:00', 'II-III', 'Phase 2 / Phase 3', 'Phase 2/ Phase 3', '2-3', '03-Feb',
        'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): yes\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
 p3 = ['3', 'Phase III', 'Phase-3', 'III',
       'Human pharmacology (Phase I): no\nTherapeutic exploratory (Phase II): no\nTherapeutic confirmatory - (Phase III): yes\nTherapeutic use (Phase IV): no\n']
@@ -429,14 +438,16 @@ for c in country_values:
         country_list.append('Malaysia')
     elif c in ['Congo', 'Congo, Democratic Republic', 'Congo, The Democratic Republic of the']:
         country_list.append('Democratic Republic of Congo')
-    elif c in ["C√¥te D'Ivoire", 'Cote Divoire']:
+    elif c in ["C√¥te D'Ivoire", 'Cote Divoire', "CÃ´te D'Ivoire"]:
         country_list.append("Cote d'Ivoire")
-    elif c in ['Türkiye', 'TÃ¼rkiye']:
+    elif c in ['Türkiye', 'TÃ¼rkiye', 'TÃƒÂ¼rkiye']:
         country_list.append('Turkey')
     elif c == 'SOUTH AMERICA':
         country_list.append('South America')
     elif c == 'AFRICA':
         country_list.append('Africa')
+    elif c == 'italy':
+        country_list.append('Italy')
     elif ';' in c:
         c_list = c.split(';')
         unique_values = list(set(c_list))
@@ -465,14 +476,16 @@ for c in country_values:
                 country_list.append('Malaysia')
             elif v in ['Congo', 'Congo, Democratic Republic', 'Congo, The Democratic Republic of the']:
                 country_list.append('Democratic Republic of Congo')
-            elif v in ["C√¥te D'Ivoire", 'Cote Divoire']:
+            elif v in ["C√¥te D'Ivoire", 'Cote Divoire', "CÃ´te D'Ivoire"]:
                 country_list.append("Cote d'Ivoire")
-            elif v in ['Türkiye', 'TÃ¼rkiye']:
+            elif v in ['Türkiye', 'TÃ¼rkiye', 'TÃƒÂ¼rkiye']:
                 country_list.append('Turkey')
             elif v == 'SOUTH AMERICA':
                 country_list.append('South America')
             elif v == 'AFRICA':
                 country_list.append('Africa')
+            elif v == 'italy':
+                country_list.append('Italy')
             else:
                 country_list.append(v)
     else:
@@ -509,9 +522,12 @@ else:
 #producing the all-clear message
 
 int_type = pd.read_excel('manual_data.xlsx', sheet_name = 'intervention')
+
 df_cond_int = df_cond_norm.merge(int_type[['trial_id', 'study_category',
                                            'intervention', 'intervention_list']], 
                                  left_on = 'TrialID', right_on = 'trial_id', how='left')
+
+
 
 df_cond_int = df_cond_int.drop('trial_id', axis=1)
 
@@ -619,6 +635,10 @@ df_final['last_refreshed_on'] = pd.to_datetime(df_final['last_refreshed_on'])
 
 #Checking for any null values
 df_final[df_final.isna().any(axis=1)]
+
+#Any fixing of weird null values
+#For this time it was just giving a value to EUCTR2020-002234-32-BE
+df_final['date_enrollement'] = df_final['date_enrollement'].fillna(pd.to_datetime('2020-11-24'))
 
 #Quick look at the data
 df_final.head(10)
