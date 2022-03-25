@@ -1,49 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Covid-19 TrialsTracker</title>
+    <title>Interactive | Covid-19 TrialsTracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+      integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/cr-1.5.5/date-1.1.2/fc-4.0.2/r-2.2.9/sc-2.0.5/sp-2.0.0/sl-1.3.4/datatables.min.css"
+    />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/fc-3.3.1/r-2.2.5/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css"/>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/cr-1.5.2/fc-3.3.1/r-2.2.5/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-    <script data-domain="covid19.trialstracker.net" defer id="plausible" src="https://plausible.io/js/plausible.compat.js"></script>
+    <script
+      data-domain="covid19.trialstracker.net"
+      defer
+      id="plausible"
+      src="https://plausible.io/js/plausible.compat.js"
+    ></script>
   </head>
 
-  <body>
-    <div class="container">
-      <div>
-        <h1>Covid-19 TrialsTracker</h1>
-
-          <p>Tracking COVID-19 Trials and their Results</p>
-
-          <ul class="nav nav-pills justify-content-center">
-            <li class="nav-item">
-             <a class="nav-link" href="/">Full Data</a>
-            </li>
-            <li class="nav-item">
-             <a class="nav-link active" href="/results">Results</a>
-            </li>
-            <li class="nav-item">
-             <a class="nav-link" href="/data_viz">Interactive</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/figures">Figures</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-          </ul>
+  <body class="d-flex flex-column h-100">
+    <header class="bg-dark mb-3">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-dark w-100">
+            <a class="navbar-brand" href="/">Covid-19 TrialsTracker</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarToggler"
+              aria-controls="navbarToggler"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+              <div class="navbar-nav ml-md-auto">
+                <a class="nav-link" href="/">Full Data</a>
+                <a class="nav-link active" href="/results/"
+                  >Results <span class="sr-only">(current)</span></a
+                >
+                <a class="nav-link" href="/data_viz/">Interactive</a>
+                <a class="nav-link" href="/figures/">Figures</a>
+                <a class="nav-link" href="/about/">About</a>
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
+    </header>
 
-      <font size="2">
+    <main class="container">
+      <h1 class="display-4 pt-1 mb-4 pb-4 border-bottom">Results</h1>
       <table id="results-table" class="table table-striped">
         <thead>
           <tr>
@@ -76,63 +95,93 @@
         </thead>
         <tbody></tbody>
       </table>
+      <p class="font-italic mt-3">Data as of 11 November 2020</p>
 
-    </font>
-      <p></p>
-      <p></p>
-      <font size="2"><p><i>Data as of 11 November 2020</i></p></font>
+      <p>
+        If you come across trial results, you can submit them
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScG2MTeOz_bOXqrMH-3RzcUGk379Lr9E6sD3taEqhuyLbfLnQ/viewform?usp=sf_link"
+          >here</a
+        >.
+      </p>
+    </main>
 
-      <p>If you come across trial results, you can submit them <a href="https://docs.google.com/forms/d/e/1FAIpQLScG2MTeOz_bOXqrMH-3RzcUGk379Lr9E6sD3taEqhuyLbfLnQ/viewform?usp=sf_link">here</a></p>
+    <footer class="text-muted mt-auto pt-3">
+      <div class="bg-light py-3">
+        <div class="container">
+          <p>
+            Built by the
+            <a href="https://www.bennett.ox.ac.uk/"
+              >Bennett Institute for Applied Data Science</a
+            >
+            in collaboration with the
+            <a href="https://www.cebm.net/covid-19/"
+              >Centre for Evidence-Based Medicine (CEBM)</a
+            >
+            at the University of Oxford.
+          </p>
+          <p>
+            Part of the
+            <a href="https://www.trialstracker.net">TrialsTracker project.</a>
+          </p>
+          <p>
+            Comments, questions or suggestions?
+            <a href="mailto:ebmdatalab@phc.ox.ac.uk">Get in touch</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
 
-    </div>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js"
+      integrity="sha512-mULnawDVcCnsk9a4aG1QLZZ6rcce/jSzEGqUkeOLy0b6q0+T6syHrxlsAGH7ZVoqC93Pd0lBqd6WguPWih7VHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/cr-1.5.5/date-1.1.2/fc-4.0.2/r-2.2.9/sc-2.0.5/sp-2.0.0/sl-1.3.4/datatables.min.js"
+    ></script>
     <script type="text/javascript">
-      $(document).ready(function() {
+      $(document).ready(function () {
         var table = $("#results-table").DataTable({
-            ajax:
-              "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/website_data/results_latest.json",
-            dom: 'lfBrtip',
-            buttons: [{extend:'searchPanes', text: 'Filter'},
-                      {extend: 'colvis', text: 'Columns'},
-                      {extend: 'colvisRestore', text:'Restore Columns'}],
-            "scrollY": 500,
-            "scrollX": true,
-            colReorder: true,
-            language: {
-              searchPanes: {
-                collapse: 'Filter'
-              }
-            },
-            fixedColumns: {
-              leftColumns: 2
-            },
+          ajax: "https://raw.githubusercontent.com/ebmdatalab/covid_trials_tracker-covid/master/notebooks/website_data/results_latest.json",
+          dom: "lfBrtip",
+          buttons: [
+            { extend: "searchPanes", text: "Filter" },
+            { extend: "colvis", text: "Columns" },
+            { extend: "colvisRestore", text: "Restore Columns" },
+          ],
+          scrollY: 500,
+          scrollX: true,
+          colReorder: true,
+          language: {
             searchPanes: {
-              container: '.searchPanes',
-              cascadePanes: true,
-              threshold: .5},
-            columnDefs: [{width: 300, targets: [6, 11, 14]}]
+              collapse: "Filter",
+            },
+          },
+          fixedColumns: {
+            leftColumns: 2,
+          },
+          searchPanes: {
+            container: ".searchPanes",
+            cascadePanes: true,
+            threshold: 0.5,
+          },
+          columnDefs: [{ width: 300, targets: [6, 11, 14] }],
         });
 
-        new $.fn.dataTable.Buttons( table, {
-            buttons: ['copy', 'csv', 'excel']
-          });
-      table.buttons( 1, null ).container().appendTo(
-        table.table().container()
-        );
+        new $.fn.dataTable.Buttons(table, {
+          buttons: ["copy", "csv", "excel"],
+        });
+        table.buttons(1, null).container().appendTo(table.table().container());
       });
     </script>
   </body>
-  <footer>
-    <font size="2">
-    <div class="container-fluid">
-      <nav class="pull-left">
-        <ul>
-          <li>Built by <a href="https://ebmdatalab.net">The DataLab</a> in collaboration with the <a href="https://www.cebm.net/covid-19/">Centre for Evidence-Based Medicine (CEBM)</a> at the University of Oxford</li>
-          <li>Part of the <a href='http://trialstracker.net'>TrialsTracker project.</a></li>
-          <li>Comments, questions or suggestions? <a href="mailto:ebmdatalab@phc.ox.ac.uk">Get in touch</a>.</li>
-        </ul>
-      </nav>
-    </div>
-  </font>
-  </footer>
 </html>
