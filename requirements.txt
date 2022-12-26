@@ -323,7 +323,7 @@ webencodings==0.5.1
     # via bleach
 websocket-client==1.1.0
     # via jupyter-server
-wheel==0.36.2
+wheel==0.38.1
     # via pip-tools
 widgetsnbextension==3.5.1
     # via ipywidgets
