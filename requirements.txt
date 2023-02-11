@@ -10,6 +10,8 @@ argon2-cffi==20.1.0
     # via
     #   jupyter-server
     #   notebook
+asttokens==2.2.1
+    # via stack-data
 async-generator==1.10
     # via nbclient
 attrs==21.2.0
@@ -45,6 +47,8 @@ entrypoints==0.3
     # via nbconvert
 et-xmlfile==1.1.0
     # via openpyxl
+executing==1.2.0
+    # via stack-data
 idna==2.10
     # via
     #   anyio
@@ -59,7 +63,7 @@ ipykernel==5.5.5
     #   nbval
     #   notebook
     #   qtconsole
-ipython==7.24.1
+ipython==8.10.0
     # via
     #   ipykernel
     #   ipywidgets
@@ -210,7 +214,7 @@ prometheus-client==0.11.0
     # via
     #   jupyter-server
     #   notebook
-prompt-toolkit==3.0.19
+prompt-toolkit==3.0.36
     # via
     #   ipython
     #   jupyter-console
@@ -218,6 +222,8 @@ ptyprocess==0.7.0
     # via
     #   pexpect
     #   terminado
+pure-eval==0.2.2
+    # via stack-data
 py==1.10.0
     # via pytest
 pycparser==2.20
@@ -267,6 +273,7 @@ send2trash==1.7.1
 six==1.16.0
     # via
     #   argon2-cffi
+    #   asttokens
     #   bleach
     #   cycler
     #   jsonschema
@@ -276,6 +283,8 @@ six==1.16.0
     #   tenacity
 sniffio==1.2.0
     # via anyio
+stack-data==0.6.2
+    # via ipython
 tenacity==7.0.0
     # via plotly
 terminado==0.10.1
