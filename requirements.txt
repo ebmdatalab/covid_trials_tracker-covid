@@ -67,8 +67,6 @@ ipython==7.24.1
     #   jupyterlab
 ipython-genutils==0.2.0
     # via
-    #   jupyter-server
-    #   nbformat
     #   notebook
     #   qtconsole
     #   traitlets
@@ -113,7 +111,7 @@ jupyter-core==4.7.1
     #   nbformat
     #   notebook
     #   qtconsole
-jupyter-server==1.8.0
+jupyter-server==1.15.4
     # via
     #   jupyterlab
     #   jupyterlab-server
@@ -153,7 +151,7 @@ nbconvert==6.1.0
     #   jupyter
     #   jupyter-server
     #   notebook
-nbformat==5.1.3
+nbformat==5.2.0
     # via
     #   ipywidgets
     #   jupyter-server
@@ -181,6 +179,7 @@ openpyxl==3.0.7
 packaging==20.9
     # via
     #   bleach
+    #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
     #   pytest
