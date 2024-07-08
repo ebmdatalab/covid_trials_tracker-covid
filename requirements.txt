@@ -315,7 +315,7 @@ traitlets==5.0.5
     #   nbformat
     #   notebook
     #   qtconsole
-urllib3==1.26.5
+urllib3==1.26.19
     # via requests
 wcwidth==0.2.5
     # via prompt-toolkit
