@@ -299,7 +299,7 @@ tornado==6.1
     #   jupyterlab
     #   notebook
     #   terminado
-tqdm==4.61.1
+tqdm==4.66.3
     # via -r requirements.in
 traitlets==5.0.5
     # via
