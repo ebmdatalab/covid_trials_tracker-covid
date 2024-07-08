@@ -291,7 +291,7 @@ toml==0.10.2
     #   jupytext
     #   pep517
     #   pytest
-tornado==6.1
+tornado==6.4.1
     # via
     #   ipykernel
     #   jupyter-client
